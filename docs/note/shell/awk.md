@@ -23,7 +23,7 @@ gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
 ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
 ```
 
-##### FS
+#### FS
 
 ```shell
 [root@localhost ~]# awk 'BEGIN{FS=":"}{print $1,$2,$3,$4,$5}' passwd
@@ -35,7 +35,7 @@ gopher x 13 30 gopher
 ftp x 14 50 FTP User
 ```
 
-##### OFS
+#### OFS
 
 ```
 [root@localhost ~]# awk 'BEGIN{FS=":";OFS="#"}{print $1,$2,$3,$4,$5}' passwd
@@ -47,7 +47,7 @@ gopher#x#13#30#gopher
 ftp#x#14#50#FTP User
 ```
 
-##### RS
+#### RS
 
 ```shell
 [root@localhost ~]# awk 'BEGIN{RS=":"}{print $0}' passwd
@@ -75,7 +75,7 @@ operator
 games
 ```
 
-##### ORS
+#### ORS
 
 ```shell
 [root@localhost ~]# awk 'BEGIN{FS=":";ORS="#"}{print $0}' passwd
@@ -96,7 +96,7 @@ games:x   12#100:games?/usr/games:/sbin/nologin
 gopher:x    13#30:gopher?/var/gopher:/sbin/nologin
 ```
 
-##### 指定多个FS(空格，多个空格，：，#，？)
+#### 指定多个FS(空格，多个空格，：，#，？)
 
 ```
 [root@localhost ~]# awk -F '[ ]+|[:#?]' '{print $1,$2,$3,$4,$5,$6,$7}' passwd

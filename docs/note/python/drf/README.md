@@ -4,12 +4,10 @@
 
 ##  Django vs DRF
 
-```md
-![An image](./images/logo.png)
-```
-
-
-
+![django](../images/django.jpg)
+<center>Django</center>
+![rfw](../images/drf.jpg)
+<center>Django REST Framwork</center>
 ## 基类
 
 1、APIView (rest_framework.views.APIView)

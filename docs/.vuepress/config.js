@@ -9,39 +9,72 @@ module.exports = {
     logo: '/assets/img/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/note/linux/awk/' },
+      { text: 'shell',
+        items: [
+          { text: 'awk', link: '/note/shell/awk' },
+          { text: 'date', link: '/note/shell/date' }
+        ]
+      },
+      { text: 'python',
+        items: [
+          { text: 'django rest framework', link: '/note/python/drf/'},
+          { text: 'celery', link: ''}
+        ]
+      },
+      { text: 'go',
+        items: [
+          { text: '基础', link: '/note/go/'},
+          { text: 'gin', link: ''}
+        ]
+      },
+      { text: '容器',
+        items: [
+          { text: 'docker', link: '/note/container/docker/' },
+          { text: 'k8s', link: '' }
+        ]
+      },
+      { text: '自动化',
+        items: [
+          { text: 'saltstack', link: '/note/automate/saltstack/' }
+        ]
+      },
       { text: 'Github', link: 'https://github.com/plsof' }
     ],
     sidebar: [
       {
-        title: 'Linux',
+        title: 'shell',
         collapsable: false, //是否展开
         children: [
-          ['./note/linux/awk', 'awk'],
-          ['./note/linux/date', 'date']
+          ['/note/shell/awk', 'awk'],
+          ['/note/shell/date', 'date']
         ]
       },
       {
-        title: 'Docker',
+        title: 'python',
         collapsable: false,
         children: [
-          ['./note/docker/image', '镜像'],
-          ['./note/docker/dockerfile', 'Dockerfile'],
-          ['./note/docker/container', '容器']
+          ['/note/python/drf/', 'Django REST framework'],
         ]
       },
       {
-        title: 'Django',
+        title: 'go',
         collapsable: false,
         children: [
-          ['./note/django/rfw', 'REST framework'],
+          ['/note/go/', '基础'],
         ]
       },
       {
-        title: 'Go',
+        title: '容器',
         collapsable: false,
         children: [
-          ['./note/go/basic', '基础'],
+          ['/note/container/docker/', 'Docker'],
+        ]
+      },
+      {
+        title: '自动化',
+        collapsable: false,
+        children: [
+          ['/note/automate/saltstack/', 'SaltStack'],
         ]
       }
     ]
