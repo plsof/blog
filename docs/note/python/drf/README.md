@@ -339,3 +339,406 @@ class BookInfoViewSet(viewsets.ViewSet):
         serializer = BookInfoSerializer(books)
         		return Response(serializer.data)
 ```
+
+
+
+## 自定义返回格式
+
+### 默认response
+
+#### views.py
+
+```python
+from rest_framework.generics import ListAPIView
+from .serializer import IdcSerializer
+from .models import Idc
+
+class IdcList(ListAPIView):
+    queryset = Idc.objects.all()
+    serializer_class = IdcAllSerializer
+```
+
+#### response
+
+```shell
+➜  ~ curl -s 'http://127.0.0.1:8000/api/asset/idc' | python3 -m json.tool
+[
+    {
+        "id": 2,
+        "name": "109",
+        "address": "成都",
+        "isp": 0,
+        "bandwidth": "",
+        "ip_range": null,
+        "comment": "",
+        "isp_name": "移动"
+    }
+]
+```
+
+### 自定义response
+
+实际开发中我们需要更多的返回字段 比如：
+
+```json
+{
+  "code": 0,  # 状态码
+  "data": [], # 存放数据
+  "msg": "",  # 返回信息
+  "total": "" # 返回数据的数量
+}
+```
+
+#### views.py
+
+```python
+from rest_framework.generics import ListAPIView
+from rest_framework.response import Response
+from .serializer import IdcSerializer
+from .models import Idc
+
+
+class ResponseInfo(object):
+    def __init__(self, **args):
+        self.response = {
+            "code": args.get('code', 0),
+            "data": args.get('data', []),
+            "msg": args.get('msg', 'success'),
+            'total': args.get('total', 0)
+        }
+
+
+class IdcList(ListAPIView):
+    def __init__(self, **kwargs):
+        self.response_format = ResponseInfo().response
+        super(IdcList, self).__init__(**kwargs)
+
+    def list(self, request):
+        queryset = Idc.objects.all()
+        serializer = IdcSerializer(queryset, many=True)
+        self.response_format["code"] = 0
+        self.response_format["data"] = serializer.data
+        if not serializer.data:
+            self.response_format["msg"] = "List empty"
+        self.response_format["total"] = len(serializer.data)
+        return Response(self.response_format)
+```
+
+#### response
+
+```shell
+➜  ~ curl -s 'http://127.0.0.1:8000/api/asset/idc' | python3 -m json.tool
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 2,
+            "name": "109",
+            "address": "成都",
+            "isp": 0,
+            "bandwidth": "",
+            "ip_range": null,
+            "comment": "",
+            "isp_name": "移动"
+        }
+    ],
+    "msg": "success",
+    "total": 1
+}
+```
+
+
+
+## 分页
+
+### 设置
+
+1. 写在settings.py
+
+2. 自定义分页类
+
+   ```python
+   class MyPageNumber(PageNumberPagination):
+       page_size = 20
+       page_query_param = 'page'
+       page_size_query_param = 'limit'
+   ```
+
+### 代码
+
+#### views.py
+
+```python
+class FileUploadView(APIView):
+    # permission_classes = [IsAdminUser]
+
+    def __init__(self, **kwargs):
+        self.response_format = ResponseInfo().response
+        super(FileUploadView, self).__init__(**kwargs)
+
+    def get(self, request, format=None):
+        files = File.objects.all()
+        serializer = FileSerializer(files, many=True)
+        page = self.request.query_params.get('page', None)
+        # 判断用户的请求是否需要分页
+        if page is not None and page is not '':
+            page_obj = MyPageNumber()
+            page_data = page_obj.paginate_queryset(queryset=serializer.data, request=request, view=self)
+            self.response_format["data"] = page_data
+        else:
+            self.response_format["data"] = serializer.data
+        self.response_format["total"] = len(serializer.data)
+        self.response_format["code"] = 0
+        if not serializer.data:
+            self.response_format["msg"] = "List empty"
+        return Response(self.response_format)
+```
+
+### 测试
+
+请求第一页的数据，每页20行
+
+```shell
+curl 'http://127.0.0.1:8000/api/upload?page=1&limit=20'
+```
+
+
+
+
+
+## 更新用户密码
+
+更新用户的密码（系统自带的User表）提供用户名、新，旧密码字段
+
+### 代码
+
+#### serializers.py
+
+```python
+class ChangePasswordSerializer(serializers.Serializer):
+
+    """
+    Serializer for password change endpoint.
+    """
+    username = serializers.CharField(required=True)
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)
+
+```
+
+#### views.py
+
+```python
+from django.contrib.auth.models import User
+from rest_framework import status
+from django.http import Http404
+from rest_framework.generics import UpdateAPIView
+from .serializers import ChangePasswordSerializer
+
+
+class ChangePasswordView(UpdateAPIView):
+    serializer_class = ChangePasswordSerializer
+    # model = User
+
+    def get_object(self, username):
+        try:
+            return User.objects.get(username=username)
+        except User.DoesNotExist:
+            raise Http404
+
+    def update(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+
+        if serializer.is_valid():
+            object = self.get_object(serializer.data.get("username"))
+            # Check old password
+            if not object.check_password(serializer.data.get("old_password")):
+                return Response({"msg": "旧密码错误"}, status=status.HTTP_400_BAD_REQUEST)
+            # set_password also hashes the password that the user will get
+            newpass = serializer.data.get("new_password")
+            if len(newpass) < 8:
+                return Response({"msg": "新密码长度小于8"},status=status.HTTP_400_BAD_REQUEST)
+            object.set_password(serializer.data.get("new_password"))
+            object.save()
+            return Response({"msg": "密码更新成功"}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+```
+
+### 测试
+
+```shell
+➜  ~ curl -H "Content-Type:application/json" -X PUT 'http://127.0.0.1:8000/api/user/changepasswd/' -d '{"old_password":"21ysten123", "new_password":"qwertyui", "username": "pdd"}'
+{"msg":"密码更新成功"}%
+```
+
+
+
+## 文件上传
+
+上传文件，查看上传文件列表，删除上传文件
+
+### 代码
+
+#### models.py
+
+```python
+from django.db import models
+
+
+class File(models.Model):
+    file = models.FileField(blank=False, null=False)
+
+    def __str__(self):
+        return self.file.name
+
+    class Meta:
+        ordering = ['file']
+        verbose_name = '文件上传'
+        verbose_name_plural = verbose_name
+
+```
+
+#### serializers.py
+
+```python
+from rest_framework import serializers
+
+from .models import File
+
+
+class FileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = File
+        fields = "__all__"
+
+```
+
+#### views.py
+
+```python
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
+from rest_framework.permissions import IsAdminUser
+
+from common.views import ResponseInfo, MyPageNumber
+from .models import File
+from .serializers import FileSerializer
+
+
+class FileUploadView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def __init__(self, **kwargs):
+        self.response_format = ResponseInfo().response
+        super(FileUploadView, self).__init__(**kwargs)
+
+    def get(self, request, format=None):
+        files = File.objects.all()
+        serializer = FileSerializer(files, many=True)
+        page = self.request.query_params.get('page', None)
+        if page is not None and page is not '':
+            page_obj = MyPageNumber()
+            page_data = page_obj.paginate_queryset(queryset=serializer.data, request=request, view=self)
+            self.response_format["data"] = page_data
+        else:
+            self.response_format["data"] = serializer.data
+        self.response_format["total"] = len(serializer.data)
+        self.response_format["code"] = 0
+        if not serializer.data:
+            self.response_format["msg"] = "List empty"
+        return Response(self.response_format)
+
+    def post(self, request, format=None):
+
+        serializer = FileSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class FileDetailView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def get_object(self, pk):
+        try:
+            return File.objects.get(pk=pk)
+        except File.DoesNotExist:
+            raise status.HTTP_404_NOT_FOUND
+
+    def delete(self, request, pk, format=None):
+        file = self.get_object(pk)
+        file.file.delete()  # 物理删除图片
+        file.delete()  # 删除数据库记录
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+```
+
+#### urls.py
+
+```python
+from django.urls import path
+
+from .views import FileUploadView, FileDetailView
+
+urlpatterns = [
+    path(r'', FileUploadView.as_view()),
+    path(r'<int:pk>/', FileDetailView.as_view()),
+]
+
+```
+
+### 设置上传目录
+
+实际部署的时候我们会设置上传目录为nginx的root目录（urls.py里面就不用设置了）
+
+#### settings.py
+
+```python
+# upload image
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```
+
+#### urls.py
+
+```
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
+### 测试
+
+1. 上传
+
+   ![file.png](../images/file.png)
+
+2. 查看上传文件列表
+
+   ```shell
+   ➜  ~ curl -s 'http://127.0.0.1:8000/api/upload/' | python3 -m json.tool
+   {
+       "code": 0,
+       "data": [
+           {
+               "id": 1,
+               "file": "/media/base.jpg"
+           }
+       ],
+       "msg": "success",
+       "total": 1
+   }
+   ```
+
+3. 删除上传文件
+
+   ```shell
+   curl -X DELETE 'http://127.0.0.1:8000/api/upload/1/'
+   ```
+
+   

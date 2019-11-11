@@ -2,7 +2,7 @@
 home: true
 # heroImage: /public/sunset.jpeg
 heroText: KEEP
-tagline: pdd记笔记的地方
+tagline: plsof记笔记的地方
 actionText: GO →
 actionLink: /note/shell/awk/
 features:
