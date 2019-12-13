@@ -1,32 +1,13 @@
-<center>
-    <h1>Awk</h1>
-</center>
+---
+title: Awk
+---
 
 ## 分隔符
 
-#### FS : The input field separator, a space by default; 字段分隔符
-
-#### OFS: The output field separator, a space by default; 输出字段分隔符
-
-#### RS: The input record separator, by default a newline; 记录分隔符
-
-#### ORS: The output record separator, by default a newline; 输出记录分隔符
-
-#### 示例
-
+### FS
+The input field separator, a space by default 字段分隔符
 ```shell
-mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
-uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
-operator:x:11:0:operator:/root:/sbin/nologin
-games:x:12:100:games:/usr/games:/sbin/nologin
-gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
-ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
-```
-
-#### FS
-
-```shell
-[root@localhost ~]# awk 'BEGIN{FS=":"}{print $1,$2,$3,$4,$5}' passwd
+[root@localhost ~]# awk 'BEGIN{FS=":"}{print $1,$2,$3,$4,$5}' /etc/passwd
 mail x 8 12 mail
 uucp x 10 14 uucp
 operator x 11 0 operator
@@ -35,10 +16,21 @@ gopher x 13 30 gopher
 ftp x 14 50 FTP User
 ```
 
-#### OFS
+#### 指定多个FS(空格，多个空格，：，#，？)
 
+```shell
+[root@localhost ~]# awk -F '[ ]+|[:#?]' '{print $1,$2,$3,$4,$5,$6,$7}' /etc/passwd
+mail x 8 12 mail /var/spool/mail /sbin/nologin
+uucp x 10 14 uucp /var/spool/uucp /sbin/nologin
+operatorx 11 0 operator /root /sbin/nologin
+games x 12 100 games /usr/games /sbin/nologin
+gopher x 13 30 gopher /var/gopher /sbin/nologin
 ```
-[root@localhost ~]# awk 'BEGIN{FS=":";OFS="#"}{print $1,$2,$3,$4,$5}' passwd
+
+### OFS
+The output field separator, a space by default 输出字段分隔符
+```shell
+[root@localhost ~]# awk 'BEGIN{FS=":";OFS="#"}{print $1,$2,$3,$4,$5}' /etc/passwd
 mail#x#8#12#mail
 uucp#x#10#14#uucp
 operator#x#11#0#operator
@@ -47,10 +39,10 @@ gopher#x#13#30#gopher
 ftp#x#14#50#FTP User
 ```
 
-#### RS
-
+### RS
+The input record separator, by default a newline 记录分隔符
 ```shell
-[root@localhost ~]# awk 'BEGIN{RS=":"}{print $0}' passwd
+[root@localhost ~]# awk 'BEGIN{RS=":"}{print $0}' /etc/passwd
 mail
 x
 8
@@ -75,44 +67,16 @@ operator
 games
 ```
 
-#### ORS
-
+### ORS
+The output record separator, by default a newline 输出记录分隔符
 ```shell
-[root@localhost ~]# awk 'BEGIN{FS=":";ORS="#"}{print $0}' passwd
+[root@localhost ~]# awk 'BEGIN{FS=":";ORS="#"}{print $0}' /etc/passwd
 mail:x:8:12:mail:/var/spool/mail:/sbin/nologin#uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin#operator:x:11:0:operator:/root:/sbin/nologin#games:x:12:100:games:/usr/games:/sbin/nologin#gopher:x:13:30:gopher:/var/gopher:/sbin/nologin#ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin#
 ```
-
-
-
-## 指定多个FS
-
-#### 示例
-
-```shell
-mail:x 8#12:mail:/var/spool/mail:/sbin/nologin
-uucp:x  10#14:uucp  /var/spool/uucp:/sbin/nologin
-operatorx   11#0:operator?/root:/sbin/nologin
-games:x   12#100:games?/usr/games:/sbin/nologin
-gopher:x    13#30:gopher?/var/gopher:/sbin/nologin
-```
-
-#### 指定多个FS(空格，多个空格，：，#，？)
-
-```
-[root@localhost ~]# awk -F '[ ]+|[:#?]' '{print $1,$2,$3,$4,$5,$6,$7}' passwd
-mail x 8 12 mail /var/spool/mail /sbin/nologin
-uucp x 10 14 uucp /var/spool/uucp /sbin/nologin
-operatorx 11 0 operator /root /sbin/nologin
-games x 12 100 games /usr/games /sbin/nologin
-gopher x 13 30 gopher /var/gopher /sbin/nologin
-```
-
-
 
 ## 数组
 
 #### 示例
-
 ```shell
 80.80.80.67 - - [2019-10-29T00:01:01+08:00] "GET /ysten-lvoms-epg/epg/getChannelNextProgram.shtml?uuid=cctv-14&curprogramId=175430298&programName=%E5%8A%A8%E7%94%BB%E5%A4%A7%E6%94%BE%E6%98%A0:%E5%96%80%E6%96%AF%E7%89%B9%E7%A5%9E%E5%A5%87%E4%B9%8B%E6%97%85&startTime=1572220920&action=next&templateId=02850&deviceGroupId=556&districtCode=510600&random=0.23766797524876893 HTTP/1.1"  "200" 149 "-" "http://jtdsepg.cdzgys.cn/watchTV2.0/watchTV11.0/index.html?businessType=livereplay&mediaType=live&fromwhere=playback&templateId=02850&catgId=ysten-cctv-1&userId=25539939"  "gefo5(ysten)" - "0.000"  "looktvepg.sc.ysten.com" "7070" "-" "HIT" "-" "-"
 80.80.80.40 - - [2019-10-29T00:01:01+08:00] "GET /ysten-lvoms-epg/epg/getChannelNextProgram.shtml?uuid=cctv-6&curprogramId=175106624&programName=%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96&startTime=1572185700&action=next&templateId=0286&deviceGroupId=821&districtCode=510100&random=0.8053548543248326 HTTP/1.1"  "200" 135 "-" "http://jtdsepg.cdzgys.cn/watchTV2.0/watchTV11.0/index.html?businessType=livereplay&mediaType=live&fromwhere=playback&templateId=0286&catgId=ysten-cctv-1&userId=25690871"  "gefo5(ysten)" - "0.000"  "looktvepg.sc.ysten.com" "7070" "-" "HIT" "-" "-"
@@ -121,8 +85,6 @@ gopher x 13 30 gopher /var/gopher /sbin/nologin
 ```shell
 [root@localhost ~]# awk -F "[ ]+|?" '{a[$12]++;n++}END{for(i in a)print i,a[i],a[i]/n}' looktvepg.access.log20191029 | sort -n -r -k2
 ```
-
-
 
 ## 条件判断
 
@@ -151,8 +113,6 @@ TIME="["${PRETIME}"+08:00]"
 # 时间 HTTP状态码 串号 节点
 awk -v actime=$TIME '$4 >= actime {print $4,$8,substr($12,2,15),$15}' $LOG | awk '{if($3==015164026498581) print "A在线",$0; else if($3==015164026490197) print "B在线"; else if($3==015373001004176) print "C在线",$0}'
 ```
-
-
 
 ## 变量传值
 
@@ -184,4 +144,3 @@ do
     grep getChannelNextProgram looktvepg.access.log | grep ysten-cctv-5 | awk -v ptime=$ptime -v ntime=$ntime '$4 >=ptime && $4<=ntime {n++} END{print "cctv5出现次数 ", n}'
 done
 ```
-

@@ -1,6 +1,6 @@
-<center>
-  <h1>Go学习笔记</h1>
-</center>
+---
+title: Go学习笔记
+---
 
 ## 变量
 

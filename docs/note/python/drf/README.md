@@ -1,12 +1,12 @@
-<center>
-  <h1>Django Rest framework</h1>
-</center>
+---
+title: Django Rest framework
+---
 
 ##  Django vs DRF
 
-![django](../images/django.jpg)
+<img src="../images/django.jpg" alt="django" style="zoom:80%;" />
 <center>Django</center>
-![rfw](../images/drf.jpg)
+<img src="../images/drf.jpg" alt="drf" style="zoom:80%;" />
 <center>Django REST Framwork</center>
 ## 基类
 

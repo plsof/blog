@@ -4,7 +4,7 @@ home: true
 heroText: KEEP
 tagline: plsof记笔记的地方
 actionText: GO →
-actionLink: /note/shell/awk/
+actionLink: /note/guide/
 features:
 - title: 容器
   details: Docker

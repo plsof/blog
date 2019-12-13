@@ -9,10 +9,10 @@ module.exports = {
     logo: '/assets/img/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'shell',
+      { text: 'linux',
         items: [
-          { text: 'awk', link: '/note/shell/awk' },
-          { text: 'date', link: '/note/shell/date' }
+          { text: 'awk', link: '/note/linux/awk' },
+          { text: 'date', link: '/note/linux/date' }
         ]
       },
       { text: 'python',
@@ -30,7 +30,13 @@ module.exports = {
       { text: '容器',
         items: [
           { text: 'docker', link: '/note/container/docker/' },
-          { text: 'k8s', link: '' }
+          { text: 'k8s', link: '/note/container/k8s/' }
+        ]
+      },
+      { text: '监控',
+        items: [
+          { text: 'prometheus', link: '/note/monitor/prometheus/' },
+          { text: 'node_exporter', link: '' }
         ]
       },
       { text: '自动化',
@@ -40,43 +46,35 @@ module.exports = {
       },
       { text: 'Github', link: 'https://github.com/plsof' }
     ],
-    sidebar: [
-      {
-        title: 'shell',
-        collapsable: false, //是否展开
-        children: [
-          ['/note/shell/awk', 'awk'],
-          ['/note/shell/date', 'date']
-        ]
-      },
-      {
-        title: 'python',
-        collapsable: false,
-        children: [
-          ['/note/python/drf/', 'Django REST framework'],
-        ]
-      },
-      {
-        title: 'go',
-        collapsable: false,
-        children: [
-          ['/note/go/', '基础'],
-        ]
-      },
-      {
-        title: '容器',
-        collapsable: false,
-        children: [
-          ['/note/container/docker/', 'Docker'],
-        ]
-      },
-      {
-        title: '自动化',
-        collapsable: false,
-        children: [
-          ['/note/automate/saltstack/', 'SaltStack'],
-        ]
-      }
-    ]
+    // sidebar: 'auto',
+    sidebar: {
+      '/note/guide/': [
+        ''
+      ],
+      '/note/linux/': [
+        'awk',
+        'date'
+      ],
+      '/note/python/drf/': [
+        ''
+      ],
+      '/note/go/': [
+        ''
+      ],
+      '/note/container/docker/': [
+        ''
+      ],
+      '/note/container/k8s/': [
+        '',
+        'pod'
+      ],
+      '/note/monitor/prometheus/': [
+        ''
+      ],
+      '/note/automate/saltstack/': [
+        ''
+      ]
+    },
+    sidebarDepth: 2
   }
 }

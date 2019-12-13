@@ -1,5 +1,9 @@
+---
+title: SaltStack
+---
+
 ## grains
-### minion系统grains
+### 系统grains
 
 #### 查看minion的所有grains
 
@@ -21,7 +25,8 @@ salt SCYD-10.25.172.207 grains.delval ipv4
 
 
 
-### 自定义grains(minion端)
+### 自定义grains
+#### minion端
 
 1. 配置
 
