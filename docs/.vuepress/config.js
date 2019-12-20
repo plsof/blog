@@ -23,8 +23,14 @@ module.exports = {
       },
       { text: 'go',
         items: [
-          { text: '基础', link: '/note/go/'},
+          { text: '基础', link: '/note/go/' },
           { text: 'gin', link: ''}
+        ]
+      },
+      {
+        text: '数据库',
+        items: [
+          { text: 'etcd', link: '/note/db/etcd/' }
         ]
       },
       { text: '容器',
@@ -39,9 +45,10 @@ module.exports = {
           { text: 'node_exporter', link: '' }
         ]
       },
-      { text: '自动化',
+      { text: '配置管理',
         items: [
-          { text: 'saltstack', link: '/note/automate/saltstack/' }
+          { text: 'confd', link: '/note/configuration-management/confd/' },
+          { text: 'saltstack', link: '/note/configuration-management/saltstack/' }
         ]
       },
       { text: 'Github', link: 'https://github.com/plsof' }
@@ -61,17 +68,28 @@ module.exports = {
       '/note/go/': [
         ''
       ],
+      '/note/db/etcd/': [
+        ''
+      ],
       '/note/container/docker/': [
         ''
       ],
       '/note/container/k8s/': [
-        '',
-        'pod'
+        'overview',
+        'cluster-architecture',
+        'containers',
+        'workloads',
+        'services-load_balancing-networking',
+        'cluster-administration',
+        'flannel'
       ],
       '/note/monitor/prometheus/': [
         ''
       ],
-      '/note/automate/saltstack/': [
+      '/note/configuration-management/confd/': [
+        ''
+      ],
+      '/note/configuration-management/saltstack/': [
         ''
       ]
     },
