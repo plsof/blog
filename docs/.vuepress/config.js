@@ -36,13 +36,13 @@ module.exports = {
       { text: '容器',
         items: [
           { text: 'docker', link: '/note/container/docker/' },
-          { text: 'k8s', link: '/note/container/k8s/' }
+          { text: 'k8s', link: '/note/container/k8s/' },
+          { text: 'harbor', link: '/note/container/harbor/' }
         ]
       },
       { text: '监控',
         items: [
           { text: 'prometheus', link: '/note/monitor/prometheus/' },
-          { text: 'node_exporter', link: '' }
         ]
       },
       { text: '配置管理',
@@ -83,8 +83,12 @@ module.exports = {
         'cluster-administration',
         'flannel'
       ],
-      '/note/monitor/prometheus/': [
+      '/note/container/harbor/': [
         ''
+      ],
+      '/note/monitor/prometheus/': [
+        '',
+        'examples/'
       ],
       '/note/configuration-management/confd/': [
         ''

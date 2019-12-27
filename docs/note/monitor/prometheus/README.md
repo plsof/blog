@@ -2,6 +2,38 @@
 title: Prometheus
 ---
 
+## 安装
+ 
+### 下载
+二进制方式
+
+```shell
+wget https://github.com/prometheus/prometheus/releases/download/v2.14.0/prometheus-2.14.0.linux-amd64.tar.gz -C /data/server/
+cd /data/server && tar -zxv -f prometheus-2.14.0.linux-amd64.tar.gz
+ln -s prometheus-2.14.0.linux-amd64 prometheus
+```
+
+### 启动脚本
+`/etc/systemd/system/prometheus.service`
+```yaml
+[Unit]
+Description=Prometheus Monitoring System
+Documentation=Prometheus Monitoring System
+
+[Service]
+ExecStart=/data/server/prometheus/prometheus \
+  --config.file=/data/server/prometheus/prometheus.yml \
+  --web.listen-address=:9090
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### 启动
+```shell
+systemctl start prometheus
+```
+
 ## 架构
 <img src="./images/architecture.png" alt="prometheus" style="zoom:85%;" />
 <center>Prometheus架构</center>
@@ -55,56 +87,3 @@ Server，Prometheus Server通过访问该Exporter提供的Endpoint端点，即�
   2. Gauge
   3. Histogram
   4. Summary
-
-
-## 实例
-
-### nginx-vts
-  https://github.com/vozlt/nginx-module-vts，nginx-module-vts
-  是一个第三方的nginx插件，可以统计nginx的各种信息，v0.1.17版本开始支持
-  数据输出格式为prometheus
-
-```shell
-http://127.0.0.1/status/format/prometheus
-```
-
-### 配置Prometheus
-```yaml
-global:
-  evaluation_interval: 30s
-  scrape_interval: 60s
-scrape_configs:
-- job_name: prometheus
-  static_configs:
-  - labels:
-      instance: prometheus
-    targets:
-    - localhost:9090
-- job_name: nginx_status_四川_西区601
-  metrics_path: /status/format/prometheus
-  static_configs:
-  - labels:
-      computerroom: 西区601
-      province: 四川
-    targets:
-    - 10.1.33.129:8800
-    - 10.1.33.130:8800
-    - 10.1.33.133:8800
-- job_name: nginx_status_四川_西区301
-  metrics_path: /status/format/prometheus
-  static_configs:
-  - labels:
-      computerroom: 西区301
-      province: 四川
-    targets:
-    - 10.3.32.26:8800
-    - 10.3.32.44:8800
-    - 10.3.32.51:8800
-```
-
-#### 配置文件验证
-```shell
-[root@prometheus ~]# /data/server/prometheus/promtool check config /data/server/prometheus/prometheus.yml
-Checking /data/server/prometheus/prometheus.yml
-  SUCCESS: 0 rule files found
-```
