@@ -81,7 +81,8 @@ module.exports = {
         'workloads',
         'services-load_balancing-networking',
         'cluster-administration',
-        'flannel'
+        'flannel',
+        'dashboard'
       ],
       '/note/container/harbor/': [
         ''
