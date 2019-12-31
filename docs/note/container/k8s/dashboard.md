@@ -96,4 +96,9 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IjcyRGtNcmY5YW50TjYxRjZDZ0R3VmxLdldDNlRR
   ```
   **这里会提示输入密码，这个密码是证书导入浏览器要输入的密码**
 
+修改service/kubernetes-dashboard类型为NodePort
+```shell
+[root@localhost ~]# kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
+```
+
 浏览器导入kubecfg.p12，Dashboard入口url地址`https://192.168.0.1:6443/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login`
