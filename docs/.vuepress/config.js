@@ -23,8 +23,8 @@ module.exports = {
       },
       { text: 'go',
         items: [
-          { text: '基础', link: '/note/go/' },
-          { text: 'gin', link: ''}
+          { text: '学习笔记', link: '/note/go/basic/' },
+          { text: 'go-restful', link: ''}
         ]
       },
       {
@@ -65,8 +65,13 @@ module.exports = {
       '/note/python/drf/': [
         ''
       ],
-      '/note/go/': [
-        ''
+      '/note/go/basic/': [
+        'programStructure',
+        'basicDataType',
+        'compositeType',
+        'functions',
+        'methods',
+        'interfaces'
       ],
       '/note/db/etcd/': [
         ''

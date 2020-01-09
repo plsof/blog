@@ -28,6 +28,7 @@ Username: admin
 Password:
 Login Succeeded
 ```
+**公共仓库上传和下载不需要登陆**
 
 ### 推送
 ```shell

@@ -104,7 +104,7 @@ preStop
 
 ### Pod Preset
 
-## Controllers
+## 控制器
 
 ### ReplicaSet
 ReplicaSet在ReplicationController的基础上增加支持集合式selector
@@ -114,7 +114,94 @@ ReplicationController用来确保容器应用的副本数始终保持在用户�
 即如果有容器异常退出，会自动创建新的Pod来替代，而如果异常多出来的容器也会自动回收。
 
 ### Deployments
-Deployment在前面的基础上支持rolling-update（更新回滚）
+Deployment控制器为Pods和ReplicaSets提供声明式的更新
+
+#### 创建Deployment
+- 命令行创建
+  ```shell
+  kubectl run myhttp-deployment --image=172.188.3.24:8000/library/myhttp:v1 --replicas=2
+  ```
+
+- YAML方式创建
+  ```yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: myhttp-deployment
+    labels:
+      app: myhttp
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: myhttp
+    template:
+      metadata:
+        labels:
+          app: myhttp
+      spec:
+        containers:
+        - name: myhttp
+          image: 172.188.3.24:8000/library/myhttp:v1
+          ports:
+          - containerPort: 8080
+  ```
+  ```shell
+  kubectl apply -f ./myhttp.yaml
+  ```
+
+查看Deplyment状态
+```shell
+[root@localhost ~]# kubectl get deployments
+NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
+myhttp-deployment      2/2     2            2           6h31m
+myhttp-v2-deployment   2/2     2            2           174m
+```
+
+#### Deployment更新
+- 命令行更新
+  ```shell
+  kubectl set image deployment/myhttp-deployment myhttp=172.188.3.24:8000/library/myhttp:v2 --record
+  ```
+  返回输出
+  ```shell
+  deployment.apps/myhttp-deployment image updated
+  ```
+- 编辑Deployment
+  ```shell
+  kubectl edit deployment myhttp-deployment
+  ```
+  返回输出
+  ```shell
+  deployment.apps/myhttp-deployment edited
+  ```
+查看Deplyment细节
+```shell
+kubectl describe deployment myhttp
+```
+
+#### Deployment回退
+查看更新历史
+```shell
+kubectl rollout history deployment myhttp-deployment
+```
+
+回退到指定版本
+```shell
+kubectl rollout undo deployment myhttp-deployment --revision=2
+```
+**未指定回退版本则默认回退到上一个版本**
+
+#### Deployment伸缩
+- 手动伸缩
+  ```shell
+  [root@localhost ~]# kubectl scale deployment myhttp-deployment --replicas=4
+  deployment.apps/myhttp-deployment scaled
+  ```
+- 自动伸缩
+  ```shell
+  kubectl autoscale deployment myhttp-deployment --min=10 --max=15 --cpu-percent=80
+  ```
 
 ### StatefulSets
 StatefulSet是为了解决有状态服务的问题（Deployments ReplicaSets无状态）

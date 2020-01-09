@@ -13,15 +13,17 @@ Service在k8s中是REST对象，与Pod一样。你可以通过POST请求API serv
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: myhttp-v2-service
 spec:
   selector:
-    app: MyApp
+    app: myhttp-v2
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 9376
+      port: 8800
+      targetPort: 80
 ```
+创建服务
+`kubectl create -f ./myhttp-v2-service.yaml`
 
 #### 没有selector的service
 Services主要用来抽象访问Pod，但它们也可以用来访问其它类型的backends
@@ -29,30 +31,30 @@ Services主要用来抽象访问Pod，但它们也可以用来访问其它类型
 - Service指向另一个Namespace或其它集群的Service
 - 您正在将workload迁移到k8s。在评估该方法时，您仅在k8s中运行一部分后端。
 
+example:（创建一个连接集群外的服务）
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: external-service
 spec:
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 9376
+      port: 3307
+      targetPort: 3307
 ```
 
 因为这个服务没有`selector`，你需要手动指定到Endpoint的映射关系
-
 ```yaml
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: my-service
+  name: external-service
 subsets:
   - addresses:
-      - ip: 192.0.2.42
+      - ip: 172.188.2.89
     ports:
-      - port: 9376
+      - port: 3307
 ```
 
 **注意：endpoint IP地址不可以是loopback，link-local或者其它k8s集群的Services，因为kube-proxy不支持虚拟地址**
@@ -64,14 +66,14 @@ subsets:
 客户端访问service-ip（clusterIP）请求会先从用户态切换到内核的iptables，然后回到用户态kube-proxy，kube-proxy负责代理转发工作。每个service都会由kube-proxy在node节点上起一个随机的代理端口，iptables会捕获clusterIP上的端口（targetPort）流量重定向到代理端口，任何访问代理端口的流量都会被代理到service后端的一个Pod上，默认情况下，对后端Pod的选择是轮询的。userspace模式，所有的转发都是通过 kube-proxy 软件来实现
 <img src="./images/userspace-proxy.svg" alt="userspace-proxy" style="zoom:40%;" />
 
-#### iptables代理模式
+#### iptables代理模式（默认模式）
 客户端访问service-ip (clusterIP) 请求会由iptables直接重定向到后端对应的Pod上，每个service都会由kube-proxy生成对应iptables规则，iptables会捕获clusterIP上的端口（targetPort）流量重定向到后端的一个Pod上，默认情况下，对后端Pod的选择是随机的，也可以设置会话保持。iptables模式，所有的转发都是通过iptables内核模块来实现的，而kube-proxy只负责生成相应的iptables规则。
 <img src="./images/iptables-proxy.svg" alt="iptables-proxy" style="zoom:40%;" />
 
 #### IPVS代理模式
 从k8s 1.8版本之后，新增kube-proxy对ipvs的支持，并且在新版本的k8s 1.11版本中被纳入GA。之所以会有ipvs这种模式，是因为iptables添加规则是不增量的，先把当前的iptables规则都拷贝出现，再做修改，然后再把修改后的iptables规则保存回去，这样一个过程的结果就是，iptables在更新一条规则时，会把iptables锁住，这样的结果在服务数量达到一定量级时，性能基本上是不可接受的。
 
-IPVS详细介绍：`https://www.codercto.com/a/20391.html`
+[IPVS详细介绍](https://www.codercto.com/a/20391.html)
 <img src="./images/ipvs-proxy.svg" alt="ipvs-proxy" style="zoom:40%;" />
 
 ### 多端口Services
