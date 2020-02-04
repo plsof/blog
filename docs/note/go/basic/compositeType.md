@@ -94,40 +94,9 @@ func main()  {
 }
 ```
 
-### 数组指针和指针数组
-```go
-package main
-
-import "fmt"
-
-func main(){
-	x,y := 1, 2
-	var arr =  [...]int{5:2}
-	//数组指针
-	var pf *[6]int = &arr
-
-	//指针数组
-	pfArr := [...]*int{&x,&y}
-	fmt.Println(pf)
-	fmt.Println(pfArr)
-}
-```
-
-## 结构体
-结构体是一种聚合的数据类型，是由零个或多个任意类型的值聚合成的实体
-
-### 结构体字面值
-结构体值也可以用结构体字面值表示，结构体字面值可以指定每个成员的值
-```go
-type Point struct{ X, Y int }
-1. p := Point{1, 2}
-2. p := Point{X:1, Y:2}
-```
-
 ## 切片
 
 ### 概念
-
 **切片是引用类型**
 
 Slice（切片）代表变长的序列，序列中每个元素都有相同的类型。一个slice类型一般写作[]T，其中T代表slice中元素的类型；slice的语法和数组很像，只是没有固定长度而已，切片是数组的一个引用
@@ -283,7 +252,8 @@ s= 潘ello
 ## Map
 
 ### 概述
-map是引用类型
+**map是引用类型**
+
 在Go语言中，一个map就是一个哈希表的引用，map类型可以写为map[K]V，其中K和V分别对应key和value。map中所有的key都有相同的类型，所有的value也有着相同的类型，但是key和value之间可以是不同的数据类型。**slice、map、function不可以作为key，因为这几个没法用==来判断**
 
 map能动态增长键值对
@@ -309,7 +279,7 @@ a= map[no1:jack no2:tom no3:alice]
 
 ### map创建
 ```go
-// 声明map不会分配内存，初始化需要make分配内存后才能赋值和使用。数组区别：数组声明后，可以append数据
+// 声明map不会分配内存，初始化需要make分配内存后才能赋值和使用。slice区别：slice声明后，可以append数据
 var a map[string]string
 var a map[string]map[string]string
 
@@ -424,8 +394,171 @@ key=blick value=18
 key=tom value=16
 ```
 
+## 结构体
+
+### 概述
+**结构体是值类型**
+
+结构体是一种聚合的数据类型，是由零个或多个任意类型的值聚合成的实体
+
+### 结构体声明
+```go
+type 结构体名称 struct {
+	field1 type
+	field2 type
+}
+
+type Cat struct {
+	Name string
+	Age int
+	Color string
+	Hobby string
+}
+
+// 结构体变量
+var cat1 Cat
+cat1.Name = "小猫"
+cat.Age = 2
+cat.Color = "黄色"
+cat.Hobby = "吃鱼"
+
+// cat2 cat3 结构体字面量
+cat2 := Cat{"小猫", 2, "黄色", "吃鱼"} // 字段顺序与Cat一致
+
+// 字段顺序可以与Cat不一致
+cat3 := Cat{
+	Name: "小猫",
+	Age: 2,
+	Color: "黄色",
+	Hobby: "吃鱼",
+}
+
+var cat4 *Cat = new(Cat)
+cat4.Name = "小猫" // 隐式解引用 等价于(*cat4).Name = "小猫"
+cat4.Age = 2
+cat4.Color = "黄色"
+cat4.Hobby = "吃鱼"
+
+var cat5 *Cat = &Cat{}
+```
+
+字段类型可以为基本类型、引用类型
+
+在创建一个结构体变量后，如果没有给字段赋值，则字段对应默认值
+
+### 结构体内存分布
+```go
+package main
+
+import (
+	"fmt"
+	"unsafe"
+)
+
+func main()  {
+	type Cat struct {
+		Name string
+		Age int
+		Color string
+		Hobby string
+	}
+
+	var cat1 Cat
+	cat1.Name = "小猫"
+	cat1.Age = 2
+	cat1.Color = "黄色"
+	cat1.Hobby = "吃鱼"
+
+	fmt.Printf("%p %p %p %p %p\n", &cat1, &cat1.Name, &cat1.Age, &cat1.Color, &cat1.Hobby)
+	fmt.Println("内存大小", unsafe.Sizeof(cat1), unsafe.Sizeof(cat1.Name), unsafe.Sizeof(cat1.Age))
+}
+```
+
+```go
+0xc000060040 0xc000060040 0xc000060050 0xc000060058 0xc000060068
+内存大小 56 16 8
+```
+
+结构体字段内存地址是连续的
+
+### 使用细节
+1. 结构体是用户单独定义的类型，和其它类型进行转换时需要有完全相同的字段（名字、个数、类型）
+	```go
+	package main
+
+	import "fmt"
+
+	type A struct {
+		Num int
+	}
+
+	type B struct {
+		Num int
+	}
+
+	func main()  {
+		var a A
+		var b B
+		a = A(b) // 需要强制转换
+		fmt.Printf("%T %T", a, b)
+	}
+	```
+2. 结构体进行type重新定义（相当于取别名），go认为是新的数据类型，但是可以相互间强转
+	```go
+	package main
+
+	import "fmt"
+
+	type Student struct {
+		Name string
+		Age int
+	}
+
+	type Stu Student
+
+	func main()  {
+		var std1 Student
+		var std2 Stu
+		std2 = Stu(std2) // 需要强制转换
+		fmt.Println(std1, std2)
+	}
+	```
+
 ## channel
-管道
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+)
+
+func producer(numChan chan int, wg *sync.WaitGroup) {
+	n := rand.Intn(10)
+	numChan <- n
+	wg.Done()
+}
+
+func consumer(numChan chan int) {
+	for ch := range numChan {
+		fmt.Println("Received ", ch)
+	}
+}
+
+func main() {
+	wg := sync.WaitGroup{}
+	var numChan chan int
+	numChan = make(chan int)
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go producer(numChan, &wg)
+	}
+	go consumer(numChan)
+	wg.Wait()
+	close(numChan)
+}
+```
 
 ## 指针
 
@@ -440,6 +573,25 @@ key=tom value=16
 p1 := &Person{name: "易天", age: 24}
 fmt.Println((*p1).name)
 fmt.Println(p1.name)
+```
+
+### 数组指针和指针数组
+```go
+package main
+
+import "fmt"
+
+func main(){
+	x,y := 1, 2
+	var arr =  [...]int{5:2}
+	//数组指针
+	var pf *[6]int = &arr
+
+	//指针数组
+	pfArr := [...]*int{&x,&y}
+	fmt.Println(pf)
+	fmt.Println(pfArr)
+}
 ```
 
 ## 接口类型

@@ -71,7 +71,12 @@ module.exports = {
         'compositeType',
         'functions',
         'methods',
-        'interfaces'
+        'interfaces',
+        'oop',
+        'files',
+        'cmd',
+        'serializer',
+        'Goroutine-Channel',
       ],
       '/note/db/etcd/': [
         ''
