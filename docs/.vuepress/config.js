@@ -87,11 +87,11 @@ module.exports = {
       '/note/container/k8s/': [
         'overview',
         'install',
-        'cluster-architecture',
+        'clusterArchitecture',
         'containers',
         'workloads',
-        'services-load_balancing-networking',
-        'cluster-administration',
+        'servicesLoadbalancingNetworking',
+        'clusterAdministration',
         'flannel',
         'dashboard'
       ],
