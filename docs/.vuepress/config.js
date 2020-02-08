@@ -86,6 +86,7 @@ module.exports = {
       ],
       '/note/container/k8s/': [
         'overview',
+        'install',
         'cluster-architecture',
         'containers',
         'workloads',
