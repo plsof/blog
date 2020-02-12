@@ -77,6 +77,7 @@ module.exports = {
         'cmd',
         'serializer',
         'Goroutine-Channel',
+        'compile',
       ],
       '/note/db/etcd/': [
         ''

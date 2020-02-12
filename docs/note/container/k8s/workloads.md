@@ -146,9 +146,8 @@ Deployment控制器为Pods和ReplicaSets提供声明式的更新
           ports:
           - containerPort: 8080
   ```
-  ```shell
-  kubectl apply -f ./myhttp.yaml
-  ```
+  创建deployment
+  `kubectl apply -f ./myhttp.yaml`
 
 查看Deplyment状态
 ```shell
@@ -157,6 +156,10 @@ NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
 myhttp-deployment      2/2     2            2           6h31m
 myhttp-v2-deployment   2/2     2            2           174m
 ```
+
+查看Deplyment描述
+
+`kubectl describe pod myhttp-deployment-c6b88c56b-bzfpc`
 
 #### Deployment更新
 - 命令行更新
