@@ -94,7 +94,8 @@ module.exports = {
         'servicesLoadbalancingNetworking',
         'clusterAdministration',
         'flannel',
-        'dashboard'
+        'helm',
+        'dashboard',
       ],
       '/note/container/harbor/': [
         ''
