@@ -92,6 +92,7 @@ module.exports = {
         'containers',
         'workloads',
         'servicesLoadbalancingNetworking',
+        'storage',
         'clusterAdministration',
         'flannel',
         'helm',
