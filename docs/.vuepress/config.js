@@ -33,11 +33,11 @@ module.exports = {
           { text: 'etcd', link: '/note/db/etcd/' }
         ]
       },
-      { text: '容器',
+      { text: '云原生',
         items: [
-          { text: 'docker', link: '/note/container/docker/' },
-          { text: 'k8s', link: '/note/container/k8s/' },
-          { text: 'harbor', link: '/note/container/harbor/' }
+          { text: 'docker', link: '/note/cloud-native/docker/' },
+          { text: 'kubernetes', link: '/note/cloud-native/kubernetes/' },
+          { text: 'harbor', link: '/note/cloud-native/harbor/' }
         ]
       },
       { text: '监控',
@@ -82,10 +82,10 @@ module.exports = {
       '/note/db/etcd/': [
         ''
       ],
-      '/note/container/docker/': [
+      '/note/cloud-native/docker/': [
         ''
       ],
-      '/note/container/k8s/': [
+      '/note/cloud-native/kubernetes/': [
         'overview',
         'install',
         'clusterArchitecture',
@@ -98,7 +98,7 @@ module.exports = {
         'helm',
         'dashboard',
       ],
-      '/note/container/harbor/': [
+      '/note/cloud-native/harbor/': [
         ''
       ],
       '/note/monitor/prometheus/': [
