@@ -59,7 +59,7 @@ tar -zxv -f helm-v2.16.1-linux-amd64.tar.gz; cp ./linux-amd64/helm /usr/local/bi
 `初始化helm; 部署tiller`
 
 ```shell
-helm init --service-account=tiller --tiller-image=sapcc/tiller:v2.16.1 --stable-repo-url=http://mirror.azure.cn/kubernetes/charts/ --history-max 300
+helm init --service-account=tiller --tiller-image=sapcc/tiller:v2.16.1 --stable-repo-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts --history-max 300
 ```
 
 说明：
