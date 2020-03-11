@@ -144,3 +144,40 @@ do
     grep getChannelNextProgram looktvepg.access.log | grep ysten-cctv-5 | awk -v ptime=$ptime -v ntime=$ntime '$4 >=ptime && $4<=ntime {n++} END{print "cctv5出现次数 ", n}'
 done
 ```
+
+## 类型转换
+
+### 字符串 -> 整数
+
+```shell
+[root@localhost ~]# echo "" | awk '{a="asd";a+0;print a}'
+asd
+[root@localhost ~]# echo "" | awk '{a="asd123";a+0;print a}'
+asd123
+[root@localhost ~]# echo "" | awk '{a="\"123\"";a+0;print a}'
+"123"
+[root@localhost ~]# echo "" | awk '{a="123";a+0;print a}'
+123
+```
+
+### 整数 -> 字符串
+
+```shell
+[root@localhost ~]# echo "" | awk 'BEGIN{a=100;b=100;c=(a""b);print c}'
+```
+
+## 内置函数
+
+### split
+
+`日志`
+
+```shell
+80.80.80.112 - - [2020-03-06T00:01:02+08:00] "GET /local/common/tp8/watchTV_U/images/player/key/btn_11.png HTTP/1.1"  "304" 0 "-" "http://jtdsepg.cdzgys.cn/local/common/tp8/watchTV_U/index.html?templateId=02867&catgId=ysten-cctv-1&businessType=livereplay&mediaType=live&fromwhere=playback&userId=143643005&source=4&fromChannel=panel&platformId=2"  "gefo8(ysten) va2d" - "0.000"  "jtdsepg.cdzgys.cn" "80" "-" "-"
+```
+
+`统计request_time > 9s的占比`
+
+```shell
+awk '{split($(NF-4),a,"\"");if(a[2]>9) i++}END{print i,i/NR}'
+```
