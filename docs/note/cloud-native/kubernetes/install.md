@@ -7,7 +7,7 @@ title: 安装
 ### 系统配置
 
 环境
-Kubernetes版本：`1.15.7`
+Kubernetes版本：`1.16.7`
 ```shell
 # CentOS7
 172.188.2.71 # master
@@ -179,7 +179,7 @@ EOF
 
 安装kubelet kubeadm kubectl
 ```shell
-yum install -y kubelet-1.15.7 kubeadm-1.15.7 kubectl-1.15.7
+yum install -y kubelet-1.16.7 kubeadm-1.16.7 kubectl-1.16.7
 ```
 
 各节点开机启动kubelet服务
