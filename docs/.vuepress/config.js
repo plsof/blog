@@ -24,7 +24,7 @@ module.exports = {
       { text: 'go',
         items: [
           { text: '学习笔记', link: '/note/go/basic/' },
-          { text: 'go-restful', link: ''}
+          { text: 'gin', link: ''}
         ]
       },
       {
@@ -36,6 +36,7 @@ module.exports = {
       { text: '云原生',
         items: [
           { text: 'docker', link: '/note/cloud-native/docker/' },
+          { text: 'docker-compose', link: '/note/cloud-native/docker-compose/' },
           { text: 'kubernetes', link: '/note/cloud-native/kubernetes/' },
           { text: 'harbor', link: '/note/cloud-native/harbor/' }
         ]
@@ -77,12 +78,15 @@ module.exports = {
         'cmd',
         'serializer',
         'Goroutine-Channel',
-        'compile',
+        'other',
       ],
       '/note/db/etcd/': [
         ''
       ],
       '/note/cloud-native/docker/': [
+        ''
+      ],
+      '/note/cloud-native/docker-compose/': [
         ''
       ],
       '/note/cloud-native/kubernetes/': [
@@ -95,6 +99,7 @@ module.exports = {
         'storage',
         'clusterAdministration',
         'network',
+        'monitoring',
         'helm',
         'dashboard',
       ],
