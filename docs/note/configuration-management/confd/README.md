@@ -34,6 +34,7 @@ dest = "/data/scripts/wtv.yml"
 keys = [
     "/wtv/monitor",
 ]
+reload_cmd = "/data/wtv/wtvsync"
 ```
 
 ### 配置模版
