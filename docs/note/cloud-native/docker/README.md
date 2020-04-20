@@ -2,18 +2,20 @@
 title: Docker
 ---
 
+## 基础
+
+### 安装
+
 ## 镜像
 
 ### 获取镜像
-
-docker pull
 
 `docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]`
 
 + Docker 镜像仓库地址：地址的格式一般是 `<域名/IP>[:端口号]`。默认地址是 Docker Hub
 + 仓库名：如之前所说，这里的仓库名是两段式名称，即 `<用户名>/<软件名>`。对于 Docker Hub，如果不给出用户名，则默认为 `library`，也就是官方镜像。
 
-从官方仓库获取镜像
+1. 从官方仓库获取镜像
 
 `$ docker pull ubuntu:18.04`
 
@@ -28,11 +30,9 @@ Digest: sha256:147913621d9cdea08853f6ba9116c2e27a3ceffecf3b492983ae97c3d643fbbe
 Status: Downloaded newer image for ubuntu:18.04
 ```
 
-从私有仓库获取镜像
+2. 从私有仓库获取镜像
 
 `$ docker pull sc.yhub.ysten.com:9881/sichuan/vas/yst-vas-batch:1.0.0130_sichuan`
-
-
 
 ### 运行
 
@@ -56,8 +56,6 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-
-
 ### 列出镜像
 
 `$ docker image ls`
@@ -73,20 +71,48 @@ ubuntu               18.04               f753707788c5        4 weeks ago        
 ubuntu               latest              f753707788c5        4 weeks ago         127 MB
 ```
 
-列表包含了 `仓库名`、`标签`、`镜像 ID`、`创建时间` 以及 `所占用的空间`。**镜像 ID** 则是镜像的唯一标识，一个镜像可以对应多个**标签**
-
-
+列表包含了 `仓库名`、`标签`、`镜像ID`、`创建时间`以及`所占用的空间`。**镜像 ID** 则是镜像的唯一标识，一个镜像可以对应多个**标签**
 
 ### 虚悬镜像
 
 `docker image ls -f dangling=true`
 
-一般来说，虚悬镜像已经失去了存在的价值，是可以随意删除的，可以用下面的命令删除。
+一般来说，虚悬镜像已经失去了存在的价值，是可以随意删除的，可以用上面的命令删除。
 
+### 镜像构建最小化
+
+1. 减少镜像层
+
+`错误示例`
+```Dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install vim
+```
+
+`正确示例`
+```Dockerfile
+FROM ubuntu
+RUN apt-get update && apt-get install vim
+```
+
+2. 删掉容器中所有不必要的东西
+
+3. 基于Alpine的较小基础镜像
+
+## 网络
+
+### Bridge网络模式
+
+### Host网络模式
+
+### Container网络模式
+
+### None网络模式
 
 ## Dockerfile
 
-### 介绍
+### 概述
 
 镜像的定制实际上就是定制每一层所添加的配置、文件。如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，这个脚本就是 Dockerfile。
 
@@ -99,9 +125,9 @@ RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
 
 
 
-### RUN 执行命令
+### RUN
 
-`RUN` 指令是用来执行命令行命令的。由于命令行的强大能力，`RUN` 指令在定制镜像时是最常用的指令之一。其格式有两种：
+`RUN`指令是用来执行命令行命令的。由于命令行的强大能力，`RUN`指令在定制镜像时是最常用的指令之一。其格式有两种：
 
 - *shell* 格式：`RUN <命令>`，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 `RUN` 指令就是这种格式。
 
@@ -115,7 +141,9 @@ Dockerfile 中每一个指令都会建立一层，`RUN` 也不例外。每一个
 
 
 
-### 构建镜像
+### build
+
+`build`指令用来构建镜像
 
 格式：
 
@@ -125,9 +153,7 @@ Dockerfile 中每一个指令都会建立一层，`RUN` 也不例外。每一个
 
 `$ docker build -t nginx:v3 .`
 
-
-
-### COPY 复制文件
+### COPY
 
 格式：
 
@@ -142,15 +168,21 @@ Dockerfile 中每一个指令都会建立一层，`RUN` 也不例外。每一个
 COPY package.json /usr/src/app/
 ```
 
-
-
 ### ADD
 
-`ADD` 指令和 `COPY` 的格式和性质基本一致。但是在 `COPY` 基础上增加了一些功能。
+`ADD`指令和`COPY`的格式和性质基本一致，但是在`COPY`基础上增加了一些功能。
 
-`COPY` 和 `ADD` 指令中选择的时候，可以遵循这样的原则，所有的文件复制均使用 `COPY` 指令，仅在需要自动解压缩的场合使用 `ADD`。
+1. `ADD`指令支持使用URL作为`<源路径>`参数
+```Dockerfile
+ADD http://foo.com/bar.go /tmp/
+```
 
+2. `ADD`指令能够自动解压缩文件
+```Dockerfile
+ADD /foo.tar.gz /tmp/
+```
 
+PS: `COPY`和`ADD`指令中选择的时候，可以遵循这样的原则，所有的文件复制均使用`COPY`指令，仅在需要自动解压缩的场合使用`ADD`。
 
 ### CMD
 
