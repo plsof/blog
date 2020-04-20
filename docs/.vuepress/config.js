@@ -99,8 +99,9 @@ module.exports = {
         'storage',
         'clusterAdministration',
         'network',
-        'monitoring',
         'helm',
+        'monitoring',
+        'efk',
         'dashboard',
       ],
       '/note/cloud-native/harbor/': [
