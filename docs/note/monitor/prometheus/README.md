@@ -198,3 +198,27 @@ http_request_total{}[5m]
 ```shell
 sum(avg(irate(node_cpu_seconds_total{mode!="idle"}[5m])) without (cpu) ) by (instance)
 ```
+
+### 内置函数
+
+#### increase
+
+`increase(v range-vector)`函数获取区间向量中的第一个和最后一个样本并返回其增长量，它会在单调性发生变化时(如由于采样目标重启引起的计数器复位)自动中断。由于这个值被外推到指定的整个时间范围，所以即使样本值都是整数，你仍然可能会得到一个非整数值
+
+最近一分钟cpu非idle利用率：
+
+`(1 - (sum(increase(node_cpu_seconds_total{mode="idle"}[1m])) by(instance)) / (sum(increase(node_cpu_seconds_total[1m])) by(instance))) * 100`
+
+#### rate
+
+rate函数专门搭配counter类型数据使用，它计算counter在某个时间段平均每秒的增量
+
+`rate(node_network_receive_bytes_total[1m])`
+
+#### sum
+
+#### topk
+
+`topk(3,rate(node_network_receive_bytes_total[1m]))`
+
+#### count
