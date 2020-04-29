@@ -211,6 +211,8 @@ k8s中的一个api对象资源，定义请求如何转发到service的规则，�
 
 ### ingress-nginx
 
+版本：`0.28.0`
+
 #### 部署模式2
 
 ```shell
@@ -218,18 +220,13 @@ k8s中的一个api对象资源，定义请求如何转发到service的规则，�
 [root@master ~]# wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/service-nodeport.yaml
 ```
 
-`替换image源`
-```shell
-[root@master ~]# sed -i 's/quay.io/quay.azk8s.cn/g' mandatory.yaml
-```
-
-`创建ingress-controller, ingress-service`
+创建ingress-controller, ingress-service
 ```shell
 [root@master ~]# kubectl apply -f mandatory.yaml
 [root@master ~]# kubectl apply -f service-nodeport.yaml
 ```
 
-`创建ingress资源`
+创建ingress资源
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -258,7 +255,7 @@ spec:
               servicePort: 80
 ```
 
-`查看状态`
+查看状态
 ```shell
 [root@master ingress]# kubectl get pods -o wide -n ingress-nginx
 NAME                                        READY   STATUS    RESTARTS   AGE   IP           NODE    NOMINATED NODE   READINESS GATES
@@ -274,12 +271,12 @@ ingress-http   www.tabops.com,www.pdd.com   10.108.202.19   80      8m59s
 
 #### 部署模式3
 
-`DaemonSet部署在特定节点 node1`
+DaemonSet部署在特定节点`node1`
 ```shell
 [root@master ingress]# kubectl label node node1 isIngress="true"
 ```
 
-`修改mandatory.yaml文件配置项`
+修改mandatory.yaml文件配置项
 
 1. Deployment -> DaemonSet
 
@@ -298,34 +295,25 @@ kind: DaemonSet
       hostNetwork: true
 ```
 
-`修改service-nodeport.yaml文件配置项`
 
-1. NodePort -> ClusterIP
-
-```yaml
-  type: ClusterIP
+创建ingress-controller
+```shell
+[root@master ~]# kubectl apply -f mandatory.yaml
 ```
 
-`创建ingress-controller, ingress-service`
+创建ingress资源
 
 同上
 
-`创建ingress资源`
-
-同上
-
-`查看状态`
+查看状态
 
 ```shell
 [root@master ingress]# kubectl get pods -o wide -n ingress-nginx
 NAME                             READY   STATUS    RESTARTS   AGE     IP             NODE    NOMINATED NODE   READINESS GATES
 nginx-ingress-controller-52qtj   1/1     Running   0          3h31m   172.188.2.86   node1   <none>           <none>
-[root@master ingress]# kubectl get svc -o wide -n ingress-nginx
-NAME            TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE   SELECTOR
-ingress-nginx   ClusterIP   10.108.162.246   <none>        80/TCP,443/TCP   11m   app.kubernetes.io/name=ingress-nginx,app.kubernetes.io/part-of=ingress-nginx
 [root@master ingress]# kubectl get ingress -o wide
 NAME           HOSTS                        ADDRESS          PORTS   AGE
-ingress-http   www.tabops.com,www.pdd.com   10.108.162.246   80      20m
+ingress-http   www.tabops.com,www.pdd.com                    80      20m
 ```
 
 ### 参考
