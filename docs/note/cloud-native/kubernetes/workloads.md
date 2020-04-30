@@ -175,14 +175,42 @@ spec:
 - 失败：容器未通过诊断。
 - 未知：诊断失败，因此不会采取任何行动。
 
+### 资源限制
+
+默认情况下，`Pod`运行没有CPU和内存等的限额。这意味着系统中的任何`Pod`将能够像执行该`Pod`所在的节点一样，消耗足够多的CPU和内存等资源。
+
+`kubectl explain pod.spec.containers.resources`
+- `limit` Pod允许请求的最大计算资源。
+- `requests` Pod运行需要的最小计算资源
+
+#### CPU、内存资源限制
+
+`Pod`内存超过limit时，会被oom，
+
+`Pod`cpu超过limit时，不会被kill，但是会限制不超过limit值。
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-nginx
+spec:
+  containers:
+  - name: my-nginx
+    image: nginx
+    resources:
+      limits:
+        cpu: "0.5"
+        memory: 500Mi
+      requests:
+        cpu: "0.1"
+        memory: 100Mi
+```
+
 ## 控制器
 
 ### ReplicaSet
 ReplicaSet在ReplicationController的基础上增加支持集合式selector
-
-### ReplicationController
-ReplicationController用来确保容器应用的副本数始终保持在用户定义的副本数，
-即如果有容器异常退出，会自动创建新的Pod来替代，而如果异常多出来的容器也会自动回收。
 
 ### Deployments
 Deployment控制器为Pods和ReplicaSets提供声明式的更新
