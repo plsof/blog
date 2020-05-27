@@ -18,13 +18,13 @@ module.exports = {
       { text: 'python',
         items: [
           { text: 'django rest framework', link: '/note/python/drf/'},
-          { text: 'celery', link: ''}
+          // { text: 'celery', link: ''}
         ]
       },
       { text: 'go',
         items: [
           { text: '学习笔记', link: '/note/go/basic/' },
-          { text: 'gin', link: ''}
+          // { text: 'gin', link: ''}
         ]
       },
       {
@@ -92,8 +92,8 @@ module.exports = {
       '/note/cloud-native/kubernetes/': [
         'overview',
         'install',
-        'clusterArchitecture',
-        'containers',
+        // 'clusterArchitecture',
+        // 'containers',
         'workloads',
         'servicesLoadbalancingNetworking',
         'storage',
@@ -103,6 +103,7 @@ module.exports = {
         'monitoring',
         'efk',
         'dashboard',
+        'deploymentStrategies'
       ],
       '/note/cloud-native/harbor/': [
         ''

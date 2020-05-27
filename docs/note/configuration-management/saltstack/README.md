@@ -36,7 +36,13 @@ salt SCYD-10.25.172.207 grains.delval ipv4
 
    如果对这个key append另一个值，value则会追加不会覆盖
 
-   这个命令会在客户端生成个文件 /etc/salt/grains
+   ```shell
+   salt SCYD-192.168.1.10 grains.set roles 'ppl-flume_recommend' force=True
+   ```
+   
+   强制覆盖roles
+
+   上面命令会在客户端生成个文件 /etc/salt/grains
 
    ```shell
    [root@localhost ~]# cat /etc/salt/grains

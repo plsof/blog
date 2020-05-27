@@ -2,7 +2,7 @@
 title: Docker
 ---
 
-## 基础
+## 简介
 
 ### 安装
 
@@ -123,7 +123,11 @@ FROM nginx
 RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
 ```
 
+### FROM
 
+```dockerfile
+FROM scratch
+```
 
 ### RUN
 
@@ -139,9 +143,7 @@ RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
 
 Dockerfile 中每一个指令都会建立一层，`RUN` 也不例外。每一个 `RUN` 的行为，就和刚才我们手工建立镜像的过程一样：新建立一层，在其上执行这些命令，执行结束后，`commit` 这一层的修改，构成新的镜像。
 
-
-
-### build
+### BUILD
 
 `build`指令用来构建镜像
 
@@ -192,8 +194,6 @@ PS: `COPY`和`ADD`指令中选择的时候，可以遵循这样的原则，所�
 - `exec` 格式：`CMD ["可执行文件", "参数1", "参数2"...]`
 - 参数列表格式：`CMD ["参数1", "参数2"...]`。在指定了 `ENTRYPOINT` 指令后，用 `CMD` 指定具体的参数。
 
-
-
 ### ENTRYPOINT
 
 `ENTRYPOINT` 的格式和 `RUN` 指令格式一样，分为 `exec` 格式和 `shell` 格式。
@@ -205,8 +205,6 @@ PS: `COPY`和`ADD`指令中选择的时候，可以遵循这样的原则，所�
 ```dockerfile
 <ENTRYPOINT> "<CMD>"
 ```
-
-
 
 ### ENV
 
@@ -222,15 +220,11 @@ ENV VERSION=1.0 DEBUG=on \
     NAME="Happy Feet"
 ```
 
-
-
 ### ARG
 
 格式：`ARG <参数名>[=<默认值>]`
 
 构建参数和 `ENV` 的效果一样，都是设置环境变量。所不同的是，`ARG` 所设置的构建环境的环境变量，在将来容器运行时是不会存在这些环境变量的。但是不要因此就使用 `ARG` 保存密码之类的信息，因为 `docker history` 还是可以看到所有值的。
-
-
 
 ### VOLUME
 
@@ -249,8 +243,6 @@ ENV VERSION=1.0 DEBUG=on \
         ]
 ```
 
-
-
 `docker run --name webserver_v2 -d -p 8080:80 -v nginx:/var/log/nginx nginx`
 
 ```bash
@@ -268,25 +260,39 @@ ENV VERSION=1.0 DEBUG=on \
         ]
 ```
 
-
-
 ### EXPOSE
 
 `EXPOSE` 指令是声明容器运行时提供的服务端口
 
+`docker run -p <宿主端口>:<容器端口>`，如果宿主端口不指定则服务器随机分配端口
 
+```shell
+➜  ~ docker run --name myapp-v1 -d -p 80 myhttp:v1
+```
+
+```shell
+➜  ~ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                   NAMES
+3070486b1d6c        myhttp:v1           "python httpserver1.…"   54 minutes ago      Up 54 minutes       0.0.0.0:32768->80/tcp   myapp-v1
+```
+
+**EXPOSE和PUBLISH（run -p）的区别**
+- 既没有在Dockerfile里Expose，也没有run -p
+  启动在这个container里的服务既不能被host主机和外网访问，也不能被link的container访问，只能在此容器内部使用
+- 只在Dockerfile里Expose了这个端口
+  启动在这个container里的服务不能被docker外部世界（host和其他主机）访问，但是可以通过container link，被其他link的container访问到
+- 同时在Dockerfile里Expose，又run -p
+  启动的这个cotnainer既可以被docker外部世界访问，也可以被link的container访问
+- 只有run -p
+  docker做了特殊的隐式转换，等价于第一种情况，既可以被外部世界访问，也可以被link的container访问到（真对这种情况，原因是docker认为，既然你都要把port open到外部世界了，等价于其他的container肯定也能访问，所以docker做了自动的Expose
 
 ### WORKDIR
 
 指定`dockerfile`的工作目录位置
 
-
-
 ### USER
 
 指定当前用户
-
-
 
 ### ONBUILD
 
@@ -311,8 +317,6 @@ CMD [ "npm", "start" ]
 ```dockerfile
 FROM my-node
 ```
-
-
 
 ### 多阶段构建
 
