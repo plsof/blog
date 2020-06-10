@@ -24,6 +24,7 @@ module.exports = {
       { text: 'go',
         items: [
           { text: '学习笔记', link: '/note/go/basic/' },
+          { text: 'gorm', link: '/note/go/gorm/' },
           // { text: 'gin', link: ''}
         ]
       },
@@ -79,6 +80,9 @@ module.exports = {
         'serializer',
         'Goroutine-Channel',
         'other',
+      ],
+      '/note/go/gorm/': [
+        ''
       ],
       '/note/db/etcd/': [
         ''

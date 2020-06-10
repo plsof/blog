@@ -2,6 +2,9 @@
 title: 部署策略
 ---
 
+参考：
+`https://www.qikqiak.com/post/k8s-deployment-strategies/`
+
 ## 重建
 停止旧版本部署新版本
 

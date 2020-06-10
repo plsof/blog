@@ -44,6 +44,14 @@ spec:
     command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 3600']
 ```
 
+### pause容器
+
+pause容器，又叫Infra容器
+
+`kubernetes`中的`pause`容器主要为每个业务容器提供以下功能：
+- 在pod中担任Linux命名空间共享的基础
+- 启用pid命名空间，开启init进程（只有Kubernetes1.7默认开启。1.8默认禁止，还是每个容器自己捕获僵尸进程）
+
 ### 生命周期
 
 **生命周期示意图**
@@ -102,7 +110,7 @@ spec:
       mountPath: /usr/share/nginx/html
 ```
 
-#### HooK
+#### 容器钩子
 
 `Kubernetes`为容器提供了生命周期的钩子，也就是`Pod Hook`，`Pod Hook`是由`Kubelet`发起的，在容器中的进程启动前或者容器中的进程终止之前运行，包含在容器的生命周期之中。我们可以同时为`Pod`中的所有容器都配置`Hook`。
 
