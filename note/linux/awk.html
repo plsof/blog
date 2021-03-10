@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Awk | seize the day</title>
+    <meta name="description" content="Vuepress blog">
+    <link rel="icon" href="/blog/assets/img/logo.png">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.4f6c7d85.css" as="style"><link rel="preload" href="/blog/assets/js/app.4e76b0e0.js" as="script"><link rel="preload" href="/blog/assets/js/2.9c33a55d.js" as="script"><link rel="preload" href="/blog/assets/js/47.6c0c5a47.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.57e73144.js"><link rel="prefetch" href="/blog/assets/js/11.d8c1dedb.js"><link rel="prefetch" href="/blog/assets/js/12.8da65523.js"><link rel="prefetch" href="/blog/assets/js/13.3d5e2151.js"><link rel="prefetch" href="/blog/assets/js/14.9f9cc553.js"><link rel="prefetch" href="/blog/assets/js/15.8332ca4b.js"><link rel="prefetch" href="/blog/assets/js/16.8d04c8be.js"><link rel="prefetch" href="/blog/assets/js/17.578f9557.js"><link rel="prefetch" href="/blog/assets/js/18.83e39dda.js"><link rel="prefetch" href="/blog/assets/js/19.48f93cb8.js"><link rel="prefetch" href="/blog/assets/js/20.10229c30.js"><link rel="prefetch" href="/blog/assets/js/21.960c6f1f.js"><link rel="prefetch" href="/blog/assets/js/22.f030b65f.js"><link rel="prefetch" href="/blog/assets/js/23.be1decb6.js"><link rel="prefetch" href="/blog/assets/js/24.2e00c878.js"><link rel="prefetch" href="/blog/assets/js/25.cd518599.js"><link rel="prefetch" href="/blog/assets/js/26.5ef5fc16.js"><link rel="prefetch" href="/blog/assets/js/27.97936c04.js"><link rel="prefetch" href="/blog/assets/js/28.62862a8b.js"><link rel="prefetch" href="/blog/assets/js/29.59980e81.js"><link rel="prefetch" href="/blog/assets/js/3.b19c8b8a.js"><link rel="prefetch" href="/blog/assets/js/30.790881ab.js"><link rel="prefetch" href="/blog/assets/js/31.a425d78d.js"><link rel="prefetch" href="/blog/assets/js/32.f5d1fbe5.js"><link rel="prefetch" href="/blog/assets/js/33.7f6a029e.js"><link rel="prefetch" href="/blog/assets/js/34.f3aeceee.js"><link rel="prefetch" href="/blog/assets/js/35.d639e5b4.js"><link rel="prefetch" href="/blog/assets/js/36.41ed9bf8.js"><link rel="prefetch" href="/blog/assets/js/37.e2e886af.js"><link rel="prefetch" href="/blog/assets/js/38.dfb8bc86.js"><link rel="prefetch" href="/blog/assets/js/39.2bb47911.js"><link rel="prefetch" href="/blog/assets/js/4.a6e4870d.js"><link rel="prefetch" href="/blog/assets/js/40.41d1e8bf.js"><link rel="prefetch" href="/blog/assets/js/41.0e663472.js"><link rel="prefetch" href="/blog/assets/js/42.6b61f58b.js"><link rel="prefetch" href="/blog/assets/js/43.5caea245.js"><link rel="prefetch" href="/blog/assets/js/44.a183f2fc.js"><link rel="prefetch" href="/blog/assets/js/45.c0038e0f.js"><link rel="prefetch" href="/blog/assets/js/46.ef45465a.js"><link rel="prefetch" href="/blog/assets/js/48.0a5aaf62.js"><link rel="prefetch" href="/blog/assets/js/49.2613246f.js"><link rel="prefetch" href="/blog/assets/js/5.0599024a.js"><link rel="prefetch" href="/blog/assets/js/50.8dd76222.js"><link rel="prefetch" href="/blog/assets/js/51.f1a01392.js"><link rel="prefetch" href="/blog/assets/js/52.a253f707.js"><link rel="prefetch" href="/blog/assets/js/53.a8e87b00.js"><link rel="prefetch" href="/blog/assets/js/54.5ced684a.js"><link rel="prefetch" href="/blog/assets/js/55.aeca4c87.js"><link rel="prefetch" href="/blog/assets/js/56.4606c66a.js"><link rel="prefetch" href="/blog/assets/js/57.92a2676a.js"><link rel="prefetch" href="/blog/assets/js/58.909bba51.js"><link rel="prefetch" href="/blog/assets/js/6.1bc4156d.js"><link rel="prefetch" href="/blog/assets/js/7.9b01b1b0.js"><link rel="prefetch" href="/blog/assets/js/8.ca4e7311.js"><link rel="prefetch" href="/blog/assets/js/9.f90ad979.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.4f6c7d85.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/logo.png" alt="seize the day" class="logo"> <span class="site-name can-hide">seize the day</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="linux" class="dropdown-title"><span class="title">linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link router-link-exact-active router-link-active">awk</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">date</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="python" class="dropdown-title"><span class="title">python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/base/" class="nav-link">python基础</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/drf/" class="nav-link">django rest framework</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="go" class="dropdown-title"><span class="title">go</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">学习笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">gorm</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">etcd</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">docker</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">docker-compose</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">kubernetes</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">harbor</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">prometheus</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">confd</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">saltstack</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="linux" class="dropdown-title"><span class="title">linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link router-link-exact-active router-link-active">awk</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">date</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="python" class="dropdown-title"><span class="title">python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/base/" class="nav-link">python基础</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/drf/" class="nav-link">django rest framework</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="go" class="dropdown-title"><span class="title">go</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">学习笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">gorm</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">etcd</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">docker</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">docker-compose</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">kubernetes</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">harbor</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">prometheus</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">confd</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">saltstack</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/linux/awk.html" class="active sidebar-link">Awk</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#分隔符" class="sidebar-link">分隔符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#fs" class="sidebar-link">FS</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#ofs" class="sidebar-link">OFS</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#rs" class="sidebar-link">RS</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#ors" class="sidebar-link">ORS</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#数组" class="sidebar-link">数组</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#条件判断" class="sidebar-link">条件判断</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#变量传值" class="sidebar-link">变量传值</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#类型转换" class="sidebar-link">类型转换</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#字符串-整数" class="sidebar-link">字符串 -&gt; 整数</a></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#整数-字符串" class="sidebar-link">整数 -&gt; 字符串</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#内置函数" class="sidebar-link">内置函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/linux/awk.html#split" class="sidebar-link">split</a></li></ul></li></ul></li><li><a href="/blog/note/linux/date.html" class="sidebar-link">date</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="分隔符"><a href="#分隔符" class="header-anchor">#</a> 分隔符</h2> <h3 id="fs"><a href="#fs" class="header-anchor">#</a> FS</h3> <p>The input field separator, a space by default 字段分隔符</p> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# awk 'BEGIN{FS=&quot;:&quot;}{print $1,$2,$3,$4,$5}' /etc/passwd
+mail x 8 12 mail
+uucp x 10 14 uucp
+operator x 11 0 operator
+games x 12 100 games
+gopher x 13 30 gopher
+ftp x 14 50 FTP User
+</code></pre></div><h4 id="指定多个fs-空格，多个空格，：，-，？"><a href="#指定多个fs-空格，多个空格，：，-，？" class="header-anchor">#</a> 指定多个FS(空格，多个空格，：，#，？)</h4> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# awk -F '[ ]+|[:#?]' '{print $1,$2,$3,$4,$5,$6,$7}' /etc/passwd
+mail x 8 12 mail /var/spool/mail /sbin/nologin
+uucp x 10 14 uucp /var/spool/uucp /sbin/nologin
+operatorx 11 0 operator /root /sbin/nologin
+games x 12 100 games /usr/games /sbin/nologin
+gopher x 13 30 gopher /var/gopher /sbin/nologin
+</code></pre></div><h3 id="ofs"><a href="#ofs" class="header-anchor">#</a> OFS</h3> <p>The output field separator, a space by default 输出字段分隔符</p> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# awk 'BEGIN{FS=&quot;:&quot;;OFS=&quot;#&quot;}{print $1,$2,$3,$4,$5}' /etc/passwd
+mail#x#8#12#mail
+uucp#x#10#14#uucp
+operator#x#11#0#operator
+games#x#12#100#games
+gopher#x#13#30#gopher
+ftp#x#14#50#FTP User
+</code></pre></div><h3 id="rs"><a href="#rs" class="header-anchor">#</a> RS</h3> <p>The input record separator, by default a newline 记录分隔符</p> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# awk 'BEGIN{RS=&quot;:&quot;}{print $0}' /etc/passwd
+mail
+x
+8
+12
+mail
+/var/spool/mail
+/sbin/nologin
+uucp
+x
+10
+14
+uucp
+/var/spool/uucp
+/sbin/nologin
+operator
+x
+11
+0
+operator
+/root
+/sbin/nologin
+games
+</code></pre></div><h3 id="ors"><a href="#ors" class="header-anchor">#</a> ORS</h3> <p>The output record separator, by default a newline 输出记录分隔符</p> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# awk 'BEGIN{FS=&quot;:&quot;;ORS=&quot;#&quot;}{print $0}' /etc/passwd
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin#uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin#operator:x:11:0:operator:/root:/sbin/nologin#games:x:12:100:games:/usr/games:/sbin/nologin#gopher:x:13:30:gopher:/var/gopher:/sbin/nologin#ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin#
+</code></pre></div><h2 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h2> <h4 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h4> <div class="language-shell extra-class"><pre class="language-text"><code>80.80.80.67 - - [2019-10-29T00:01:01+08:00] &quot;GET /ysten-lvoms-epg/epg/getChannelNextProgram.shtml?uuid=cctv-14&amp;curprogramId=175430298&amp;programName=%E5%8A%A8%E7%94%BB%E5%A4%A7%E6%94%BE%E6%98%A0:%E5%96%80%E6%96%AF%E7%89%B9%E7%A5%9E%E5%A5%87%E4%B9%8B%E6%97%85&amp;startTime=1572220920&amp;action=next&amp;templateId=02850&amp;deviceGroupId=556&amp;districtCode=510600&amp;random=0.23766797524876893 HTTP/1.1&quot;  &quot;200&quot; 149 &quot;-&quot; &quot;http://jtdsepg.cdzgys.cn/watchTV2.0/watchTV11.0/index.html?businessType=livereplay&amp;mediaType=live&amp;fromwhere=playback&amp;templateId=02850&amp;catgId=ysten-cctv-1&amp;userId=25539939&quot;  &quot;gefo5(ysten)&quot; - &quot;0.000&quot;  &quot;looktvepg.sc.ysten.com&quot; &quot;7070&quot; &quot;-&quot; &quot;HIT&quot; &quot;-&quot; &quot;-&quot;
+80.80.80.40 - - [2019-10-29T00:01:01+08:00] &quot;GET /ysten-lvoms-epg/epg/getChannelNextProgram.shtml?uuid=cctv-6&amp;curprogramId=175106624&amp;programName=%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96&amp;startTime=1572185700&amp;action=next&amp;templateId=0286&amp;deviceGroupId=821&amp;districtCode=510100&amp;random=0.8053548543248326 HTTP/1.1&quot;  &quot;200&quot; 135 &quot;-&quot; &quot;http://jtdsepg.cdzgys.cn/watchTV2.0/watchTV11.0/index.html?businessType=livereplay&amp;mediaType=live&amp;fromwhere=playback&amp;templateId=0286&amp;catgId=ysten-cctv-1&amp;userId=25690871&quot;  &quot;gefo5(ysten)&quot; - &quot;0.000&quot;  &quot;looktvepg.sc.ysten.com&quot; &quot;7070&quot; &quot;-&quot; &quot;HIT&quot; &quot;-&quot; &quot;-&quot;
+</code></pre></div><div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# awk -F &quot;[ ]+|?&quot; '{a[$12]++;n++}END{for(i in a)print i,a[i],a[i]/n}' looktvepg.access.log20191029 | sort -n -r -k2
+</code></pre></div><h2 id="条件判断"><a href="#条件判断" class="header-anchor">#</a> 条件判断</h2> <div class="language-shell extra-class"><pre class="language-text"><code>awk '$4&gt;=&quot;[2019-10-28T01:00:00+08:00]&quot; &amp;&amp; $4&lt;&quot;[2019-10-28T03:00:00+08:00]&quot; {print}' looktvepg.access.log20191029
+</code></pre></div><div class="language-shell extra-class"><pre class="language-text"><code>#!/bin/bash
+#2017/07/05 @pdd
+# egrep &quot;015164026490197|015164026498133|015164026498581|015164026496744|015164026495932|015373001004176&quot; /nginxlogs/tms.access.log
+
+LOG=&quot;/nginxlogs/tms.access.log&quot;
+
+MIN=$1
+
+# minutes must great than 30
+if [[ -n &quot;$1&quot; &amp;&amp; &quot;$1&quot; -gt 30 ]];then
+    PRETIME=$(date -d &quot;-$1 min&quot; &quot;+%Y-%m-%dT%T&quot;)
+else
+    PRETIME=$(date -d &quot;-30 min&quot; &quot;+%Y-%m-%dT%T&quot;)
+fi
+
+TIME=&quot;[&quot;${PRETIME}&quot;+08:00]&quot;
+
+# 时间 HTTP状态码 串号 节点
+awk -v actime=$TIME '$4 &gt;= actime {print $4,$8,substr($12,2,15),$15}' $LOG | awk '{if($3==015164026498581) print &quot;A在线&quot;,$0; else if($3==015164026490197) print &quot;B在线&quot;; else if($3==015373001004176) print &quot;C在线&quot;,$0}'
+</code></pre></div><h2 id="变量传值"><a href="#变量传值" class="header-anchor">#</a> 变量传值</h2> <h4 id="每分钟的请求占比"><a href="#每分钟的请求占比" class="header-anchor">#</a> 每分钟的请求占比</h4> <div class="language-shell extra-class"><pre class="language-text"><code>#!/bin/bash
+
+for i in $(seq 20)
+do
+    ptime=`date -d &quot;$(($i-1)) minute 20191001 0950&quot; &quot;+[%Y-%m-%dT%H:%M:%S+08:00]&quot;`
+    ntime=`date -d &quot;$(($i)) minute 20191001 0950&quot; &quot;+[%Y-%m-%dT%H:%M:%S+08:00]&quot;`
+    echo &quot;$ptime - $ntime&quot;
+    awk -v ptime=$ptime -v ntime=$ntime '$4 &gt;=ptime &amp;&amp; $4&lt;ntime {a[$NF]++;n++} END{for(i in a)print i,a[i]/n*100&quot;%&quot;;print &quot;一分钟总行数&quot;n}' looktvepg.access.log20191001
+    echo
+done
+</code></pre></div><h4 id="每十秒的访问量"><a href="#每十秒的访问量" class="header-anchor">#</a> 每十秒的访问量</h4> <div class="language-shell extra-class"><pre class="language-text"><code>#!/bin/bash
+
+for i in $(seq 0 16)
+do
+    ptime=`date -d &quot;$(($i*10)) seconds 20191106 01:03&quot; &quot;+[%Y-%m-%dT%H:%M:%S+08:00]&quot;`
+    ntime=`date -d &quot;$(($i*10+9)) seconds 20191106 01:03&quot; &quot;+[%Y-%m-%dT%H:%M:%S+08:00]&quot;`
+    echo &quot;$ptime - $ntime&quot;
+    grep getChannelNextProgram looktvepg.access.log | grep ysten-cctv-5 | awk -v ptime=$ptime -v ntime=$ntime '$4 &gt;=ptime &amp;&amp; $4&lt;=ntime {n++} END{print &quot;cctv5出现次数 &quot;, n}'
+done
+</code></pre></div><h2 id="类型转换"><a href="#类型转换" class="header-anchor">#</a> 类型转换</h2> <h3 id="字符串-整数"><a href="#字符串-整数" class="header-anchor">#</a> 字符串 -&gt; 整数</h3> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# echo &quot;&quot; | awk '{a=&quot;asd&quot;;a+0;print a}'
+asd
+[root@localhost ~]# echo &quot;&quot; | awk '{a=&quot;asd123&quot;;a+0;print a}'
+asd123
+[root@localhost ~]# echo &quot;&quot; | awk '{a=&quot;\&quot;123\&quot;&quot;;a+0;print a}'
+&quot;123&quot;
+[root@localhost ~]# echo &quot;&quot; | awk '{a=&quot;123&quot;;a+0;print a}'
+123
+</code></pre></div><h3 id="整数-字符串"><a href="#整数-字符串" class="header-anchor">#</a> 整数 -&gt; 字符串</h3> <div class="language-shell extra-class"><pre class="language-text"><code>[root@localhost ~]# echo &quot;&quot; | awk 'BEGIN{a=100;b=100;c=(a&quot;&quot;b);print c}'
+</code></pre></div><h2 id="内置函数"><a href="#内置函数" class="header-anchor">#</a> 内置函数</h2> <h3 id="split"><a href="#split" class="header-anchor">#</a> split</h3> <p><code>日志</code></p> <div class="language-shell extra-class"><pre class="language-text"><code>80.80.80.112 - - [2020-03-06T00:01:02+08:00] &quot;GET /local/common/tp8/watchTV_U/images/player/key/btn_11.png HTTP/1.1&quot;  &quot;304&quot; 0 &quot;-&quot; &quot;http://jtdsepg.cdzgys.cn/local/common/tp8/watchTV_U/index.html?templateId=02867&amp;catgId=ysten-cctv-1&amp;businessType=livereplay&amp;mediaType=live&amp;fromwhere=playback&amp;userId=143643005&amp;source=4&amp;fromChannel=panel&amp;platformId=2&quot;  &quot;gefo8(ysten) va2d&quot; - &quot;0.000&quot;  &quot;jtdsepg.cdzgys.cn&quot; &quot;80&quot; &quot;-&quot; &quot;-&quot;
+</code></pre></div><p><code>统计request_time &gt; 9s的占比</code></p> <div class="language-shell extra-class"><pre class="language-text"><code>awk '{split($(NF-4),a,&quot;\&quot;&quot;);if(a[2]&gt;9) i++}END{print i,i/NR}'
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/note/linux/date.html">date</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.4e76b0e0.js" defer></script><script src="/blog/assets/js/2.9c33a55d.js" defer></script><script src="/blog/assets/js/47.6c0c5a47.js" defer></script>
+  </body>
+</html>
