@@ -17,7 +17,8 @@ module.exports = {
       },
       { text: 'python',
         items: [
-          { text: 'django rest framework', link: '/note/python/drf/'},
+          { text: 'python基础', link: '/note/python/base/' },
+          { text: 'django rest framework', link: '/note/python/drf/' },
           // { text: 'celery', link: ''}
         ]
       },
@@ -64,8 +65,15 @@ module.exports = {
         'awk',
         'date'
       ],
+      '/note/python/base/': [
+        'class',
+      ],
       '/note/python/drf/': [
-        ''
+        'views',
+        'generics',
+        'mixins',
+        'viewsets',
+        'serializers'
       ],
       '/note/go/basic/': [
         'programStructure',
