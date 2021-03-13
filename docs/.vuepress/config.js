@@ -9,20 +9,20 @@ module.exports = {
     logo: '/assets/img/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'linux',
+      { text: 'Linux',
         items: [
           { text: 'awk', link: '/note/linux/awk' },
           { text: 'date', link: '/note/linux/date' }
         ]
       },
-      { text: 'python',
+      { text: 'Python',
         items: [
-          { text: 'python基础', link: '/note/python/base/' },
-          { text: 'django rest framework', link: '/note/python/drf/' },
+          { text: '面向对象', link: '/note/python/oop/' },
+          { text: '模块', link: '/note/python/modules/' },
           // { text: 'celery', link: ''}
         ]
       },
-      { text: 'go',
+      { text: 'Golang',
         items: [
           { text: '学习笔记', link: '/note/go/basic/' },
           { text: 'gorm', link: '/note/go/gorm/' },
@@ -65,8 +65,12 @@ module.exports = {
         'awk',
         'date'
       ],
-      '/note/python/base/': [
-        'class',
+      '/note/python/oop/': [
+        '',
+      ],
+      '/note/python/modules/': [
+        'logging',
+        'configparser'
       ],
       '/note/python/drf/': [
         'views',
