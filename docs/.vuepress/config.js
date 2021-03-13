@@ -70,7 +70,7 @@ module.exports = {
       ],
       '/note/python/modules/': [
         'logging',
-        'configparser'
+        'paramiko'
       ],
       '/note/python/drf/': [
         'views',
