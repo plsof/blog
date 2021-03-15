@@ -19,6 +19,7 @@ module.exports = {
         items: [
           { text: '面向对象', link: '/note/python/oop/' },
           { text: '模块', link: '/note/python/modules/' },
+          { text: '网络', link: '/note/python/network/' }
           // { text: 'celery', link: ''}
         ]
       },
@@ -68,8 +69,8 @@ module.exports = {
       '/note/python/oop/': [
         '',
       ],
-      '/note/python/network': [
-        '',
+      '/note/python/network/': [
+        'ipaddress'
       ],
       '/note/python/modules/': [
         'logging',

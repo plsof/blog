@@ -5,7 +5,7 @@ title: ipaddress
 ## 简介
 
 ### 介绍
-`ipaddress`是Python的的自带库，提供创建和操作IPv4、IPv6地址和网络的能力
+`ipaddress`是Python的的自带库，提供创建 操作IPv4、IPv6地址和网络的能力
 
 ## 说明
 
