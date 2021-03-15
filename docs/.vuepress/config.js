@@ -18,7 +18,7 @@ module.exports = {
       { text: 'Python',
         items: [
           { text: '面向对象', link: '/note/python/oop/' },
-          { text: '模块', link: '/note/python/modules/' },
+          { text: '日志', link: '/note/python/log/' },
           { text: '网络', link: '/note/python/network/' }
           // { text: 'celery', link: ''}
         ]
@@ -70,11 +70,12 @@ module.exports = {
         '',
       ],
       '/note/python/network/': [
-        'ipaddress'
-      ],
-      '/note/python/modules/': [
-        'logging',
+        'ipaddress',
+        'netifaces',
         'paramiko'
+      ],
+      '/note/python/log/': [
+        'logging'
       ],
       '/note/python/drf/': [
         'views',
