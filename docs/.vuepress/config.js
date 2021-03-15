@@ -68,6 +68,9 @@ module.exports = {
       '/note/python/oop/': [
         '',
       ],
+      '/note/python/network': [
+        '',
+      ],
       '/note/python/modules/': [
         'logging',
         'paramiko'
