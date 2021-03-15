@@ -1,16 +1,16 @@
 ---
-netifaces
+title: netifaces
 ---
 
 ## 简介
 
 ### 介绍
-`netifaces`是一个轻便的获取网络接口信息库
+`netifaces`是一个轻便的获取网络接口信息的库
 
 ### 安装
 `pip install netifaces`
 
-### 说明
+## 说明
 
 ### 实例
 

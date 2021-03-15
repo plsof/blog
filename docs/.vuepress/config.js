@@ -17,6 +17,7 @@ module.exports = {
       },
       { text: 'Python',
         items: [
+          { text: '数据类型', link: '/note/python/datatypes/' },
           { text: '面向对象', link: '/note/python/oop/' },
           { text: '日志', link: '/note/python/log/' },
           { text: '网络', link: '/note/python/network/' }
@@ -67,6 +68,9 @@ module.exports = {
         'date'
       ],
       '/note/python/oop/': [
+        '',
+      ],
+      '/note/python/datatypes/': [
         '',
       ],
       '/note/python/network/': [
