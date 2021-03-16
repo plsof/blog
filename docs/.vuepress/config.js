@@ -18,6 +18,7 @@ module.exports = {
       { text: 'Python',
         items: [
           { text: '数据类型', link: '/note/python/datatypes/' },
+          { text: '函数', link: '/note/python/function/' },
           { text: '面向对象', link: '/note/python/oop/' },
           { text: '日志', link: '/note/python/log/' },
           { text: '网络', link: '/note/python/network/' }
@@ -71,6 +72,9 @@ module.exports = {
         '',
       ],
       '/note/python/datatypes/': [
+        '',
+      ],
+      '/note/python/function/': [
         '',
       ],
       '/note/python/network/': [
