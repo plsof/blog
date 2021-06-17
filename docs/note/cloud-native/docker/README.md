@@ -84,6 +84,7 @@ ubuntu               latest              f753707788c5        4 weeks ago        
 1. 减少镜像层
 
 `错误示例`
+
 ```Dockerfile
 FROM ubuntu
 RUN apt-get update
@@ -91,14 +92,15 @@ RUN apt-get install vim
 ```
 
 `正确示例`
+
 ```Dockerfile
 FROM ubuntu
 RUN apt-get update && apt-get install vim
 ```
 
-2. 删掉容器中所有不必要的东西
+2.删掉容器中所有不必要的东西
 
-3. 基于Alpine的较小基础镜像
+3.基于Alpine的较小基础镜像
 
 ## 网络
 
@@ -175,11 +177,13 @@ COPY package.json /usr/src/app/
 `ADD`指令和`COPY`的格式和性质基本一致，但是在`COPY`基础上增加了一些功能。
 
 1. `ADD`指令支持使用URL作为`<源路径>`参数
+
 ```Dockerfile
 ADD http://foo.com/bar.go /tmp/
 ```
 
 2. `ADD`指令能够自动解压缩文件
+
 ```Dockerfile
 ADD /foo.tar.gz /tmp/
 ```
@@ -277,7 +281,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ```
 
 **EXPOSE和PUBLISH（run -p）的区别**
-- 既没有在Dockerfile里Expose，也没有run -p
+- 既没有在Dockerfile里Expose, 也没有run -p
   启动在这个container里的服务既不能被host主机和外网访问，也不能被link的container访问，只能在此容器内部使用
 - 只在Dockerfile里Expose了这个端口
   启动在这个container里的服务不能被docker外部世界（host和其他主机）访问，但是可以通过container link，被其他link的container访问到
@@ -330,13 +334,9 @@ FROM my-node
 
 `$ docker run --name webserver -d -p 80:80 nginx`
 
-
-
 ### 日志
 
 `docker container logs [container ID or NAMES]`
-
-
 
 ### 终止
 
@@ -344,13 +344,9 @@ FROM my-node
 
 终止状态的容器可以用 `docker container ls -a` 命令看到。
 
-
-
 ### 进入
 
 `$ docker exec -it webserver bash`
-
-
 
 ### 删除
 
@@ -365,3 +361,93 @@ FROM my-node
 清理掉所有处于终止状态的容器
 
 `$ docker container prune`
+
+## SDK
+
+### Go SDK
+
+```go
+go get github.com/docker/docker/client
+```
+
+#### 获取容器信息
+
+`docker ps -a --filter="name=frontend"`
+
+```go
+package main
+
+import (
+  "context"
+  "fmt"
+  "github.com/docker/docker/api/types"
+  "github.com/docker/docker/api/types/filters"
+  "github.com/docker/docker/client"
+)
+
+func main() {
+  cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+  if err != nil {
+    fmt.Printf("docker api error: %s", err)
+  }
+  // 关闭docker api
+  defer cli.Close()
+
+  // docker ps -a --filter "name=frontend"
+  customFilter := filters.NewArgs()
+  customFilter.Add("name", "lcm_frontend_pdd")
+  containers, err := cli.ContainerList(context.Background(), types.ContainerListOptions{All: true, Filters: customFilter})
+  if err != nil {
+    fmt.Printf("docker list error: %s", err)
+  }
+  if len(containers) == 0 {
+    fmt.Println("containers not exist")
+  }
+  for _, container := range containers {
+    fmt.Printf("ID: %s\n", container.ID)
+    fmt.Printf("Image: %s\n", container.Image)
+    fmt.Printf("State: %s\n", container.State)
+  }
+}
+```
+
+#### 获取本地镜像信息
+
+`docker images --filter=reference='172.16.81.200:443/library/frontend'`
+
+```go
+package main
+
+import (
+  "context"
+  "fmt"
+  "github.com/docker/docker/api/types"
+  "github.com/docker/docker/api/types/filters"
+  "github.com/docker/docker/client"
+)
+
+func main() {
+  cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+  if err != nil {
+    fmt.Printf("docker api error: %s", err)
+  }
+  // 关闭docker api
+  defer cli.Close()
+
+  // docker images --filter=reference='172.16.81.200:443/library/frontend'
+  customFilter := filters.NewArgs()
+  customFilter.Add("reference", "172.16.81.200:443/library/frontend")
+  images, err := cli.ImageList(context.Background(), types.ImageListOptions{All: true, Filters: customFilter})
+  if err != nil {
+    fmt.Printf("docker image error: %s", err)
+  }
+  if len(images) == 0 {
+    fmt.Println("images not exist")
+  }
+  for _, image := range images {
+    fmt.Printf("ID\n: %s", image.ID)
+    fmt.Printf("Digest: %s\n", image.RepoDigests)
+    fmt.Printf("Tag: %s\n", image.RepoTags)
+  }
+}
+```
