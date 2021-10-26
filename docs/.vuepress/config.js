@@ -29,7 +29,7 @@ module.exports = {
         items: [
           { text: '学习笔记', link: '/note/go/basic/' },
           { text: 'gorm', link: '/note/go/gorm/' },
-          // { text: 'gin', link: ''}
+          { text: 'gin', link: '/note/go/gin/'}
         ]
       },
       {
@@ -107,6 +107,9 @@ module.exports = {
         'other',
       ],
       '/note/go/gorm/': [
+        ''
+      ],
+      '/note/go/gin/': [
         ''
       ],
       '/note/db/etcd/': [
