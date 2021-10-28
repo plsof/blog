@@ -6,7 +6,7 @@ tagline: plsof记笔记的地方
 actionText: GO →
 actionLink: /note/guide/
 features:
-- title: 容器
+- title: 云原生
   details: Docker
 - title: 运维&开发
   details: DevOPs
