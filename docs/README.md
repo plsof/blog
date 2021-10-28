@@ -11,6 +11,6 @@ features:
 - title: 运维&开发
   details: DevOPs
 - title: 自动化
-  details: SaltStack
+  details: CICD
 footer: MIT Licensed | Copyright © 2018-present PDD
 ---

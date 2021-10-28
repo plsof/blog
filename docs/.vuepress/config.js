@@ -1,6 +1,6 @@
 module.exports = {
-  head:[
-    ['link', {rel:'icon', href:'/assets/img/logo.png'}]
+  head: [
+    ['link', { rel: 'icon', href: '/assets/img/logo.png' }]
   ],
   base: '/blog/',
   title: 'seize the day',
@@ -9,13 +9,15 @@ module.exports = {
     logo: '/assets/img/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Linux',
+      {
+        text: 'Linux',
         items: [
           { text: 'awk', link: '/note/linux/awk' },
           { text: 'date', link: '/note/linux/date' }
         ]
       },
-      { text: 'Python',
+      {
+        text: 'Python',
         items: [
           { text: '数据类型', link: '/note/python/datatypes/' },
           { text: '函数', link: '/note/python/function/' },
@@ -25,11 +27,12 @@ module.exports = {
           // { text: 'celery', link: ''}
         ]
       },
-      { text: 'Golang',
+      {
+        text: 'Golang',
         items: [
-          { text: '学习笔记', link: '/note/go/basic/' },
+          { text: '基础', link: '/note/go/basic/' },
           { text: 'gorm', link: '/note/go/gorm/' },
-          { text: 'gin', link: '/note/go/gin/'}
+          { text: 'gin', link: '/note/go/gin/' }
         ]
       },
       {
@@ -38,7 +41,8 @@ module.exports = {
           { text: 'etcd', link: '/note/db/etcd/' }
         ]
       },
-      { text: '云原生',
+      {
+        text: '云原生',
         items: [
           { text: 'docker', link: '/note/cloud-native/docker/' },
           { text: 'docker-compose', link: '/note/cloud-native/docker-compose/' },
@@ -46,12 +50,14 @@ module.exports = {
           { text: 'harbor', link: '/note/cloud-native/harbor/' }
         ]
       },
-      { text: '监控',
+      {
+        text: '监控',
         items: [
           { text: 'prometheus', link: '/note/monitor/prometheus/' },
         ]
       },
-      { text: '配置管理',
+      {
+        text: '配置管理',
         items: [
           { text: 'confd', link: '/note/configuration-management/confd/' },
           { text: 'saltstack', link: '/note/configuration-management/saltstack/' }
@@ -101,9 +107,10 @@ module.exports = {
         'interfaces',
         'oop',
         'files',
-        'cmd',
         'serializer',
         'Goroutine-Channel',
+        'io',
+        'network',
         'other',
       ],
       '/note/go/gorm/': [
