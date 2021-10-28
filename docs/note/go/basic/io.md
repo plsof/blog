@@ -125,4 +125,62 @@ import (
 
 ## ioutil
 
+`ioutil`包实现了一些I/O实用功能
+
+### ReadFile
+
+```go
+func ReadFile(filename string) ([]byte, error)
+```
+
+#### exmaple
+
+```go
+package main
+
+import (
+  "fmt"
+  "io/ioutil"
+  "log"
+  )
+
+  func main() {
+  content, err := ioutil.ReadFile("testdata/hello")
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Printf("File contents: %s", content)
+}
+```
+
+`ReadFile`读取文件并返回内容（大文件慎用，没有读缓存）。成功的调用返回err == nil，而不是err == EOF。因为ReadFile读取整个文件，所以它不会将Read中的EOF视为要报告的错误。
+
+### WriteFile
+
+```go
+func WriteFile(filename string, data []byte, perm fs.FileMode) error
+```
+
+`WriteFile`写数据到文件（内容多慎用，没有写缓存），如果文件不存在则创建，文件存在则覆盖其内容
+
+#### exmaple
+
+```go
+package main
+
+import (
+  "io/ioutil"
+  "log"
+)
+
+func main() {
+  message := []byte("Hello, Gophers!")
+  err := ioutil.WriteFile("/tmp/test.txt", message, 0644)
+  if err != nil {
+    log.Fatal(err)
+  }
+}
+```
+
 ## bufio
