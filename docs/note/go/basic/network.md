@@ -2,7 +2,7 @@
 title: 网络
 ---
 
-## net/ip
+## net
 
 ### IP
 

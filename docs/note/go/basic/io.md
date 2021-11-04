@@ -14,7 +14,7 @@ type Reader interface {
 }
 ```
 
-`Reader`接口包装了基本的读方法
+`Reader`接口包装了基本的读方法。Read方法会接收一个字节数组p，并将读取到的数据存进该数组，最后返回读取的字节数n。注意n不一定等于读取的数据长度，比如字节数组p的容量太小，n会等于数组的长度。
 
 ### Writer
 
@@ -24,7 +24,17 @@ type Writer interface {
 }
 ```
 
-`Writer`接口包装了基本的写方法
+`Writer`接口包装了基本的写方法。Write方法同样接收一个字节数组p，并将接收的数据保存至文件或者标准输出等，返回的n表示写入的数据长度。当n不等于len(p)时，返回一个错误。
+
+### Closer
+
+```go
+type Closer interface {
+  Close() error
+}
+```
+
+`Closer`接口包装了基本的关闭方法。
 
 ### Copy
 
@@ -184,3 +194,35 @@ func main() {
 ```
 
 ## bufio
+
+包bufio实现缓冲I/O。它包装了一个io.Reader或io.Writer对象，创建另一个对象（Reader或Writer）该对象也实现了该接口，但为文本I/O提供了缓冲和一些帮助。
+
+### Scanner
+
+```go
+type Scanner struct {
+  // contains filtered or unexported fields
+}
+```
+
+#### example
+
+```go
+package main
+
+import (
+  "bufio"
+  "fmt"
+  "os"
+)
+
+func main() {
+  scanner := bufio.NewScanner(os.Stdin)
+  for scanner.Scan() {
+    fmt.Println(scanner.Text()) // Println will add back the final '\n'
+  }
+  if err := scanner.Err(); err != nil {
+    fmt.Fprintln(os.Stderr, "reading standard input:", err)
+  }
+}
+```
