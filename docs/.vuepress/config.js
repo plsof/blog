@@ -110,6 +110,7 @@ module.exports = {
         'Goroutine-Channel',
         'io',
         'network',
+        'system',
         'other',
       ],
       '/note/go/gorm/': [
