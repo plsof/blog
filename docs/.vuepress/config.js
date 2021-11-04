@@ -106,7 +106,6 @@ module.exports = {
         'methods',
         'interfaces',
         'oop',
-        'files',
         'serializer',
         'Goroutine-Channel',
         'io',
