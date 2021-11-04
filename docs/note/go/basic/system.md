@@ -364,7 +364,7 @@ func main() {
 }
 ```
 
-exmaple2: 管道方法实现`ls | wc -l`
+exmaple3: 管道方法实现`ls | wc -l`
 
 ```go
 package main
