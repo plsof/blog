@@ -46,7 +46,7 @@ func Copy(dst Writer, src Reader) (written int64, err error)
 成功的Copy返回err == nil，而非err == EOF。由于Copy被定义为从src读取直到EOF为止，因此它不会将来自Read的EOF当做错误来报告。
 若dst实现了ReaderFrom接口，其复制操作可通过调用dst.ReadFrom(src)实现。此外，若src实现了WriterTo接口，其复制操作可通过调用 src.WriteTo(dst)实现。
 
-#### example
+Example
 
 ```go
 package main
@@ -75,7 +75,7 @@ func MultiReader(readers ...Reader) Reader
 
 `MultiReader`返回一个逻辑串联的Reader，他们是按顺序读入的。一旦所有的输入都返回EOF，Read将返回EOF。如果任何一个Reader返回非nil，非EOF错误，Read将返回该错误。
 
-#### example
+Example
 
 ```go
 import (
@@ -105,7 +105,7 @@ func MultiWriter(writers ...Writer) Writer
 
 `MultiWriter`创建一个Writer，将写入复制到所有提供的写入器,类似Unix tee(1)命令。每次写入都会写入每个列出的写入器，一次一个。如果列出的写入器返回错误，则整个写入操作将停止并返回错误。
 
-#### example
+Example
 
 ```go
 package main
@@ -143,7 +143,9 @@ import (
 func ReadFile(filename string) ([]byte, error)
 ```
 
-#### exmaple
+`ReadFile`读取文件并返回内容（大文件慎用，没有读缓存）。成功的调用返回err == nil，而不是err == EOF。因为ReadFile读取整个文件，所以它不会将Read中的EOF视为要报告的错误。
+
+Example
 
 ```go
 package main
@@ -155,16 +157,14 @@ import (
   )
 
   func main() {
-  content, err := ioutil.ReadFile("testdata/hello")
+  content, err := ioutil.ReadFile("./1.txt") // 自动打开文件，关闭文件
   if err != nil {
     log.Fatal(err)
   }
 
-  fmt.Printf("File contents: %s", content)
+  fmt.Printf("File contents: %s", string(content))
 }
 ```
-
-`ReadFile`读取文件并返回内容（大文件慎用，没有读缓存）。成功的调用返回err == nil，而不是err == EOF。因为ReadFile读取整个文件，所以它不会将Read中的EOF视为要报告的错误。
 
 ### WriteFile
 
@@ -174,7 +174,7 @@ func WriteFile(filename string, data []byte, perm fs.FileMode) error
 
 `WriteFile`写数据到文件（内容多慎用，没有写缓存），如果文件不存在则创建，文件存在则覆盖其内容
 
-#### exmaple
+Example
 
 ```go
 package main
@@ -197,6 +197,82 @@ func main() {
 
 包bufio实现缓冲I/O。它包装了一个io.Reader或io.Writer对象，创建另一个对象（Reader或Writer）该对象也实现了该接口，但为文本I/O提供了缓冲和一些帮助。
 
+### NewReader
+
+```go
+func NewReader(rd io.Reader) *Reader
+```
+
+`NewReader`返回一个默认缓冲值的新Reader
+
+Exmaple: 隔行读取文件内容
+
+```go
+package main
+
+import (
+  "bufio"
+  "fmt"
+  "io"
+  "log"
+  "os"
+)
+
+func main() {
+  file, err := os.Open("./1.txt")
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer file.Close()
+
+  reader := bufio.NewReader(file)
+  for {
+    str, err := reader.ReadString('\n')
+    if err == io.EOF {
+      break
+    }
+    fmt.Println(str)
+  }
+}
+```
+
+### NewWriter
+
+```go
+func NewWriter(w io.Writer) *Writer
+```
+
+`NewWriter`返回一个默认缓冲值的新Writer
+
+Example
+
+```go
+package main
+
+import (
+  "bufio"
+  "fmt"
+  "os"
+)
+
+func main() {
+  filePath := "./2.txt"
+  file, err := os.OpenFile(filePath, os.O_WRONLY | os.O_CREATE, 0666)
+  if err != nil {
+    fmt.Printf("open file err=%v\n", err)
+    return
+  }
+  defer file.Close()
+
+  str := "hello pdd!\n"
+  writer := bufio.NewWriter(file) // 带缓冲区的writer
+  for i := 0; i < 5; i++ {
+    writer.WriteString(str)
+  }
+  writer.Flush() // 将缓冲区内容写到文件
+}
+```
+
 ### Scanner
 
 ```go
@@ -205,7 +281,7 @@ type Scanner struct {
 }
 ```
 
-#### example
+Example
 
 ```go
 package main
