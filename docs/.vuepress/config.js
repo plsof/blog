@@ -99,7 +99,6 @@ module.exports = {
         'serializers'
       ],
       '/note/go/basic/': [
-        'programStructure',
         'basicDataType',
         'compositeType',
         'functions',
