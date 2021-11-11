@@ -304,3 +304,50 @@ func main() {
 第3个参数是string类型，值为pdd
 第4个参数是Student类型，值为{}
 ```
+
+## 指针和接口
+
+```go
+type Cat struct {}
+type Duck interface { ... }
+
+func (c  Cat) Quack {}  // 使用结构体实现接口
+func (c *Cat) Quack {}  // 使用结构体指针实现接口
+
+var d Duck = Cat{}      // 使用结构体初始化变量
+var d Duck = &Cat{}     // 使用结构体指针初始化变量
+```
+
+实现接口的类型和初始化返回的类型两个维度共组成了四种情况，然而这四种情况不是都能通过编译器的检查
+
+|                   | 结构体实现接口 | 结构体指针实现接口 |
+| :--------------: | :-----------: | :-------------: |
+| 结构体初始化变量    | 通过          | 不通过           |
+| 结构体指针初始化变量 | 通过          | 通过            |
+
+```go
+作为指针的 &Cat{} 变量能够隐式地获取到指向的结构体，所以能在结构体上调用 Walk 和 Quack 方法。
+```
+
+但是如果我们将上述代码中方法的接受者和初始化的类型进行交换，代码就无法通过编译了
+
+```go
+type Duck interface {
+  Quack()
+}
+
+type Cat struct{}
+
+func (c *Cat) Quack() {
+  fmt.Println("meow")
+}
+
+func main() {
+  var c Duck = Cat{}
+  c.Quack()
+}
+
+$ go build interface.go
+./interface.go:20:6: cannot use Cat literal (type Cat) as type Duck in assignment:
+  Cat does not implement Duck (Quack method has pointer receiver)
+```
