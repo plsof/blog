@@ -111,6 +111,7 @@ module.exports = {
         'io',
         'network',
         'system',
+        'reflect',
         'other',
       ],
       '/note/go/gorm/': [
