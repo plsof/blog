@@ -118,7 +118,7 @@ module.exports = {
         ''
       ],
       '/note/go/gin/': [
-        ''
+        'websocket'
       ],
       '/note/db/etcd/': [
         ''
