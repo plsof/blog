@@ -46,7 +46,8 @@ module.exports = {
       {
         text: '数据库',
         items: [
-          { text: 'etcd', link: '/note/db/etcd/' }
+          { text: 'etcd', link: '/note/db/etcd/' },
+          { text: 'redis', link: '/note/db/redis/' }
         ]
       },
       {
