@@ -36,6 +36,14 @@ module.exports = {
         ]
       },
       {
+        text: '前端',
+        items: [
+          { text: 'css', link: '/note/frontend/css/'},
+          { text: 'js', link: '/note/frontend/js/'},
+          { text: 'vue', link: '/note/frontend/vue/'}
+        ]
+      },
+      {
         text: '数据库',
         items: [
           { text: 'etcd', link: '/note/db/etcd/' }
@@ -118,7 +126,17 @@ module.exports = {
         ''
       ],
       '/note/go/gin/': [
+        'middleware',
         'websocket'
+      ],
+      '/note/frontend/css/': [
+        ''
+      ],
+      '/note/frontend/js/': [
+        ''
+      ],
+      '/note/frontend/vue/': [
+        ''
       ],
       '/note/db/etcd/': [
         ''
