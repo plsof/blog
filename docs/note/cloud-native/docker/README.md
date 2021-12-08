@@ -131,20 +131,6 @@ RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
 FROM scratch
 ```
 
-### RUN
-
-`RUN`指令是用来执行命令行命令的。由于命令行的强大能力，`RUN`指令在定制镜像时是最常用的指令之一。其格式有两种：
-
-- *shell* 格式：`RUN <命令>`，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 `RUN` 指令就是这种格式。
-
-```Dockerfile
-RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
-```
-
-- *exec* 格式：`RUN ["可执行文件", "参数1", "参数2"]`，这更像是函数调用中的格式。
-
-Dockerfile 中每一个指令都会建立一层，`RUN` 也不例外。每一个 `RUN` 的行为，就和刚才我们手工建立镜像的过程一样：新建立一层，在其上执行这些命令，执行结束后，`commit` 这一层的修改，构成新的镜像。
-
 ### BUILD
 
 `build`指令用来构建镜像
@@ -190,24 +176,69 @@ ADD /foo.tar.gz /tmp/
 
 PS: `COPY`和`ADD`指令中选择的时候，可以遵循这样的原则，所有的文件复制均使用`COPY`指令，仅在需要自动解压缩的场合使用`ADD`。
 
+### RUN
+
+`RUN`指令执行命令并创建新的镜像层，通常用于安装软件包。有2种运行命令的格式
+
++ shell格式：`RUN <命令>`，就像直接在命令行中输入的命令一样。
+
+```Dockerfile
+RUN echo hello world
+```
+
++ exec格式：`RUN ["可执行文件", "参数1", "参数2"]`，这更像是函数调用中的格式。
+
+```Dockerfile
+RUN ["echo", "hello world"]
+```
+
+Dockerfile中每一个指令都会建立一层，`RUN`也不例外。每一个`RUN`的行为，就和刚才我们手工建立镜像的过程一样：新建立一层，在其上执行这些命令，执行结束后，commit这一层的修改，构成新的镜像。
+
 ### CMD
 
-`CMD` 指令的格式和 `RUN` 相似，也是两种格式：
+`CMD`指令的格式和`RUN`相似，也是两种格式：
 
-- `shell` 格式：`CMD <命令>`
-- `exec` 格式：`CMD ["可执行文件", "参数1", "参数2"...]`
-- 参数列表格式：`CMD ["参数1", "参数2"...]`。在指定了 `ENTRYPOINT` 指令后，用 `CMD` 指定具体的参数。
++ shell格式：`CMD <命令>`
++ exec格式：`CMD ["可执行文件", "参数1", "参数2"...]`
++ 参数列表格式：`CMD ["参数1", "参数2"...]`，在`ENTRYPOINT`指令后，用`CMD`指定具体的参数。
+
+`CMD`指令指定容器的默认执行命令，此命令会在容器启动且`docker run`没有指定其他命令时运行，如果指定了命令则会被替换
+
+```Dockerfile
+FROM busybox
+CMD ["echo", "hello world"]
+```
+
+```shell
+➜  /Users/pdd docker run test:v1
+hello world
+
+➜  /Users/pdd docker run -it test:v1 sh
+/ #
+```
 
 ### ENTRYPOINT
 
-`ENTRYPOINT` 的格式和 `RUN` 指令格式一样，分为 `exec` 格式和 `shell` 格式。
+`ENTRYPOINT`的目的和`CMD`一样，都是在指定容器启动程序及参数。其指令的格式和`RUN`指令格式一样，分为shell格式和exec格式。
 
-`ENTRYPOINT` 的目的和 `CMD` 一样，都是在指定容器启动程序及参数。`ENTRYPOINT` 在运行时也可以替代，不过比 `CMD` 要略显繁琐，需要通过 `docker run` 的参数 `--entrypoint` 来指定。
+```Dockerfile
+FROM busybox
+ENTRYPOINT ["echo", "hello world"]
+CMD [" --- pdd"]
+```
 
-当指定了 `ENTRYPOINT` 后，`CMD` 的含义就发生了改变，不再是直接的运行其命令，而是将 `CMD` 的内容作为参数传给 `ENTRYPOINT` 指令，换句话说实际执行时，将变为：
+当指定了`ENTRYPOINT`后，`CMD`的含义就发生了改变，不再是直接的运行其命令，而是将`CMD`的内容作为参数传给`ENTRYPOINT`指令
 
-```dockerfile
-<ENTRYPOINT> "<CMD>"
+```shell
+➜  /Users/pdd docker run test:v2
+hello world  --- pdd
+```
+
+`ENTRYPOINT`在运行时也可以替代，不过比`CMD`要略显繁琐，需要通过 `docker run`的参数`--entrypoint`来指定。
+
+```shell
+➜  /Users/pdd docker run -it --entrypoint "sh" test:v2
+/ #
 ```
 
 ### ENV
