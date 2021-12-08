@@ -145,14 +145,12 @@ FROM scratch
 
 ### COPY
 
-格式：
+COPY有2种格式：
 
-- `COPY [--chown=<user>:<group>] <源路径>... <目标路径>`
-- `COPY [--chown=<user>:<group>] ["<源路径1>",... "<目标路径>"]`
++ `COPY [--chown=<user>:<group>] <src>... <dest>`
++ `COPY [--chown=<user>:<group>] ["<src>",... "<dest>"]`
 
-和 `RUN` 指令一样，也有两种格式，一种类似于命令行，一种类似于函数调用。
-
-`COPY` 指令将从构建上下文目录中 `<源路径>` 的文件/目录复制到新的一层的镜像内的 `<目标路径>` 位置。比如：
+`COPY`指令将从构建上下文目录中`<源路径>`的文件/目录复制到新的一层的镜像内的`<目标路径>`位置
 
 ```Dockerfile
 COPY package.json /usr/src/app/
@@ -171,7 +169,7 @@ ADD http://foo.com/bar.go /tmp/
 2. `ADD`指令能够自动解压缩文件
 
 ```Dockerfile
-ADD /foo.tar.gz /tmp/
+ADD foo.tar.gz /tmp/
 ```
 
 PS: `COPY`和`ADD`指令中选择的时候，可以遵循这样的原则，所有的文件复制均使用`COPY`指令，仅在需要自动解压缩的场合使用`ADD`。
@@ -245,8 +243,8 @@ hello world  --- pdd
 
 格式有两种：
 
-- `ENV <key> <value>`
-- `ENV <key1>=<value1> <key2>=<value2>...`
++ `ENV <key> <value>`
++ `ENV <key1>=<value1> <key2>=<value2>...`
 
 这个指令设置环境变量，无论是后面的其它指令，如 `RUN`，还是运行时的应用，都可以直接使用这里定义的环境变量。
 
@@ -311,14 +309,18 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 3070486b1d6c        myhttp:v1           "python httpserver1.…"   54 minutes ago      Up 54 minutes       0.0.0.0:32768->80/tcp   myapp-v1
 ```
 
-**EXPOSE和PUBLISH（run -p）的区别**
-- 既没有在Dockerfile里Expose, 也没有run -p
+#### EXPOSE和PUBLISH（run -p）的区别
+
++ 既没有在Dockerfile里Expose, 也没有run -p
   启动在这个container里的服务既不能被host主机和外网访问，也不能被link的container访问，只能在此容器内部使用
-- 只在Dockerfile里Expose了这个端口
+
++ 只在Dockerfile里Expose了这个端口
   启动在这个container里的服务不能被docker外部世界（host和其他主机）访问，但是可以通过container link，被其他link的container访问到
-- 同时在Dockerfile里Expose，又run -p
+
++ 同时在Dockerfile里Expose，又run -p
   启动的这个cotnainer既可以被docker外部世界访问，也可以被link的container访问
-- 只有run -p
+
++ 只有run -p
   docker做了特殊的隐式转换，等价于第一种情况，既可以被外部世界访问，也可以被link的container访问到（真对这种情况，原因是docker认为，既然你都要把port open到外部世界了，等价于其他的container肯定也能访问，所以docker做了自动的Expose
 
 ### WORKDIR
