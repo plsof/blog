@@ -31,8 +31,8 @@ module.exports = {
         text: 'Golang',
         items: [
           { text: '基础', link: '/note/go/basic/' },
-          { text: 'gorm', link: '/note/go/gorm/' },
-          { text: 'gin', link: '/note/go/gin/' }
+          { text: 'gin', link: '/note/go/gin/' },
+          { text: 'gorm', link: '/note/go/gorm/' }
         ]
       },
       {
