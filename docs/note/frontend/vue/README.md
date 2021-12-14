@@ -85,3 +85,23 @@ export default {
 }
 <script>
 ```
+
+## 生命周期
+
+### 钩子函数
+
+| vue2 | vue3 |
+| ---- | ---- |
+|beforeCreate|setup|
+|created|setup|
+|beforeMount|onBeforeMount|
+|mounted|onMounted|
+|beforeUpdate|onBeforeUpdate|
+|updated|onUpdated|
+|beforeUnmount|onBeforeUnmount|
+|unmounted|onUnmounted|
+|errorCaptured|onErrorCaptured|
+|renderTracked|onRenderTracked|
+|renderTriggered|onRenderTriggered|
+|activated|onActivated|
+|deactivated|onDeactivated|
