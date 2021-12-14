@@ -1,17 +1,15 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": "git@github.com:plsof/blog.git",
+  "author": "plsof <1103901630@qq.com>",
+  "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.8.2"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   }
 }

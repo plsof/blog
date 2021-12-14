@@ -1,12 +1,12 @@
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: '/assets/img/logo.png' }]
+    ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }]
   ],
   base: '/blog/',
-  title: 'seize the day',
+  title: 'plsof',
   description: 'Vuepress blog',
   themeConfig: {
-    logo: '/assets/img/logo.png',
+    logo: '/assets/img/sheep.png',
     nav: [
       { text: 'Home', link: '/' },
       {
