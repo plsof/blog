@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>部署策略 | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/12.a8947560.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/cloud-native/kubernetes/overview.html" class="sidebar-link">概述</a></li><li><a href="/blog/note/cloud-native/kubernetes/install.html" class="sidebar-link">安装</a></li><li><a href="/blog/note/cloud-native/kubernetes/workloads.html" class="sidebar-link">工作负载</a></li><li><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html" class="sidebar-link">服务、负载均衡和网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/storage.html" class="sidebar-link">存储</a></li><li><a href="/blog/note/cloud-native/kubernetes/clusterAdministration.html" class="sidebar-link">集群管理</a></li><li><a href="/blog/note/cloud-native/kubernetes/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/helm.html" class="sidebar-link">Helm</a></li><li><a href="/blog/note/cloud-native/kubernetes/monitoring.html" class="sidebar-link">监控</a></li><li><a href="/blog/note/cloud-native/kubernetes/efk.html" class="sidebar-link">EFK</a></li><li><a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="sidebar-link">Dashboard</a></li><li><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html" aria-current="page" class="active sidebar-link">部署策略</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html#重建" class="sidebar-link">重建</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html#滚动更新" class="sidebar-link">滚动更新</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html#蓝绿" class="sidebar-link">蓝绿</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html#金丝雀" class="sidebar-link">金丝雀</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html#a-b测试" class="sidebar-link">A/B测试</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>参考：
+<code>https://www.qikqiak.com/post/k8s-deployment-strategies/</code></p> <h2 id="重建"><a href="#重建" class="header-anchor">#</a> 重建</h2> <p>停止旧版本部署新版本</p> <h2 id="滚动更新"><a href="#滚动更新" class="header-anchor">#</a> 滚动更新</h2> <p>批量滚动更新方式发布新版本</p> <h2 id="蓝绿"><a href="#蓝绿" class="header-anchor">#</a> 蓝绿</h2> <p>新版本与旧版本一起存在，然后切换流量</p> <h2 id="金丝雀"><a href="#金丝雀" class="header-anchor">#</a> 金丝雀</h2> <p>将新版本面向一部分用户发布，然后继续全量发布</p> <p>金丝雀部署是让部分用户访问到新版本应用，在<code>Kubernetes</code>中，可以使用两个具有相同<code>Pod</code>标签的<code>Deployment</code>来实现金丝雀部署。新版本的副本和旧版本的一起发布。在一段时间后如果没有检测到错误，则可以割接流量到新版本并删除旧版本的应用。
+<img src="/blog/assets/img/canary.f0815578.jpg" alt="Canary">
+在下面的例子中，我们使用<code>ingress-nginx</code>来实现一个金丝雀发布</p> <ol><li>2个副本的v1应用提供服务
+v1资源清单<code>ingress-myhttp-v1.yml</code></li></ol> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1<span class="token punctuation">-</span>deployment
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> 172.188.3.24<span class="token punctuation">:</span>8000/library/myhttp<span class="token punctuation">:</span>v1
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> extensions/v1beta1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> ingress<span class="token punctuation">-</span>myhttp<span class="token punctuation">-</span>v1
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> ingress<span class="token punctuation">-</span>myhttp<span class="token punctuation">-</span>v1
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+    <span class="token key atrule">kubernetes.io/ingress.class</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx&quot;</span>
+    <span class="token key atrule">nginx.ingress.kubernetes.io/use-regex</span><span class="token punctuation">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> www.myhttp.com
+      <span class="token key atrule">http</span><span class="token punctuation">:</span>
+        <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+            <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+              <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v1<span class="token punctuation">-</span>service
+              <span class="token key atrule">servicePort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+</code></pre></div><ol start="2"><li>2个副本的v2应用提供服务（权重设置50%）
+v2资源清单<code>ingress-myhttp-v2.yml</code>，设置权重50%</li></ol> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2<span class="token punctuation">-</span>deployment
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> 172.188.3.24<span class="token punctuation">:</span>8000/library/myhttp<span class="token punctuation">:</span>v2
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> extensions/v1beta1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> ingress<span class="token punctuation">-</span>myhttp<span class="token punctuation">-</span>v2
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> ingress<span class="token punctuation">-</span>myhttp<span class="token punctuation">-</span>v2
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+    <span class="token key atrule">kubernetes.io/ingress.class</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx&quot;</span>
+    <span class="token key atrule">nginx.ingress.kubernetes.io/use-regex</span><span class="token punctuation">:</span> <span class="token string">&quot;true&quot;</span>
+    <span class="token key atrule">nginx.ingress.kubernetes.io/canary</span><span class="token punctuation">:</span> <span class="token string">&quot;true&quot;</span>
+    <span class="token key atrule">nginx.ingress.kubernetes.io/canary-weight</span><span class="token punctuation">:</span> <span class="token string">&quot;50&quot;</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> www.myhttp.com
+      <span class="token key atrule">http</span><span class="token punctuation">:</span>
+        <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+            <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+              <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>v2<span class="token punctuation">-</span>service
+              <span class="token key atrule">servicePort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+</code></pre></div><ol start="3"><li>验证</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>➜  ~ <span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">seq</span> <span class="token number">1</span> <span class="token number">10</span><span class="token variable">`</span></span><span class="token punctuation">;</span><span class="token keyword">do</span>
+<span class="token function">curl</span> <span class="token string">'http://www.myhttp.com'</span> -x <span class="token string">'172.188.2.87:80'</span>
+<span class="token builtin class-name">echo</span>
+<span class="token keyword">done</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;v2&quot;</span>, <span class="token string">&quot;hostname&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;myhttp-v2-deployment-84dfdfbcd8-55gzd&quot;</span>, <span class="token string">&quot;IP&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;10.244.2.109&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;v2&quot;</span>, <span class="token string">&quot;hostname&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;myhttp-v2-deployment-84dfdfbcd8-55gzd&quot;</span>, <span class="token string">&quot;IP&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;10.244.2.109&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;v2&quot;</span>, <span class="token string">&quot;hostname&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;myhttp-v2-deployment-84dfdfbcd8-55gzd&quot;</span>, <span class="token string">&quot;IP&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;10.244.2.109&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;v2&quot;</span>, <span class="token string">&quot;hostname&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;myhttp-v2-deployment-84dfdfbcd8-t74p2&quot;</span>, <span class="token string">&quot;IP&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;10.244.1.106&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+</code></pre></div><ol start="4"><li>流量全部割接到v2应用上
+流量割接，修改v2权重为100即可<code>nginx.ingress.kubernetes.io/canary-weight: &quot;100&quot;</code></li></ol> <h2 id="a-b测试"><a href="#a-b测试" class="header-anchor">#</a> A/B测试</h2> <p>以精确的方式（HTTP 头、cookie、权重等）向部分用户发布新版本。A/B测实际上是一种基于数据统计做出业务决策的技术。在Kubernetes 中并不原生支持，需要额外的一些高级组件来完成改设置（比如Istio、Linkerd、Traefik、或者自定义 Nginx/Haproxy 等）</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="prev">
+        Dashboard
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/12.a8947560.js" defer></script>
+  </body>
+</html>

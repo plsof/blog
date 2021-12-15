@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面向对象 | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/56.f09e9bf7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link router-link-active">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link router-link-active">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/go/basic/datatype.html" class="sidebar-link">数据类型</a></li><li><a href="/blog/note/go/basic/functions.html" class="sidebar-link">函数</a></li><li><a href="/blog/note/go/basic/methods.html" class="sidebar-link">方法</a></li><li><a href="/blog/note/go/basic/interfaces.html" class="sidebar-link">接口</a></li><li><a href="/blog/note/go/basic/serializer.html" class="sidebar-link">序列化</a></li><li><a href="/blog/note/go/basic/Goroutine-Channel.html" class="sidebar-link">协程和管道</a></li><li><a href="/blog/note/go/basic/io.html" class="sidebar-link">输入输出</a></li><li><a href="/blog/note/go/basic/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/go/basic/system.html" class="sidebar-link">系统</a></li><li><a href="/blog/note/go/basic/reflect.html" class="sidebar-link">反射</a></li><li><a href="/blog/note/go/basic/other.html" class="sidebar-link">其它</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="封装"><a href="#封装" class="header-anchor">#</a> 封装</h2> <h3 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h3> <p>封装（encapsulation）就是把抽象出的<strong>字段和对字段的操作</strong>封装在一起，数据被保护在内部，程序的其它包只有通过被授权的操作（方法）才能对字段进行操作</p> <p>封装的好处：1. 隐藏实现细节 2. 可以对数据进行验证，保证安全合理</p> <p>Go中体现封装：1. 对结构体中的属性进行封装 2. 通过方法、包实现封装</p> <h3 id="实现步骤"><a href="#实现步骤" class="header-anchor">#</a> 实现步骤</h3> <ol><li>结构体、字段（属性）的首字母小写（不能导出了，其它包不能使用，类似private）</li> <li>结构体所在包提供一个工厂模式的函数，首字母大写，类似一个构造函数</li> <li>提供一个首字母大写的Set方法（类似其它语言的public），用于对属性判断并赋值<div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token keyword">var</span> <span class="token keyword">struct</span><span class="token punctuation">)</span> <span class="token function">setXxx</span><span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span> <span class="token punctuation">(</span>返回值列表<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 数据验证逻辑</span>
+  <span class="token keyword">var</span><span class="token punctuation">.</span>field <span class="token operator">=</span> 参数
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li>提供一个首字母大写的Get方法（类似其它语言的public），用于获取属性的值<div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token keyword">var</span> <span class="token keyword">struct</span><span class="token punctuation">)</span> GetXxx <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">var</span><span class="token punctuation">.</span>field
+<span class="token punctuation">}</span>
+</code></pre></div></li></ol> <p><code>案例：编写程序实现不能随便查看人的年龄，工资等隐私，并对输入的年龄进行合理的验证</code></p> <p><code>model/person.go</code></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> model
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">type</span> person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Name <span class="token builtin">string</span>
+	age <span class="token builtin">int</span>
+	sal <span class="token builtin">float64</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Newperson</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">*</span>person <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>person<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span> name<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>person<span class="token punctuation">)</span> <span class="token function">SetAge</span><span class="token punctuation">(</span>age <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> age <span class="token operator">&gt;</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> age <span class="token operator">&lt;</span> <span class="token number">150</span> <span class="token punctuation">{</span>
+		p<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;年龄不符合范围&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>person<span class="token punctuation">)</span> <span class="token function">GetAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> p<span class="token punctuation">.</span>age
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>person<span class="token punctuation">)</span> <span class="token function">SetSal</span><span class="token punctuation">(</span>sal <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> sal <span class="token operator">&gt;=</span> <span class="token number">3000</span> <span class="token operator">&amp;&amp;</span> sal <span class="token operator">&lt;=</span> <span class="token number">30000</span> <span class="token punctuation">{</span>
+		p<span class="token punctuation">.</span>sal <span class="token operator">=</span> sal
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;薪水不符合范围&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>person<span class="token punctuation">)</span> <span class="token function">GetSal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> p<span class="token punctuation">.</span>sal
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>main/main.go</code></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;awesomeProject/struct/model&quot;</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	p <span class="token operator">:=</span> model<span class="token punctuation">.</span><span class="token function">Newperson</span><span class="token punctuation">(</span><span class="token string">&quot;pdd&quot;</span><span class="token punctuation">)</span>
+	p<span class="token punctuation">.</span><span class="token function">SetAge</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span>
+	p<span class="token punctuation">.</span><span class="token function">SetSal</span><span class="token punctuation">(</span><span class="token number">29999</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> <span class="token string">&quot;age=&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">GetAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;salary=&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">GetSal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code>pdd age<span class="token operator">=</span> <span class="token number">30</span> salary<span class="token operator">=</span> <span class="token number">29999</span>
+</code></pre></div><h2 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h2> <h3 id="概述-2"><a href="#概述-2" class="header-anchor">#</a> 概述</h3> <p>继承可以解决代码复用，提高代码的扩展性和维护性
+基本语法</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Price <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> B <span class="token builtin">string</span> <span class="token punctuation">{</span>
+  A <span class="token comment">// 嵌套匿名结构体A</span>
+  Writing <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="注意事项"><a href="#注意事项" class="header-anchor">#</a> 注意事项</h3> <ol><li><p>结构体可以使用嵌套匿名结构体所有的字段和方法，首字母小写的字段、方法也可以使用</p></li> <li><p>匿名结构体字段访问可以简化</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> b B
+b<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;tom&quot;</span> <span class="token comment">// b.A.name = &quot;tom&quot;</span>
+b<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">78</span> <span class="token comment">// b.A.age = 78</span>
+b<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// b.A.say()</span>
+</code></pre></div></li> <li><p>当结构体和匿名结构体有相同的字段或者方法时，编译器采用<strong>就近访问原则</strong>访问，如希望访问匿名结构体的字段和方法，可以通过匿名结构体名来区分</p></li> <li><p>结构体嵌入两个（或多个）匿名结构体（多重继承），如两个匿名结构体有相同的字段和方法（同时结构体本身没有同名的字段和方法），在访问时，就必须明确指定匿名结构体名字，否则编译出错</p></li> <li><p>结构体嵌入有名结构体，这种模式就叫组合，如果是组合关系，那么访问组合的结构体的字段和方法时，就必须带上结构体的名字</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> C <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  a A
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> c C
+c<span class="token punctuation">.</span>a<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;jack&quot;</span>
+</code></pre></div></li> <li><p>嵌套匿名结构体后，也可以在创建结构体变量时，直接指定各个匿名结构体字段的值</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Goods <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Price <span class="token builtin">float64</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Brand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Address <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Tv <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Goods
+  Brand
+<span class="token punctuation">}</span>
+
+tv <span class="token operator">:=</span> Tv<span class="token punctuation">{</span> Goods<span class="token punctuation">{</span><span class="token string">&quot;电视机&quot;</span><span class="token punctuation">,</span> <span class="token number">2999</span><span class="token punctuation">}</span><span class="token punctuation">,</span> Brand<span class="token punctuation">{</span>
+  Name<span class="token punctuation">:</span>    <span class="token string">&quot;小米&quot;</span><span class="token punctuation">,</span>
+  Address<span class="token punctuation">:</span> <span class="token string">&quot;北京&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">}</span>
+</code></pre></div></li></ol> <h2 id="多态"><a href="#多态" class="header-anchor">#</a> 多态</h2> <h3 id="概述-3"><a href="#概述-3" class="header-anchor">#</a> 概述</h3> <p>变量（实例）具有<strong>多种形态</strong>，Go中多态特征是通过接口实现的。可以按照统一的接口来调用不同的实现，这时接口变量就呈现不同的形态</p> <h3 id="接口体现多态特征"><a href="#接口体现多态特征" class="header-anchor">#</a> 接口体现多态特征</h3> <ol><li><p>多态参数</p></li> <li><p>多态数组</p></li></ol> <p><code>案例</code></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">type</span> Usb <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Phone <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Phone<span class="token punctuation">)</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;手机开始工作&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Phone<span class="token punctuation">)</span> <span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;手机停止工作&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Camera <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c Camera<span class="token punctuation">)</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;相机开始工作&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c Camera<span class="token punctuation">)</span> <span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;相机停止工作&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Working</span><span class="token punctuation">(</span>usb Usb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	usb<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	usb<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 多态参数 既可以接受Phone 也可以接受Camera</span>
+	<span class="token keyword">var</span> p Phone
+	<span class="token keyword">var</span> c Camera
+	<span class="token function">Working</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+  <span class="token function">Working</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+  <span class="token comment">// 定义多态数组</span>
+  <span class="token keyword">var</span> usbArr <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>Usb
+  usbArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> Phone<span class="token punctuation">{</span><span class="token string">&quot;小米&quot;</span><span class="token punctuation">}</span>
+  usbArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> Camera<span class="token punctuation">{</span><span class="token string">&quot;尼康&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/56.f09e9bf7.js" defer></script>
+  </body>
+</html>

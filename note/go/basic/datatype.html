@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据类型 | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/10.2757765f.js" as="script"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link router-link-active">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link router-link-active">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/go/basic/datatype.html" aria-current="page" class="active sidebar-link">数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#基础类型" class="sidebar-link">基础类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#整型" class="sidebar-link">整型</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#浮点数" class="sidebar-link">浮点数</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#字符" class="sidebar-link">字符</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#复数" class="sidebar-link">复数</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#布尔值" class="sidebar-link">布尔值</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#字符串" class="sidebar-link">字符串</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#常量" class="sidebar-link">常量</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#example" class="sidebar-link">Example</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#聚合类型" class="sidebar-link">聚合类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#数组" class="sidebar-link">数组</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#结构体" class="sidebar-link">结构体</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#引用类型" class="sidebar-link">引用类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#切片" class="sidebar-link">切片</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#映射" class="sidebar-link">映射</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#channel" class="sidebar-link">Channel</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#指针" class="sidebar-link">指针</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#函数" class="sidebar-link">函数</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/go/basic/datatype.html#接口" class="sidebar-link">接口</a></li></ul></li><li><a href="/blog/note/go/basic/functions.html" class="sidebar-link">函数</a></li><li><a href="/blog/note/go/basic/methods.html" class="sidebar-link">方法</a></li><li><a href="/blog/note/go/basic/interfaces.html" class="sidebar-link">接口</a></li><li><a href="/blog/note/go/basic/serializer.html" class="sidebar-link">序列化</a></li><li><a href="/blog/note/go/basic/Goroutine-Channel.html" class="sidebar-link">协程和管道</a></li><li><a href="/blog/note/go/basic/io.html" class="sidebar-link">输入输出</a></li><li><a href="/blog/note/go/basic/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/go/basic/system.html" class="sidebar-link">系统</a></li><li><a href="/blog/note/go/basic/reflect.html" class="sidebar-link">反射</a></li><li><a href="/blog/note/go/basic/other.html" class="sidebar-link">其它</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="基础类型"><a href="#基础类型" class="header-anchor">#</a> 基础类型</h2> <p>值类型：变量直接存储，变量通常在栈中分配</p> <h3 id="整型"><a href="#整型" class="header-anchor">#</a> 整型</h3> <h4 id="有符号整型"><a href="#有符号整型" class="header-anchor">#</a> 有符号整型</h4> <div class="language-go extra-class"><pre class="language-go"><code><span class="token builtin">int8</span>    <span class="token number">1</span>字节 <span class="token operator">-</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">7</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">7</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">int16</span>   <span class="token number">2</span>字节 <span class="token operator">-</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">15</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">15</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">int32</span>   <span class="token number">4</span>字节 <span class="token operator">-</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">31</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">int64</span>   <span class="token number">8</span>字节 <span class="token operator">-</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">63</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">63</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">int</span>     <span class="token number">32</span>位系统为<span class="token builtin">int32</span> <span class="token number">64</span>位系统为<span class="token builtin">int64</span>
+</code></pre></div><h4 id="无符号整型"><a href="#无符号整型" class="header-anchor">#</a> 无符号整型</h4> <div class="language-go extra-class"><pre class="language-go"><code><span class="token builtin">uint8</span>   <span class="token number">1</span>字节 <span class="token number">0</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">8</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">uint16</span>  <span class="token number">2</span>字节 <span class="token number">0</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">16</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">uint32</span>  <span class="token number">4</span>字节 <span class="token number">0</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">32</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token builtin">uint64</span>  <span class="token number">8</span>字节 <span class="token number">0</span> ~ <span class="token number">2</span><span class="token operator">^</span><span class="token number">64</span><span class="token operator">-</span><span class="token number">1</span>
+</code></pre></div><h3 id="浮点数"><a href="#浮点数" class="header-anchor">#</a> 浮点数</h3> <p>浮点数都是有符号的，go的浮点型默认为float64</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token builtin">float32</span> <span class="token number">4</span>字节
+<span class="token builtin">float64</span> <span class="token number">8</span>字节
+</code></pre></div><h3 id="字符"><a href="#字符" class="header-anchor">#</a> 字符</h3> <p>Go语言有两种字符类型</p> <ul><li>byte（uint8的别名），代表ASCII码的一个字符，一个ASCII字符占一个字节</li> <li>rune（int32的别名），代表一个Unicode码，当需要处理中文的时候需要用到rune类型，一个中文占用3个字节</li></ul> <p>Example</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> c1 <span class="token operator">=</span> <span class="token string">'a'</span>
+  <span class="token keyword">var</span> c2 <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token comment">// 字符0</span>
+  <span class="token comment">// 当我们直接输出byte值，就是直接输出对应字符的码值</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;c1=&quot;</span><span class="token punctuation">,</span> c1<span class="token punctuation">,</span> <span class="token string">&quot;c2=&quot;</span><span class="token punctuation">,</span> c2<span class="token punctuation">)</span>
+  <span class="token comment">// 输出对应字符，需要使用格式化输出</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;c1=%c c2=%c\n&quot;</span><span class="token punctuation">,</span> c1<span class="token punctuation">,</span> c2<span class="token punctuation">)</span>
+  <span class="token comment">// 数字转换成字符</span>
+  <span class="token keyword">var</span> c3 <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">22269</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;c3=%c\n&quot;</span><span class="token punctuation">,</span> c3<span class="token punctuation">)</span>
+  <span class="token comment">// 字符串可以进行运行，运算时按照码值</span>
+  <span class="token keyword">var</span> n1 <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token string">'a'</span> <span class="token comment">// 10 + 97 = 107</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;n1=&quot;</span><span class="token punctuation">,</span> n1<span class="token punctuation">)</span>
+  c4 <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">rune</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string">&quot;中国&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;c4=%c, len=%d\n&quot;</span><span class="token punctuation">,</span> c4<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>c4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token assign-left variable">c1</span><span class="token operator">=</span> <span class="token number">97</span> <span class="token assign-left variable">c2</span><span class="token operator">=</span> <span class="token number">48</span>
+<span class="token assign-left variable">c1</span><span class="token operator">=</span>a <span class="token assign-left variable">c2</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">c3</span><span class="token operator">=</span>国
+<span class="token assign-left variable">n1</span><span class="token operator">=</span> <span class="token number">107</span>
+<span class="token assign-left variable">c4</span><span class="token operator">=</span><span class="token punctuation">[</span>中 国<span class="token punctuation">]</span>, <span class="token assign-left variable">len</span><span class="token operator">=</span><span class="token number">2</span>
+</code></pre></div><h3 id="复数"><a href="#复数" class="header-anchor">#</a> 复数</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token builtin">complex64</span> <span class="token builtin">complex128</span>
+</code></pre></div><h3 id="布尔值"><a href="#布尔值" class="header-anchor">#</a> 布尔值</h3> <p>bool类型数据只允许取值true和false，默认值为false</p> <p>bool类型占一个字节</p> <h3 id="字符串"><a href="#字符串" class="header-anchor">#</a> 字符串</h3> <p>一个字符串是一个<strong>不可改变</strong>的字节序列</p> <p>字符串底层实现是一个数据结构（结构体），占用16个字节，前8个字节是一个指针，指向字符串的地址，后8个字节是一个整数，标识字符串的长度。</p> <p>注意go语言的字符串内部并不以'\0'作为结尾，而是通过一个长度域来表示字符串的长度</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+  ptr <span class="token builtin">uintptr</span>
+  <span class="token builtin">len</span> <span class="token builtin">uint64</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> a <span class="token builtin">string</span>
+a <span class="token operator">=</span> <span class="token string">&quot;aa&quot;</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a size=&quot;</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// a size= 16</span>
+</code></pre></div><img src="/blog/assets/img/string.83743e2d.png" alt="string" style="zoom:60%;"> <h3 id="常量"><a href="#常量" class="header-anchor">#</a> 常量</h3> <p>常量是一个简单值的标识符，在程序运行时，不会被修改的量</p> <p>常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">const</span> s <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">&quot;abc&quot;</span>
+</code></pre></div><h3 id="example"><a href="#example" class="header-anchor">#</a> Example</h3> <p>基本数据类型转换</p> <p>Example1</p> <p>int32 -&gt; float32, int32 -&gt; int8, int32 -&gt; int8, int32 -&gt; int64</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> i <span class="token builtin">int32</span> <span class="token operator">=</span> <span class="token number">100</span>
+  <span class="token keyword">var</span> n1 <span class="token builtin">float32</span> <span class="token operator">=</span> <span class="token function">float32</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token keyword">var</span> n2 <span class="token builtin">int8</span> <span class="token operator">=</span> <span class="token function">int8</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token keyword">var</span> n3 <span class="token builtin">int64</span> <span class="token operator">=</span> <span class="token function">int64</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;i=%v n1=%v n2=%v n3=%v\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> n1<span class="token punctuation">,</span> n2<span class="token punctuation">,</span> n3<span class="token punctuation">)</span>
+
+  <span class="token comment">// 被转换的是变量存储的数据（值），变量本身的数据类型没有变化</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;i type is %T\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
+
+  <span class="token comment">// 高精度 -&gt; 低精度；高精度的值超过低精度值的范围，编译时不会出错，结果会按溢出处理</span>
+  <span class="token keyword">var</span> num1 <span class="token builtin">int64</span> <span class="token operator">=</span> <span class="token number">999999</span>
+  <span class="token keyword">var</span> num2 <span class="token builtin">int8</span> <span class="token operator">=</span> <span class="token function">int8</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;num2=&quot;</span><span class="token punctuation">,</span> num2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">100</span> <span class="token assign-left variable">n1</span><span class="token operator">=</span><span class="token number">100</span> <span class="token assign-left variable">n2</span><span class="token operator">=</span><span class="token number">100</span> <span class="token assign-left variable">n3</span><span class="token operator">=</span><span class="token number">100</span>
+i <span class="token builtin class-name">type</span> is int32
+<span class="token assign-left variable">num2</span><span class="token operator">=</span> <span class="token number">63</span>
+</code></pre></div><p>Example2</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;fmt&quot;</span>
+  <span class="token string">&quot;strconv&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> num1 <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">99</span>
+  <span class="token keyword">var</span> num2 <span class="token builtin">float64</span> <span class="token operator">=</span> <span class="token number">23.456</span>
+  <span class="token keyword">var</span> b <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token keyword">var</span> str <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">&quot;hello&quot;</span>
+
+  <span class="token comment">// int -&gt; string</span>
+  str1 <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">FormatInt</span><span class="token punctuation">(</span><span class="token function">int64</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;str1: type=%T, value=%q\n&quot;</span><span class="token punctuation">,</span> str1<span class="token punctuation">,</span> str1<span class="token punctuation">)</span>
+  <span class="token comment">// float64 -&gt; string</span>
+  str2 <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">FormatFloat</span><span class="token punctuation">(</span>num2<span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;str2: type=%T, value=%q\n&quot;</span><span class="token punctuation">,</span> str2<span class="token punctuation">,</span> str2<span class="token punctuation">)</span>
+  <span class="token comment">// bool -&gt; string</span>
+  str3 <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">FormatBool</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;str3: type=%T, value=%q\n&quot;</span><span class="token punctuation">,</span> str3<span class="token punctuation">,</span> str3<span class="token punctuation">)</span>
+
+  <span class="token comment">// string -&gt; int64</span>
+  i1<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">ParseInt</span><span class="token punctuation">(</span><span class="token string">&quot;100&quot;</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;i1: type=%T, value=%d\n&quot;</span><span class="token punctuation">,</span> i1<span class="token punctuation">,</span> i1<span class="token punctuation">)</span>
+  <span class="token comment">// string -&gt; float64</span>
+  i2<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">ParseFloat</span><span class="token punctuation">(</span><span class="token string">&quot;23.456&quot;</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;i2: type=%T, value=%f\n&quot;</span><span class="token punctuation">,</span> i2<span class="token punctuation">,</span> i2<span class="token punctuation">)</span>
+  <span class="token comment">// string -&gt; bool</span>
+  i3<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">ParseBool</span><span class="token punctuation">(</span><span class="token string">&quot;true&quot;</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;i3: type=%T, value=%t\n&quot;</span><span class="token punctuation">,</span> i3<span class="token punctuation">,</span> i3<span class="token punctuation">)</span>
+  <span class="token comment">// string在做数据类型转换时，要确保string能转换成有效的数据，否则转换为默认值</span>
+  i4<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">ParseInt</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;i4: type=%T, value=%d\n&quot;</span><span class="token punctuation">,</span> i4<span class="token punctuation">,</span> i4<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>str1: <span class="token assign-left variable">type</span><span class="token operator">=</span>string, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">&quot;99&quot;</span>
+str2: <span class="token assign-left variable">type</span><span class="token operator">=</span>string, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">&quot;23.4560000000&quot;</span>
+str3: <span class="token assign-left variable">type</span><span class="token operator">=</span>string, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token string">&quot;true&quot;</span>
+i1: <span class="token assign-left variable">type</span><span class="token operator">=</span>int64, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">100</span>
+i2: <span class="token assign-left variable">type</span><span class="token operator">=</span>float64, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">23.456000</span>
+i3: <span class="token assign-left variable">type</span><span class="token operator">=</span>bool, <span class="token assign-left variable">value</span><span class="token operator">=</span>true
+i4: <span class="token assign-left variable">type</span><span class="token operator">=</span>int64, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">0</span>
+</code></pre></div><h2 id="聚合类型"><a href="#聚合类型" class="header-anchor">#</a> 聚合类型</h2> <p>值类型：变量直接存储，变量通常在栈中分配</p> <h3 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h3> <p>数组是一个由固定长度的特定类型元素组成的序列，一个数组可以由零个或多个元素组成</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a=&quot;</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+
+  <span class="token keyword">var</span> b <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;b[2]=&quot;</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">var</span> c <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token comment">// 定义一个含有5个元素的数组c，最后一个元素初始化为-1</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;c=&quot;</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token assign-left variable">a</span><span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">]</span>
+b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span> <span class="token number">0</span>
+<span class="token assign-left variable">c</span><span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0,0</span>,0,0,-1<span class="token punctuation">]</span>
+</code></pre></div><p>如果在数组的长度位置出现的是“...”省略号，则表示数组的长度是根据初始化值的个数来计算</p> <div class="language-go extra-class"><pre class="language-go"><code>q <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%T\n&quot;</span><span class="token punctuation">,</span> q<span class="token punctuation">)</span> <span class="token comment">// &quot;[3]int&quot;</span>
+</code></pre></div><p>数组的长度是数组类型的一个组成部分，因此[3]int和[4]int是两种不同的数组类型。</p> <p>数组的长度必须是常量表达式，因为数组的长度需要在编译阶段确定</p> <div class="language-go extra-class"><pre class="language-go"><code>q <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+q <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span> <span class="token comment">// compile error: cannot assign [4]int to [3]int</span>
+</code></pre></div><p>数组是值类型</p> <p>Example: 修改数组的值</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>arr <span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span><span class="token operator">*</span>arr<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">80</span>
+  arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">90</span> <span class="token comment">// 指针隐式解引用</span>
+  <span class="token comment">// arr++ go中没有指针运算</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> intArr <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span>
+  <span class="token function">modify</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>intArr<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;intArr&quot;</span><span class="token punctuation">,</span> intArr<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>intArr <span class="token punctuation">[</span><span class="token number">80</span> <span class="token number">90</span> <span class="token number">30</span><span class="token punctuation">]</span>
+</code></pre></div><h4 id="数组的内存布局"><a href="#数组的内存布局" class="header-anchor">#</a> 数组的内存布局</h4> <ul><li><p>数组地址可以通过数组名来获取 &amp;数组名</p></li> <li><p>数组第一个元素的地址就是数组的地址</p></li> <li><p>数组各个元素的地址间隔是依据数组类型决定的，比如int64 -&gt; 8字节，int32 -&gt; 4字节 ...</p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> intArr <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;intArr的地址=%p\n&quot;</span><span class="token operator">+</span>
+    <span class="token string">&quot;intArr[0]的地址=%p\n&quot;</span><span class="token operator">+</span>
+    <span class="token string">&quot;intArr[1]的地址=%p\n&quot;</span><span class="token operator">+</span>
+    <span class="token string">&quot;intArr[2]的地址=%p\n&quot;</span><span class="token punctuation">,</span>
+    <span class="token operator">&amp;</span>intArr<span class="token punctuation">,</span> <span class="token operator">&amp;</span>intArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>intArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>intArr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token comment">// 为什么内存地址是一个字节加1，google内存最小寻址单位</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>intArr的地址<span class="token operator">=</span>0xc000014090
+intArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>的地址<span class="token operator">=</span>0xc000014090
+intArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>的地址<span class="token operator">=</span>0xc000014098
+intArr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>的地址<span class="token operator">=</span>0xc0000140a0
+</code></pre></div><h4 id="遍历"><a href="#遍历" class="header-anchor">#</a> 遍历</h4> <p>for-range</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> myArr <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;pdd&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pxx&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pbb&quot;</span><span class="token punctuation">}</span>
+
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>myArr<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s &quot;</span><span class="token punctuation">,</span> myArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// index, value名称自行定义</span>
+  <span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> myArr <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;下标=%d 值=%s\n&quot;</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>pdd pxx pbb 
+下标<span class="token operator">=</span><span class="token number">0</span> 值<span class="token operator">=</span>pdd
+下标<span class="token operator">=</span><span class="token number">1</span> 值<span class="token operator">=</span>pxx
+下标<span class="token operator">=</span><span class="token number">2</span> 值<span class="token operator">=</span>pbb
+</code></pre></div><h3 id="结构体"><a href="#结构体" class="header-anchor">#</a> 结构体</h3> <p>结构体是一种聚合的数据类型，是由零个或多个任意类型的值聚合成的实体</p> <p>在创建一个结构体变量后，如果没有给字段赋值，则字段对应其默认值</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Cat <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Age <span class="token builtin">int</span>
+  Color <span class="token builtin">string</span>
+  Hobby <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 结构体变量</span>
+<span class="token keyword">var</span> cat1 Cat
+cat1<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;小猫&quot;</span>
+cat<span class="token punctuation">.</span>Age <span class="token operator">=</span> <span class="token number">2</span>
+cat<span class="token punctuation">.</span>Color <span class="token operator">=</span> <span class="token string">&quot;黄色&quot;</span>
+cat<span class="token punctuation">.</span>Hobby <span class="token operator">=</span> <span class="token string">&quot;吃鱼&quot;</span>
+
+<span class="token comment">// cat2 cat3 结构体字面量</span>
+cat2 <span class="token operator">:=</span> Cat<span class="token punctuation">{</span><span class="token string">&quot;小猫&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&quot;黄色&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;吃鱼&quot;</span><span class="token punctuation">}</span> <span class="token comment">// 字段顺序与Cat一致</span>
+
+<span class="token comment">// 字段顺序可以与Cat不一致</span>
+cat3 <span class="token operator">:=</span> Cat<span class="token punctuation">{</span>
+  Name<span class="token punctuation">:</span> <span class="token string">&quot;小猫&quot;</span><span class="token punctuation">,</span>
+  Age<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  Color<span class="token punctuation">:</span> <span class="token string">&quot;黄色&quot;</span><span class="token punctuation">,</span>
+  Hobby<span class="token punctuation">:</span> <span class="token string">&quot;吃鱼&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> cat4 <span class="token operator">*</span>Cat <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>Cat<span class="token punctuation">)</span>
+cat4<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;小猫&quot;</span> <span class="token comment">// 隐式解引用 等价于(*cat4).Name = &quot;小猫&quot;</span>
+cat4<span class="token punctuation">.</span>Age <span class="token operator">=</span> <span class="token number">2</span>
+cat4<span class="token punctuation">.</span>Color <span class="token operator">=</span> <span class="token string">&quot;黄色&quot;</span>
+cat4<span class="token punctuation">.</span>Hobby <span class="token operator">=</span> <span class="token string">&quot;吃鱼&quot;</span>
+
+<span class="token keyword">var</span> cat5 <span class="token operator">*</span>Cat <span class="token operator">=</span> <span class="token operator">&amp;</span>Cat<span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><h4 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h4> <p>Example</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Price <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> B <span class="token builtin">string</span> <span class="token punctuation">{</span>
+  A <span class="token comment">// 嵌套匿名结构体A</span>
+  Writing <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>匿名结构体字段访问可以简化</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> b B
+b<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;tom&quot;</span> <span class="token comment">// b.A.name = &quot;tom&quot;</span>
+b<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">78</span> <span class="token comment">// b.A.age = 78</span>
+b<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// b.A.say()</span>
+</code></pre></div><ul><li><p>当结构体和匿名结构体有相同的字段或者方法时，编译器采用就近访问原则访问，如希望访问匿名结构体的字段和方法，可以通过匿名结构体名来区分</p></li> <li><p>结构体嵌入两个（或多个）匿名结构体（多重继承），如两个匿名结构体有相同的字段和方法（同时结构体本身没有同名的字段和方法），在访问时，就必须明确指定匿名结构体名字，否则编译出错</p></li> <li><p>结构体嵌入有名结构体，这种模式就叫组合，如果是组合关系，那么访问组合的结构体的字段和方法时，就必须带上结构体的名字</p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Age <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> C <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  a A
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> c C
+c<span class="token punctuation">.</span>a<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;jack&quot;</span>
+</code></pre></div><ul><li>嵌套匿名结构体后，也可以在创建结构体变量时，直接指定各个匿名结构体字段的值</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Goods <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Price <span class="token builtin">float64</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Brand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name <span class="token builtin">string</span>
+  Address <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Tv <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Goods
+  Brand
+<span class="token punctuation">}</span>
+
+tv <span class="token operator">:=</span> Tv<span class="token punctuation">{</span> Goods<span class="token punctuation">{</span><span class="token string">&quot;电视机&quot;</span><span class="token punctuation">,</span> <span class="token number">2999</span><span class="token punctuation">}</span><span class="token punctuation">,</span> Brand<span class="token punctuation">{</span>
+  Name<span class="token punctuation">:</span>    <span class="token string">&quot;小米&quot;</span><span class="token punctuation">,</span>
+  Address<span class="token punctuation">:</span> <span class="token string">&quot;北京&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">}</span>
+</code></pre></div><h4 id="结构体内存分布"><a href="#结构体内存分布" class="header-anchor">#</a> 结构体内存分布</h4> <p>结构体字段内存地址是连续的</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;fmt&quot;</span>
+  <span class="token string">&quot;unsafe&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> Cat <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  Name  <span class="token builtin">string</span>
+  Age   <span class="token builtin">int</span>
+  Color <span class="token builtin">string</span>
+  Hobby <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> cat1 Cat
+  cat1<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;小猫&quot;</span>
+  cat1<span class="token punctuation">.</span>Age <span class="token operator">=</span> <span class="token number">2</span>
+  cat1<span class="token punctuation">.</span>Color <span class="token operator">=</span> <span class="token string">&quot;黄色&quot;</span>
+  cat1<span class="token punctuation">.</span>Hobby <span class="token operator">=</span> <span class="token string">&quot;吃鱼&quot;</span>
+
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%p %p %p %p %p\n&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>cat1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cat1<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cat1<span class="token punctuation">.</span>Age<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cat1<span class="token punctuation">.</span>Color<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cat1<span class="token punctuation">.</span>Hobby<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;内存大小&quot;</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Sizeof</span><span class="token punctuation">(</span>cat1<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Sizeof</span><span class="token punctuation">(</span>cat1<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Sizeof</span><span class="token punctuation">(</span>cat1<span class="token punctuation">.</span>Age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>0xc000070040 0xc000070040 0xc000070050 0xc000070058 0xc000070068
+内存大小 <span class="token number">56</span> <span class="token number">16</span> <span class="token number">8</span>
+</code></pre></div><h2 id="引用类型"><a href="#引用类型" class="header-anchor">#</a> 引用类型</h2> <p>引用类型：变量存储的是一个地址、这个地址对应的空间存储数据（值），内存通常在堆上分配，当没有任何变量引用这个地址时，该地址对应的数据空间就成了一个垃圾，由GC来回收</p> <h3 id="切片"><a href="#切片" class="header-anchor">#</a> 切片</h3> <p>切片（slice）代表变长的序列，序列中每个元素都有相同的类型。一个slice类型一般写作[]T，其中T代表切片中元素的类型。切片的语法和数组很像，只是没有固定长度而已，切片是数组的一个引用</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> intArr <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+  slice <span class="token operator">:=</span> intArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;intArr&quot;</span><span class="token punctuation">,</span> intArr<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;slice的元素&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;slice的元素个数&quot;</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;slice的容量&quot;</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可以用内置的make函数创建一个指定元素类型、长度和容量的切片。容量部分可以省略，在这种情况下，容量将等于长度，未省略cap &gt;= len</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>T<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">,</span> <span class="token builtin">cap</span><span class="token punctuation">)</span>
+</code></pre></div><p>Example: 创建切片</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 方式1</span>
+  <span class="token keyword">var</span> intArr1 <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+  slice1 <span class="token operator">:=</span> intArr1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;slice1&quot;</span><span class="token punctuation">,</span> slice1<span class="token punctuation">)</span>
+
+  <span class="token comment">// 方式2</span>
+  <span class="token keyword">var</span> slice2 <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+  slice2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+  slice2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;slice2&quot;</span><span class="token punctuation">,</span> slice2<span class="token punctuation">)</span>
+
+  <span class="token comment">// 方式3 使用原理类似make</span>
+  <span class="token keyword">var</span> slice3 <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;slice3&quot;</span><span class="token punctuation">,</span> slice3<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="切片的内存布局"><a href="#切片的内存布局" class="header-anchor">#</a> 切片的内存布局</h4> <img src="/blog/assets/img/slice.fea348c4.png" alt="slice" style="zoom:50%;"> <h4 id="切片扩容"><a href="#切片扩容" class="header-anchor">#</a> 切片扩容</h4> <p>append内置函数可以对切片进行动态追加</p> <ul><li><p>切片append操作的本质就是对数组扩容</p></li> <li><p>如果扩容后的切片len不大于cap，就在数组上追加数据</p></li> <li><p>如果扩容后的切片len大于cap，go底层会创建一个新的数组newArr（扩容后大小），将切片原来包含的数据拷贝到新数组，追加数据，切片重新引用到新数组（newArr由底层维护，不可见）</p></li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> intArr <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+  slice <span class="token operator">:=</span> intArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;数组地址=%p\n&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>intArr<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;slice=%v len=%d cap=%d\n&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;数组地址=%p 切片地址=%p\n&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token operator">&amp;</span>slice<span class="token punctuation">)</span>
+  slice <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>slice<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;slice=%v len=%d cap=%d\n&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;数组地址=%p 切片地址=%p\n&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token operator">&amp;</span>slice<span class="token punctuation">)</span>
+  slice <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>slice<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;slice=%v len=%d cap=%d\n&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;数组地址=%p 切片地址=%p\n&quot;</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token operator">&amp;</span>slice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>数组地址<span class="token operator">=</span>0xc000098030
+<span class="token assign-left variable">slice</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token assign-left variable">len</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">cap</span><span class="token operator">=</span><span class="token number">5</span>
+数组地址<span class="token operator">=</span>0xc000098030 切片地址<span class="token operator">=</span>0xc0000a2000
+<span class="token assign-left variable">slice</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">6</span> <span class="token number">7</span><span class="token punctuation">]</span> <span class="token assign-left variable">len</span><span class="token operator">=</span><span class="token number">4</span> <span class="token assign-left variable">cap</span><span class="token operator">=</span><span class="token number">5</span>
+数组地址<span class="token operator">=</span>0xc000098030 切片地址<span class="token operator">=</span>0xc0000a2000
+<span class="token assign-left variable">slice</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span> <span class="token assign-left variable">len</span><span class="token operator">=</span><span class="token number">6</span> <span class="token assign-left variable">cap</span><span class="token operator">=</span><span class="token number">10</span>
+数组地址<span class="token operator">=</span>0xc0000ac000 切片地址<span class="token operator">=</span>0xc0000a2000
+</code></pre></div><h4 id="切片拷贝"><a href="#切片拷贝" class="header-anchor">#</a> 切片拷贝</h4> <p>切片使用内置函数copy进行拷贝，copy(dst_para, src_para): dst_para和src_para都是切片类型</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> slice1 <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+  <span class="token keyword">var</span> slice2 <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> slice3 <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token function">copy</span><span class="token punctuation">(</span>slice2<span class="token punctuation">,</span> slice1<span class="token punctuation">)</span>
+  <span class="token function">copy</span><span class="token punctuation">(</span>slice3<span class="token punctuation">,</span> slice1<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;slice1=%v\nslice2=%v\nslice3=%v\n&quot;</span><span class="token punctuation">,</span> slice1<span class="token punctuation">,</span> slice2<span class="token punctuation">,</span> slice3<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token assign-left variable">slice1</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token assign-left variable">slice2</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token assign-left variable">slice3</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+</code></pre></div><h3 id="映射"><a href="#映射" class="header-anchor">#</a> 映射</h3> <p>在Go语言中，一个map就是一个哈希表的引用，map类型可以写为map[K]V，其中K和V分别对应key和value。map中所有的key都有相同的类型，所有的value也有着相同的类型，但是key和value之间可以是不同的数据类型。slice、map、function不可以作为key，因为这几个没法用==来判断</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 声明map不会分配内存，初始化需要make分配内存后才能赋值和使用</span>
+<span class="token comment">// slice区别：slice声明后，可以append数据</span>
+<span class="token keyword">var</span> a <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+a <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+a<span class="token punctuation">[</span><span class="token string">&quot;no1&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;北京&quot;</span>
+a<span class="token punctuation">[</span><span class="token string">&quot;no2&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;上海&quot;</span>
+a<span class="token punctuation">[</span><span class="token string">&quot;no3&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;无锡&quot;</span>
+
+ages <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+ages<span class="token punctuation">[</span><span class="token string">&quot;alice&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">31</span>
+ages<span class="token punctuation">[</span><span class="token string">&quot;charlie&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">34</span>
+
+ages <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+  <span class="token string">&quot;alice&quot;</span><span class="token punctuation">:</span>   <span class="token number">31</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;charlie&quot;</span><span class="token punctuation">:</span> <span class="token number">34</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="map增删查该"><a href="#map增删查该" class="header-anchor">#</a> map增删查该</h4> <p>增加，更新</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token string">&quot;key&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> value <span class="token comment">// key不存在则增加，存在则修改</span>
+</code></pre></div><p>删除</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token function">delete</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">,</span> <span class="token string">&quot;key&quot;</span><span class="token punctuation">)</span> <span class="token comment">// key存在则删除，key不存在也不会报错</span>
+</code></pre></div><p>查找</p> <div class="language-go extra-class"><pre class="language-go"><code>val<span class="token punctuation">,</span> ok <span class="token operator">:=</span> a<span class="token punctuation">[</span><span class="token string">&quot;no1&quot;</span><span class="token punctuation">]</span> <span class="token comment">// 存在返回true, 否则false</span>
+<span class="token keyword">if</span> ok <span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;key no1存在%v\n&quot;</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;key no1不存在\n&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="map遍历"><a href="#map遍历" class="header-anchor">#</a> map遍历</h4> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token operator">:=</span> <span class="token keyword">range</span> a <span class="token punctuation">{</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;k=%v v=%v&quot;</span><span class="token punctuation">,</span> k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="channel"><a href="#channel" class="header-anchor">#</a> Channel</h3> <p><code>Channel</code>是一种先入先出（FIFO）通信机制，可以用它在goroutine之间传递消息</p> <p>和map类似，channel也对应一个由make创建的底层数据结构的引用，默认值为nil</p> <div class="language-go extra-class"><pre class="language-go"><code>ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">)</span>
+</code></pre></div><p><code>Channel</code>支持三种通信模式，全双工、只读，只写</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">chan</span> T          <span class="token comment">// 可以接收和发送类型为T的数据</span>
+<span class="token keyword">chan</span><span class="token operator">&lt;-</span> <span class="token builtin">float64</span>  <span class="token comment">// 只可以用来发送float64类型的数据</span>
+<span class="token operator">&lt;-</span><span class="token keyword">chan</span> <span class="token builtin">int</span>      <span class="token comment">// 只可以用来接收int类型的数据</span>
+</code></pre></div><h4 id="关闭channel"><a href="#关闭channel" class="header-anchor">#</a> 关闭Channel</h4> <p>可以用内置close函数关闭channel，随后对该channel写数据将导致panic异常，但仍可以正常从该channel读取数据，如果channel已经没有数据的话将产生一个零值的数据。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  ch <span class="token operator">&lt;-</span> <span class="token number">1</span>
+  <span class="token function">close</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
+  <span class="token comment">//ch &lt;- 2 // panic</span>
+  a1 <span class="token operator">:=</span> <span class="token operator">&lt;-</span>ch
+  a2 <span class="token operator">:=</span> <span class="token operator">&lt;-</span>ch
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;a1=%d a2=%d\n&quot;</span><span class="token punctuation">,</span> a1<span class="token punctuation">,</span> a2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>检查channel是否已经被关闭</p> <div class="language-go extra-class"><pre class="language-go"><code>v<span class="token punctuation">,</span> ok <span class="token operator">:=</span> <span class="token operator">&lt;-</span>ch
+</code></pre></div><h4 id="不带缓存的channel"><a href="#不带缓存的channel" class="header-anchor">#</a> 不带缓存的Channel</h4> <div class="language-go extra-class"><pre class="language-go"><code>ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">)</span>
+</code></pre></div><p>一个基于无缓存channel的发送操作将导致发送者goroutine阻塞，直到另一个goroutine在相同的channel上执行接收操作，当发送的值通过channel成功传输之后，两个goroutine可以继续执行后面的语句。反之，如果接收操作先发生，那么接收者goroutine也将阻塞，直到有另一个goroutine在相同的channel上执行发送操作</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;fmt&quot;</span>
+  <span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">worker</span><span class="token punctuation">(</span>done <span class="token keyword">chan</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token comment">// 通知任务已完成</span>
+  done <span class="token operator">&lt;-</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  start <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  done <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token keyword">go</span> <span class="token function">worker</span><span class="token punctuation">(</span>done<span class="token punctuation">)</span>
+  <span class="token comment">// 阻塞直到接收到数据</span>
+  <span class="token operator">&lt;-</span>done
+
+  end <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Since</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;task Done!&quot;</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;cost time=&quot;</span><span class="token punctuation">,</span> end<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>task Done<span class="token operator">!</span>
+cost <span class="token assign-left variable">time</span><span class="token operator">=</span> <span class="token number">2</span>.001512833s
+</code></pre></div><h4 id="带缓存的channel"><a href="#带缓存的channel" class="header-anchor">#</a> 带缓存的Channel</h4> <p>带缓存的channel内部持有一个元素队列。队列的最大容量是在调用make函数创建channel时通过第二个参数指定的。下面的语句创建了一个可以持有三个字符串元素的带缓存channel</p> <div class="language-go extra-class"><pre class="language-go"><code>ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre></div><p>当缓存满的时候写阻塞，当缓存空的时候读阻塞</p> <h4 id="channel遍历"><a href="#channel遍历" class="header-anchor">#</a> Channel遍历</h4> <p><code>for ... range</code>语句可以遍历channel</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;fmt&quot;</span>
+  <span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  c <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">)</span>
+  <span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+      c <span class="token operator">&lt;-</span> i
+      time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> c <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;Finished&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>range c</code>产生的迭代值为channel中发送的值，它会一直迭代直到channel被关闭。上面的例子中如果把<code>close(c)</code>注释掉，程序会一直阻塞在<code>for ... range</code>那一行</p> <h3 id="指针"><a href="#指针" class="header-anchor">#</a> 指针</h3> <p>Go支持指针，但不支持指针运算，指针默认值为nil</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//var a *int or a := new(int)</span>
+  b <span class="token operator">:=</span> <span class="token number">4</span>
+  a <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+  a <span class="token operator">=</span> <span class="token operator">&amp;</span>b
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v, %d\n&quot;</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> <span class="token operator">*</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Example: 数组指针和指针数组</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  x<span class="token punctuation">,</span> y <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span>
+  <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span>
+  <span class="token comment">//数组指针</span>
+  <span class="token keyword">var</span> pf <span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>arr
+
+  <span class="token comment">//指针数组</span>
+  pfArr <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token operator">&amp;</span>x<span class="token punctuation">,</span> <span class="token operator">&amp;</span>y<span class="token punctuation">}</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>pf<span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>pfArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">*</span>pfArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token number">1</span> <span class="token number">2</span>
+</code></pre></div><h4 id="隐式解引用"><a href="#隐式解引用" class="header-anchor">#</a> 隐式解引用</h4> <p>对于一些复杂类型的指针， 如果要访问成员变量的话，需要写成类似<code>(*p).field</code>的形式，Go提供了隐式解引用特性，我们只需要<code>p.field</code>即可访问相应的成员</p> <div class="language-go extra-class"><pre class="language-go"><code>p1 <span class="token operator">:=</span> <span class="token operator">&amp;</span>Person<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&quot;易天&quot;</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">}</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>p1<span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+</code></pre></div><h3 id="函数"><a href="#函数" class="header-anchor">#</a> 函数</h3> <p>函数也是一种引用类型，具体详见函数章节</p> <h2 id="接口"><a href="#接口" class="header-anchor">#</a> 接口</h2> <p>接口是一种引用类型，详见接口章节</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/note/go/basic/functions.html">
+        函数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/10.2757765f.js" defer></script>
+  </body>
+</html>

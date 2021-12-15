@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工作负载 | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/9.1f23426f.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/cloud-native/kubernetes/overview.html" class="sidebar-link">概述</a></li><li><a href="/blog/note/cloud-native/kubernetes/install.html" class="sidebar-link">安装</a></li><li><a href="/blog/note/cloud-native/kubernetes/workloads.html" aria-current="page" class="active sidebar-link">工作负载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#pods" class="sidebar-link">Pods</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#模版" class="sidebar-link">模版</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#pause容器" class="sidebar-link">pause容器</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#生命周期" class="sidebar-link">生命周期</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#资源限制" class="sidebar-link">资源限制</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#控制器" class="sidebar-link">控制器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#replicaset" class="sidebar-link">ReplicaSet</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#deployments" class="sidebar-link">Deployments</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#statefulsets" class="sidebar-link">StatefulSets</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#daemonset" class="sidebar-link">DaemonSet</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#jobs" class="sidebar-link">Jobs</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/workloads.html#cronjob" class="sidebar-link">CronJob</a></li></ul></li></ul></li><li><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html" class="sidebar-link">服务、负载均衡和网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/storage.html" class="sidebar-link">存储</a></li><li><a href="/blog/note/cloud-native/kubernetes/clusterAdministration.html" class="sidebar-link">集群管理</a></li><li><a href="/blog/note/cloud-native/kubernetes/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/helm.html" class="sidebar-link">Helm</a></li><li><a href="/blog/note/cloud-native/kubernetes/monitoring.html" class="sidebar-link">监控</a></li><li><a href="/blog/note/cloud-native/kubernetes/efk.html" class="sidebar-link">EFK</a></li><li><a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="sidebar-link">Dashboard</a></li><li><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html" class="sidebar-link">部署策略</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="pods"><a href="#pods" class="header-anchor">#</a> Pods</h2> <h3 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h3> <p><code>Pod</code>是<code>Kubernetes</code>中最基本的调度单元</p> <p><strong>Pod示意图</strong></p> <img src="/blog/assets/img/pod.9ec82ebf.png" alt="Pod"> <p><code>Pod</code>在<code>Kubernetes</code>中有两种使用方式</p> <ul><li><p>Pods that run a single container:</p> <p><code>Pod</code>中只运行一个容器</p></li> <li><p>Pods that run multiple containers that need to work together:</p> <p><code>Pod</code>中运行多个容器，容器间共享资源</p></li></ul> <h4 id="网络"><a href="#网络" class="header-anchor">#</a> 网络</h4> <p>每个<code>Pod</code>有一个特有的IP地址，<code>Pod</code>中的各<code>Container</code>共享网络资源，<code>Container</code>之间通过localhost进行通信</p> <h4 id="存储"><a href="#存储" class="header-anchor">#</a> 存储</h4> <p><code>Pod</code>可以指定一个Volumes作为共享存储，<code>Pod</code>的<code>Containers</code>共享这个Volume</p> <h3 id="模版"><a href="#模版" class="header-anchor">#</a> 模版</h3> <p>Pod模版是Pod的规格说明，控制器使用Pod模版创建实际的Pod</p> <div class="language-json extra-class"><pre class="language-json"><code>apiVersion<span class="token operator">:</span> v1
+kind<span class="token operator">:</span> Pod
+metadata<span class="token operator">:</span>
+  name<span class="token operator">:</span> myapp-pod
+  labels<span class="token operator">:</span>
+    app<span class="token operator">:</span> myapp
+spec<span class="token operator">:</span>
+  containers<span class="token operator">:</span>
+  - name<span class="token operator">:</span> myapp-container
+    image<span class="token operator">:</span> busybox
+    command<span class="token operator">:</span> <span class="token punctuation">[</span>'sh'<span class="token punctuation">,</span> '-c'<span class="token punctuation">,</span> 'echo Hello Kubernetes! &amp;&amp; sleep <span class="token number">3600</span>'<span class="token punctuation">]</span>
+</code></pre></div><h3 id="pause容器"><a href="#pause容器" class="header-anchor">#</a> pause容器</h3> <p>pause容器，又叫Infra容器</p> <p><code>kubernetes</code>中的<code>pause</code>容器主要为每个业务容器提供以下功能：</p> <ul><li>在pod中担任Linux命名空间共享的基础</li> <li>启用pid命名空间，开启init进程（只有Kubernetes1.7默认开启。1.8默认禁止，还是每个容器自己捕获僵尸进程）</li></ul> <h3 id="生命周期"><a href="#生命周期" class="header-anchor">#</a> 生命周期</h3> <p><strong>生命周期示意图</strong></p> <img src="/blog/assets/img/podLife.28e94648.jpg" alt="PodLife" style="zoom:50%;"> <h4 id="状态"><a href="#状态" class="header-anchor">#</a> 状态</h4> <p><code>Pod</code>的状态定义在<code>PodStatus</code>对象中，其中有一个<code>phase</code>字段，查看<code>Pod</code>的状态值<code>kubectl explain pod.status</code></p> <p>下面是<code>phase</code>可能的值：</p> <ul><li>Pending（挂起）：<code>Pod</code>已被<code>Kubernetes</code>系统接受，但有一个或者多个容器镜像尚未创建。等待时间包括调度Pod的时间和通过网络下载镜像的时间，这可能需要花点时间。</li> <li>Running（运行中）：该<code>Pod</code>已经绑定到了一个节点上，<code>Pod</code>中所有的容器都已被创建。至少有一个容器正在运行，或者正处于启动或重启状态。</li> <li>Succeeded（成功）：<code>Pod</code>中的所有容器都被成功终止，并且不会再重启。</li> <li>Failed（失败）：<code>Pod</code>中的所有容器都已终止了，并且至少有一个容器是因为失败终止。也就是说，容器以非0状态退出或者被系统终止。</li> <li>Unknown（未知）：因为某些原因无法取得<code>Pod</code>的状态，通常是因为与<code>Pod</code>所在主机通信失败。</li></ul> <p>除此之外，<code>PodStatus</code>对象中还包含一个<code>PodCondition</code>数组。 <code>PodCondition</code>数组的每个元素都有一个type字段和一个status字段。type字段是字符串，可能的值有PodScheduled、Ready、Initialized、Unschedulable、ContainersReady。status字段是一个字符串，可能的值有 True、False、Unknown。</p> <h4 id="重启策略"><a href="#重启策略" class="header-anchor">#</a> 重启策略</h4> <p><code>restartPolicy</code>字段设置<code>Pod</code>中所有容器的重启策略</p> <ul><li>Always (默认)</li> <li>OnFailure</li> <li>Never</li></ul> <h4 id="初始化容器"><a href="#初始化容器" class="header-anchor">#</a> 初始化容器</h4> <p><code>Init Container</code>就是用来做初始化工作的容器，可以是一个或者多个，如果有多个的话，这些容器会按定义的顺序依次执行。从上面的<code>Pod</code>生命周期图中可以看出初始化容器是独立于主容器之外的，只有所有的初始化容器执行完之后，主容器才会被启动。</p> <p><code>init-demo.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> init<span class="token punctuation">-</span>demo
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> workdir
+    <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token key atrule">initContainers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> install
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> busybox
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/bin/sh&quot;</span><span class="token punctuation">]</span>
+    <span class="token key atrule">args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;-c&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;echo hello pdd &gt; /tmp/index.html&quot;</span><span class="token punctuation">]</span>
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> workdir
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> <span class="token string">&quot;/tmp&quot;</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> workdir
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /usr/share/nginx/html
+</code></pre></div><h4 id="容器钩子"><a href="#容器钩子" class="header-anchor">#</a> 容器钩子</h4> <p><code>Kubernetes</code>为容器提供了生命周期的钩子，也就是<code>Pod Hook</code>，<code>Pod Hook</code>是由<code>Kubelet</code>发起的，在容器中的进程启动前或者容器中的进程终止之前运行，包含在容器的生命周期之中。我们可以同时为<code>Pod</code>中的所有容器都配置<code>Hook</code>。</p> <p>钩子函数：</p> <ul><li><p><code>PostStart</code>: 这个钩子在容器创建后立即执行。但是并不能保证钩子将在容器<code>ENTRYPOINT</code>之前运行，因为没有参数传递给处理程序。主要用于资源部署、环境准备等。不过需要注意的是如果钩子花费太长时间以至于不能运行或者挂起，容器将不能达到<code>running</code>状态。</p></li> <li><p><code>PreStop</code>: 这个钩子在容器终止之前立即被调用。它是阻塞的，意味着它是同步的，所以它必须在删除容器的调用发出之前完成。主要用于优雅关闭应用程序、通知其他系统等。如果钩子在执行期间挂起，<code>Pod</code>阶段将停留在<code>running</code>状态并且永不会达到<code>failed</code>状态。</p></li></ul> <p>如果<code>PostStart</code>或者<code>PreStop</code>钩子失败，它会杀死容器。所以我们应该让钩子函数尽可能的轻量。当然有些情况下，长时间运行命令是合理的，比如在停止容器之前预先保存状态。</p> <ul><li><code>EXEC</code>: 用于执行一段特定的命令，不过要注意的是该命令消耗的资源会被计入容器。</li> <li><code>HTTP</code>: 对容器上的特定的端点执行 HTTP 请求。</li></ul> <p><code>pod-poststart.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> hook<span class="token punctuation">-</span>demo1
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> hook<span class="token punctuation">-</span>demo1
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">lifecycle</span><span class="token punctuation">:</span>
+      <span class="token key atrule">postStart</span><span class="token punctuation">:</span>
+        <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/bin/sh&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;-c&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;echo Hello from the postStart handler &gt; /usr/share/nginx/html/index.html&quot;</span><span class="token punctuation">]</span>
+</code></pre></div><p><code>pod-prestop.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> hook<span class="token punctuation">-</span>demo2
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> message
+    <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+      <span class="token key atrule">path</span><span class="token punctuation">:</span> /tmp
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> hook<span class="token punctuation">-</span>demo2
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> message
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /usr/share/
+    <span class="token key atrule">lifecycle</span><span class="token punctuation">:</span>
+      <span class="token key atrule">preStop</span><span class="token punctuation">:</span>
+        <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'/bin/sh'</span><span class="token punctuation">,</span> <span class="token string">'-c'</span><span class="token punctuation">,</span> <span class="token string">'echo Hello from the preStop Handler &gt; /usr/share/message'</span><span class="token punctuation">]</span>
+</code></pre></div><h4 id="监控检查"><a href="#监控检查" class="header-anchor">#</a> 监控检查</h4> <p><code>kubelet</code>可以选择性在运行的容器上执行以下三种探针：</p> <ul><li><code>livenessProbe</code>：指示容器是否正在运行。如果存活探测失败，则<code>kubelet</code>会杀死容器，并且容器将受到其重启策略的影响。如果容器不提供存活探针，则默认状态为<code>Success</code>。</li> <li><code>readinessProbe</code>：指示容器是否准备好服务请求。如果就绪探测失败，端点控制器将从与<code>Pod</code>匹配的所有<code>Service</code>的端点中删除该<code>Pod</code>的IP地址。初始延迟之前的就绪状态默认为<code>Failure</code>。如果容器不提供就绪探针，则默认状态为<code>Success</code>。</li> <li><code>startupProbe</code>：指示容器中的应用程序是否启动，在<code>startupProbe</code>探针执行成功之前，其它的探针都会失效。如果存活探测失败，则<code>kubelet</code>会杀死容器，并且容器将受到其重启策略的影响。如果容器不提供存活探针，则默认状态为<code>Success</code>。</li></ul> <p>探针支持下面几种配置方式:</p> <ul><li><code>ExecAction</code>：在容器内执行指定命令。如果命令退出时返回码为0则认为诊断成功。</li> <li><code>TCPSocketAction</code>：对指定容器（IP:Port）进行TCP检查。如果端口打开，则诊断被认为是成功的。</li> <li><code>HTTPGetAction</code>：对指定容器（http://ip:port/path）执行HTTP Get请求。如果响应的状态码大于等于200且小于400，则诊断被认为是成功的。</li></ul> <p>每次探测都将获得以下三种结果之一：</p> <ul><li>成功：容器通过了诊断。</li> <li>失败：容器未通过诊断。</li> <li>未知：诊断失败，因此不会采取任何行动。</li></ul> <h3 id="资源限制"><a href="#资源限制" class="header-anchor">#</a> 资源限制</h3> <p>默认情况下，<code>Pod</code>运行没有CPU和内存等的限额。这意味着系统中的任何<code>Pod</code>将能够像执行该<code>Pod</code>所在的节点一样，消耗足够多的CPU和内存等资源。</p> <p><code>kubectl explain pod.spec.containers.resources</code></p> <ul><li><code>limit</code> Pod允许请求的最大计算资源。</li> <li><code>requests</code> Pod运行需要的最小计算资源</li></ul> <h4 id="cpu、内存资源限制"><a href="#cpu、内存资源限制" class="header-anchor">#</a> CPU、内存资源限制</h4> <p><code>Pod</code>内存超过limit时，会被oom，</p> <p><code>Pod</code>cpu超过limit时，不会被kill，但是会限制不超过limit值。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>nginx
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+      <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">&quot;0.5&quot;</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> 500Mi
+      <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">&quot;0.1&quot;</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> 100Mi
+</code></pre></div><h2 id="控制器"><a href="#控制器" class="header-anchor">#</a> 控制器</h2> <h3 id="replicaset"><a href="#replicaset" class="header-anchor">#</a> ReplicaSet</h3> <p>ReplicaSet在ReplicationController的基础上增加支持集合式selector</p> <h3 id="deployments"><a href="#deployments" class="header-anchor">#</a> Deployments</h3> <p>Deployment控制器为Pods和ReplicaSets提供声明式的更新</p> <h4 id="创建deployment"><a href="#创建deployment" class="header-anchor">#</a> 创建Deployment</h4> <ul><li><p>命令行创建</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl run myhttp-deployment --image<span class="token operator">=</span><span class="token number">172.188</span>.3.24:8000/library/myhttp:v1 --replicas<span class="token operator">=</span><span class="token number">2</span>
+</code></pre></div></li> <li><p>YAML方式创建</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp<span class="token punctuation">-</span>deployment
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> myhttp
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> myhttp
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> 172.188.3.24<span class="token punctuation">:</span>8000/library/myhttp<span class="token punctuation">:</span>v1
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+</code></pre></div><p>创建deployment
+<code>kubectl apply -f ./myhttp.yaml</code></p></li></ul> <p>查看Deplyment状态</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># kubectl get deployments</span>
+NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
+myhttp-deployment      <span class="token number">2</span>/2     <span class="token number">2</span>            <span class="token number">2</span>           6h31m
+myhttp-v2-deployment   <span class="token number">2</span>/2     <span class="token number">2</span>            <span class="token number">2</span>           174m
+</code></pre></div><p>查看Deplyment描述</p> <p><code>kubectl describe pod myhttp-deployment-c6b88c56b-bzfpc</code></p> <h4 id="deployment更新"><a href="#deployment更新" class="header-anchor">#</a> Deployment更新</h4> <ul><li>命令行更新<div class="language-shell extra-class"><pre class="language-shell"><code>kubectl <span class="token builtin class-name">set</span> image deployment/myhttp-deployment <span class="token assign-left variable">myhttp</span><span class="token operator">=</span><span class="token number">172.188</span>.3.24:8000/library/myhttp:v2 --record
+</code></pre></div>返回输出<div class="language-shell extra-class"><pre class="language-shell"><code>deployment.apps/myhttp-deployment image updated
+</code></pre></div></li> <li>编辑Deployment<div class="language-shell extra-class"><pre class="language-shell"><code>kubectl edit deployment myhttp-deployment
+</code></pre></div>返回输出<div class="language-shell extra-class"><pre class="language-shell"><code>deployment.apps/myhttp-deployment edited
+</code></pre></div></li></ul> <p>查看Deplyment细节</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl describe deployment myhttp
+</code></pre></div><h4 id="deployment回退"><a href="#deployment回退" class="header-anchor">#</a> Deployment回退</h4> <p>查看更新历史</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl rollout <span class="token function">history</span> deployment myhttp-deployment
+</code></pre></div><p>回退到指定版本</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl rollout undo deployment myhttp-deployment --revision<span class="token operator">=</span><span class="token number">2</span>
+</code></pre></div><p><strong>未指定回退版本则默认回退到上一个版本</strong></p> <h4 id="deployment伸缩"><a href="#deployment伸缩" class="header-anchor">#</a> Deployment伸缩</h4> <ul><li>手动伸缩<div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># kubectl scale deployment myhttp-deployment --replicas=4</span>
+deployment.apps/myhttp-deployment scaled
+</code></pre></div></li> <li>自动伸缩<div class="language-shell extra-class"><pre class="language-shell"><code>kubectl autoscale deployment myhttp-deployment --min<span class="token operator">=</span><span class="token number">10</span> --max<span class="token operator">=</span><span class="token number">15</span> --cpu-percent<span class="token operator">=</span><span class="token number">80</span>
+</code></pre></div></li></ul> <h3 id="statefulsets"><a href="#statefulsets" class="header-anchor">#</a> StatefulSets</h3> <p>StatefulSet是为了解决有状态服务的问题（Deployments ReplicaSets无状态）</p> <ol><li><p>稳定的持久化存储，即Pod重新调度后还能访问到相同的持久化数据，基于PVC实现</p></li> <li><p>稳定的网络标志，即Pod重新调度后其PodName和HostName不变，基于Headess
+Service实现（没有Cluster IP的Service）</p></li> <li><p>有序部署，有序扩展，即Pod是有顺序的，在部署或扩展的时候要依据定义的顺序依
+进行（从0到N-1，在下一个Pod运行之前，所有前面的Pod必须都是Running和Ready状态）基于
+init container实现</p></li> <li><p>有序收缩，有序删除</p></li></ol> <h3 id="daemonset"><a href="#daemonset" class="header-anchor">#</a> DaemonSet</h3> <p>DaemonSet确保全部（除了污点）Node上运行一个Pod的副本。当有Node加入集群时，
+也会为他们新增一个Pod。当有Node从集群移除时，这些Pod也会被回收。删除Daemonset将会
+删除它创建的所有Pod</p> <p>使用DaemonSet的一些典型用法：</p> <ol><li><p>运行存储集群daemon, 例如在每个Node上运行glusterd、ceph</p></li> <li><p>在每个Node上面运行日志收集daemon, 例如fluentd、logstash</p></li> <li><p>在每个Node上面运行监控daemon, 例如Prometheus Node Exporter</p></li></ol> <h3 id="jobs"><a href="#jobs" class="header-anchor">#</a> Jobs</h3> <p>Job负责批处理任务，即仅执行一次的任务，它保证批处理任务的一个或多个Pod成功结束</p> <h3 id="cronjob"><a href="#cronjob" class="header-anchor">#</a> CronJob</h3> <p>Cronjob管理基于时间的Job</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/cloud-native/kubernetes/install.html" class="prev">
+        安装
+      </a></span> <span class="next"><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html">
+        服务、负载均衡和网络
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/9.1f23426f.js" defer></script>
+  </body>
+</html>

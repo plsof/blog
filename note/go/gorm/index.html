@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GORM | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/17.b1c707d0.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/go/gorm/" aria-current="page" class="active sidebar-link">GORM</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#入门指南" class="sidebar-link">入门指南</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#声明模型" class="sidebar-link">声明模型</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#连接到数据库" class="sidebar-link">连接到数据库</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#crud" class="sidebar-link">CRUD</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#创建" class="sidebar-link">创建</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#查询" class="sidebar-link">查询</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#更新" class="sidebar-link">更新</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#删除" class="sidebar-link">删除</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#关联" class="sidebar-link">关联</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#belongs-to" class="sidebar-link">Belongs to</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#has-one" class="sidebar-link">Has One</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#has-many" class="sidebar-link">Has Many</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#many-to-many" class="sidebar-link">Many To Many</a></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#预加载" class="sidebar-link">预加载</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#自定义数据类型" class="sidebar-link">自定义数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/go/gorm/#scanner-valuer" class="sidebar-link">Scanner/Valuer</a></li></ul></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="入门指南"><a href="#入门指南" class="header-anchor">#</a> 入门指南</h2> <h3 id="声明模型"><a href="#声明模型" class="header-anchor">#</a> 声明模型</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Cluster <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  global<span class="token punctuation">.</span>ARSDN_MODEL
+  Name         <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;not null;unique;comment:'集群名称'&quot;`</span>
+  CType        <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:enum('master','slave');default:'master';comment:'主从类型'&quot;`</span>
+  MasterIp     <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'主集群IP'&quot;`</span>
+  MasterPort   <span class="token builtin">uint</span>        <span class="token string">`gorm:&quot;comment:'主集群Port'&quot;`</span>
+  MasterPass   <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:varchar(2000);comment:'主集群密码'&quot;`</span>
+  Desc         <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'集群描述'&quot;`</span>
+  SdnVersion   <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:enum('arSdn_3.1', 'arSdn_3.2');comment:'SDN版本'&quot;`</span>
+  BackendType  <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:enum('KVM','VMware');comment:'后端集群类型'&quot;`</span>
+  BackendIp    <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;not null;unique;comment:'后端集群IP'&quot;`</span>
+  BackendPort  <span class="token builtin">uint</span>        <span class="token string">`gorm:&quot;not null;comment:'后端集群端口'&quot;`</span>
+  BackendUser  <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'VMware账号'&quot;`</span>
+  BackendPass  <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'VMware密码'&quot;`</span>
+  Network      Networks    <span class="token string">`gorm:&quot;not null;type:json;comment:'网络'&quot;`</span>
+  Sdn          SDN         <span class="token string">`gorm:&quot;not null;type:json;comment:'SDN参数'&quot;`</span>
+  Status       <span class="token builtin">int</span>         <span class="token string">`gorm:&quot;not null;comment:'集群状态'&quot;`</span>
+  Hosts        <span class="token punctuation">[</span><span class="token punctuation">]</span>HostModel <span class="token string">`gorm:&quot;constraint:OnDelete:CASCADE;comment:'主机'&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>Networks</code>、<code>SDN</code>是自定义数据类型，详情见自定义数据类型章节</p> <h3 id="连接到数据库"><a href="#连接到数据库" class="header-anchor">#</a> 连接到数据库</h3> <p>GORM 官方支持的数据库类型有：MySQL, PostgreSQL, SQlite, SQL Server</p> <h4 id="mysql"><a href="#mysql" class="header-anchor">#</a> MySQL</h4> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;gorm.io/driver/mysql&quot;</span>
+  <span class="token string">&quot;gorm.io/gorm&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// 不建立外键</span>
+<span class="token keyword">func</span> <span class="token function">gormConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>gorm<span class="token punctuation">.</span>Config <span class="token punctuation">{</span>
+  config <span class="token operator">:=</span> <span class="token operator">&amp;</span>gorm<span class="token punctuation">.</span>Config<span class="token punctuation">{</span>DisableForeignKeyConstraintWhenMigrating<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span>
+  <span class="token keyword">return</span> config
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">GormMysql</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>gorm<span class="token punctuation">.</span>DB <span class="token punctuation">{</span>
+  dsn <span class="token operator">:=</span> <span class="token string">&quot;root:huayun2021@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;</span>
+  mysqlConfig <span class="token operator">:=</span> mysql<span class="token punctuation">.</span>Config<span class="token punctuation">{</span>
+    DSN<span class="token punctuation">:</span>                       dsn<span class="token punctuation">,</span>   <span class="token comment">// DSN data source name</span>
+    DefaultStringSize<span class="token punctuation">:</span>         <span class="token number">256</span><span class="token punctuation">,</span>   <span class="token comment">// string 类型字段的默认长度</span>
+    DisableDatetimePrecision<span class="token punctuation">:</span>  <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 禁用 datetime 精度，MySQL 5.6 之前的数据库不支持</span>
+    DontSupportRenameIndex<span class="token punctuation">:</span>    <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 重命名索引时采用删除并新建的方式，MySQL 5.7 之前的数据库和 MariaDB 不支持重命名索引</span>
+    DontSupportRenameColumn<span class="token punctuation">:</span>   <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 用 `change` 重命名列，MySQL 8 之前的数据库和 MariaDB 不支持重命名列</span>
+    SkipInitializeWithVersion<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 根据版本自动配置</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> db<span class="token punctuation">,</span> err <span class="token operator">:=</span> gorm<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span>mysql<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span>mysqlConfig<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">gormConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+    log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;mysql connect fail&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token boolean">nil</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> db
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="crud"><a href="#crud" class="header-anchor">#</a> CRUD</h2> <h3 id="创建"><a href="#创建" class="header-anchor">#</a> 创建</h3> <div class="language-go extra-class"><pre class="language-go"><code>user <span class="token operator">:=</span> User<span class="token punctuation">{</span>Name<span class="token punctuation">:</span> <span class="token string">&quot;Jinzhu&quot;</span><span class="token punctuation">,</span> Age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">,</span> Birthday<span class="token punctuation">:</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+
+result <span class="token operator">:=</span> db<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span> <span class="token comment">// 通过数据的指针来创建</span>
+
+user<span class="token punctuation">.</span>ID             <span class="token comment">// 返回插入数据的主键</span>
+result<span class="token punctuation">.</span>Error        <span class="token comment">// 返回 error</span>
+result<span class="token punctuation">.</span>RowsAffected <span class="token comment">// 返回插入记录的条数</span>
+</code></pre></div><h3 id="查询"><a href="#查询" class="header-anchor">#</a> 查询</h3> <h4 id="检索单个对象"><a href="#检索单个对象" class="header-anchor">#</a> 检索单个对象</h4> <p>GORM 提供了<code>First</code>、<code>Take</code>、<code>Last</code>方法，以便从数据库中检索单个对象。当查询数据库时它添加了<code>LIMIT 1</code>条件，且没有找到记录时，它会返回<code>ErrRecordNotFound</code>错误</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 获取第一条记录（主键升序）</span>
+db<span class="token punctuation">.</span><span class="token function">First</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span>
+<span class="token comment">// SELECT * FROM users ORDER BY id LIMIT 1;</span>
+
+<span class="token comment">// 获取一条记录，没有指定排序字段</span>
+db<span class="token punctuation">.</span><span class="token function">Take</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span>
+<span class="token comment">// SELECT * FROM users LIMIT 1;</span>
+
+<span class="token comment">// 获取最后一条记录（主键降序）</span>
+db<span class="token punctuation">.</span><span class="token function">Last</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span>
+<span class="token comment">// SELECT * FROM users ORDER BY id DESC LIMIT 1;</span>
+
+result <span class="token operator">:=</span> db<span class="token punctuation">.</span><span class="token function">First</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span>
+result<span class="token punctuation">.</span>RowsAffected <span class="token comment">// 返回找到的记录数</span>
+result<span class="token punctuation">.</span>Error        <span class="token comment">// returns error or nil</span>
+
+<span class="token comment">// 检查 ErrRecordNotFound 错误</span>
+errors<span class="token punctuation">.</span><span class="token function">Is</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>Error<span class="token punctuation">,</span> gorm<span class="token punctuation">.</span>ErrRecordNotFound<span class="token punctuation">)</span>
+</code></pre></div><h4 id="检索全部对象"><a href="#检索全部对象" class="header-anchor">#</a> 检索全部对象</h4> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 获取全部记录</span>
+<span class="token keyword">var</span> users <span class="token punctuation">[</span><span class="token punctuation">]</span>User
+result <span class="token operator">:=</span> db<span class="token punctuation">.</span><span class="token function">Find</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>users<span class="token punctuation">)</span>
+<span class="token comment">// SELECT * FROM users;</span>
+
+result<span class="token punctuation">.</span>RowsAffected <span class="token comment">// 返回找到的记录数，相当于 `len(users)`</span>
+result<span class="token punctuation">.</span>Error        <span class="token comment">// returns error</span>
+</code></pre></div><h3 id="更新"><a href="#更新" class="header-anchor">#</a> 更新</h3> <div class="language-go extra-class"><pre class="language-go"><code>db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Email<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span><span class="token string">&quot;id = ?&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token string">&quot;email&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;plsof@qq.com&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="删除"><a href="#删除" class="header-anchor">#</a> 删除</h3> <div class="language-go extra-class"><pre class="language-go"><code>db<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span><span class="token string">&quot;name = ?&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pdd&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>email<span class="token punctuation">)</span>
+<span class="token comment">// DELETE from emails where id = 10 AND name = &quot;pdd&quot;;</span>
+</code></pre></div><h4 id="软删除"><a href="#软删除" class="header-anchor">#</a> 软删除</h4> <p>如果你的模型里面包含<code>gorm.DeleteAt</code>（<code>gorm.Model</code>提供）字段，会执行软删除。</p> <p>记录不会被删除，而是把<code>DeleteAt</code>字段设置为当前时间，Query请求的时候不会显示出这个字段。</p> <p><code>Unscoped</code>会执行物理的删除</p> <div class="language-go extra-class"><pre class="language-go"><code>db<span class="token punctuation">.</span><span class="token function">Unscoped</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>order<span class="token punctuation">)</span>
+<span class="token comment">// DELETE FROM orders WHERE id=10;</span>
+</code></pre></div><h4 id="阻止全局删除"><a href="#阻止全局删除" class="header-anchor">#</a> 阻止全局删除</h4> <p>如果在没有任何条件的情况下执行批量删除，GORM 不会执行该操作，并返回 ErrMissingWhereClause 错误</p> <p>对此，你必须加一些条件，或者使用原生 SQL，或者启用 AllowGlobalUpdate 模式，例如：</p> <div class="language-go extra-class"><pre class="language-go"><code>db<span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Error <span class="token comment">// gorm.ErrMissingWhereClause</span>
+
+db<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span><span class="token string">&quot;1 = 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// DELETE FROM `users` WHERE 1=1</span>
+
+db<span class="token punctuation">.</span><span class="token function">Exec</span><span class="token punctuation">(</span><span class="token string">&quot;DELETE FROM users&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">// DELETE FROM users</span>
+
+db<span class="token punctuation">.</span><span class="token function">Session</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>gorm<span class="token punctuation">.</span>Session<span class="token punctuation">{</span>AllowGlobalUpdate<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// DELETE FROM users</span>
+</code></pre></div><h2 id="关联"><a href="#关联" class="header-anchor">#</a> 关联</h2> <h3 id="belongs-to"><a href="#belongs-to" class="header-anchor">#</a> Belongs to</h3> <p><code>belongs to</code>会与另一个模型建立了一对一的连接。这种模型的每一个实例都“属于”另一个模型的一个实例。</p> <p>例如，您的应用包含 cluster 和 host，并且每个 host 能且只能被分配给一个 cluster。下面的类型就表示这种关系。注意，在<code>Host</code>对象中，有一个和<code>Cluster</code>一样的ClusterID。默认情况下，<code>ClusterID</code>被隐含地用来在<code>Host</code>和<code>Cluster</code>之间创建一个外键关系，因此必须包含在<code>Host</code>结构体中才能填充<code>Cluster</code>内部结构体。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// Host 属于 Cluster，ClusterID是外键</span>
+<span class="token keyword">type</span> Host <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  HostName  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;column:hostname;not null;unique&quot;`</span>
+  SshIp     <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+  ClusterID <span class="token builtin">uint</span>    <span class="token comment">// 外键</span>
+  Cluster   Cluster
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Cluster <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  Name  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="has-one"><a href="#has-one" class="header-anchor">#</a> Has One</h3> <p><code>has one</code>与另一个模型建立一对一的关联，但它和一对一关系有些许不同。这种关联表明一个模型的每个实例都包含或拥有另一个模型的一个实例。</p> <p>例如，您的应用包含 cluster 和 host 模型，且每个 cluster 只能有一个 host。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// Cluster有一个Host，ClusterID是外键</span>
+<span class="token keyword">type</span> Cluster <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  Name  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+  Host  Host    <span class="token string">`gorm:&quot;constraint:OnDelete:CASCADE&quot;`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Host <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  ClusterID <span class="token builtin">uint</span>    <span class="token comment">// 外键</span>
+  HostName  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;column:hostname;not null;unique&quot;`</span>
+  SshIp     <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="has-many"><a href="#has-many" class="header-anchor">#</a> Has Many</h3> <p><code>has many</code>与另一个模型建立了一对多的连接。不同于<code>has one</code>，拥有者可以有零或多个关联模型。</p> <p>例如，您的应用包含cluster和host模型，且每个cluster可以有多个host。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// Cluster有多个Host，ClusterID是外键</span>
+<span class="token keyword">type</span> Cluster <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  Name  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+  Hosts <span class="token punctuation">[</span><span class="token punctuation">]</span>Host  <span class="token string">`gorm:&quot;constraint:OnDelete:CASCADE&quot;`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Host <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  ClusterID <span class="token builtin">uint</span>    <span class="token comment">// 外键</span>
+  HostName  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;column:hostname;not null;unique&quot;`</span>
+  SshIp     <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="many-to-many"><a href="#many-to-many" class="header-anchor">#</a> Many To Many</h3> <p>Example:</p> <ol><li>数据结构</li></ol> <table><thead><tr><th>表1</th> <th>表2</th> <th>关联关系</th></tr></thead> <tbody><tr><td>user</td> <td>address</td> <td>belongs_to</td></tr> <tr><td>user</td> <td>email</td> <td>has_many</td></tr> <tr><td>user</td> <td>creditcard</td> <td>has_one</td></tr> <tr><td>user</td> <td>languages</td> <td>many_to_many</td></tr></tbody></table> <img src="/blog/assets/img/related.18971cde.png" alt="gorm" style="zoom:85%;"> <ol start="2"><li>代码</li></ol> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">&quot;fmt&quot;</span>
+  <span class="token string">&quot;github.com/jinzhu/gorm&quot;</span>
+  <span class="token boolean">_</span> <span class="token string">&quot;github.com/jinzhu/gorm/dialects/mysql&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  ID                <span class="token builtin">uint</span>       <span class="token string">`gorm:&quot;primary_key&quot;`</span>
+  Birthday          <span class="token builtin">string</span>     <span class="token string">`gorm:&quot;column:birthday&quot;`</span>
+  Age               <span class="token builtin">int</span>        <span class="token string">`gorm:&quot;column:age&quot;`</span>
+  Name              <span class="token builtin">string</span>     <span class="token string">`gorm:&quot;column:name&quot;`</span>
+  BillingAddress    Address    <span class="token string">`gorm:&quot;foreignkey:BillingAddressId;&quot;`</span> <span class="token comment">// One-To-One (属于 - 本表的BillingAddressID作外键</span>
+  BillingAddressId  <span class="token builtin">int</span>        <span class="token string">`gorm:&quot;column:billing_address_id&quot;`</span>
+  ShippingAddress   Address    <span class="token string">`gorm:&quot;foreignkey:ShippingAddressId;&quot;`</span> <span class="token comment">// One-To-One (属于 - 本表的ShippingAddressID作外键)</span>
+  ShippingAddressId <span class="token builtin">int</span>        <span class="token string">`gorm:&quot;column:shipping_address_id&quot;`</span>
+  CreditCard        CreditCard <span class="token string">`gorm:&quot;foreignkey:UserID;&quot;`</span> <span class="token comment">// One-To-One (拥有一个 - CreditCard表的UserID作外键)</span>
+  Emails            <span class="token punctuation">[</span><span class="token punctuation">]</span>Email    <span class="token string">`gorm:&quot;ForeignKey:UserID;&quot;`</span>            <span class="token comment">// One-To-Many (拥有多个 - Email表的UserID作外键)</span>
+  Languages         <span class="token punctuation">[</span><span class="token punctuation">]</span>Language <span class="token string">`gorm:&quot;many2many:user_languages;&quot;`</span>     <span class="token comment">// Many-To-Many , 'user_languages'是连接表</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Email <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  ID     <span class="token builtin">int</span>    <span class="token string">`gorm:&quot;primary_key&quot;`</span>
+  UserID <span class="token builtin">int</span>    <span class="token string">`gorm:&quot;column:user_id;&quot;`</span> <span class="token comment">// 外键 (属于), tag `index`是为该列创建索引</span>
+  Email  <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:email&quot;`</span>    <span class="token comment">// `type`设置sql类型, `unique_index` 为该列设置唯一索引</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Address <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  ID       <span class="token builtin">int</span>    <span class="token string">`gorm:&quot;primary_key&quot;`</span>
+  Address1 <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:address1&quot;`</span> <span class="token comment">// 设置字段为非空并唯一</span>
+  Address2 <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:address2&quot;`</span>
+  Post     <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:post&quot;`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Language <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  ID   <span class="token builtin">int</span>    <span class="token string">`gorm:&quot;primary_key&quot;`</span>
+  Name <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:name&quot;`</span> <span class="token comment">// 创建索引并命名，如果找到其他相同名称的索引则创建组合索引</span>
+  Code <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:code&quot;`</span> <span class="token comment">// `unique_index` also works</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> CreditCard <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  ID     <span class="token builtin">int</span>    <span class="token string">`gorm:&quot;primary_key&quot;`</span>
+  UserID <span class="token builtin">int</span>    <span class="token string">`gorm:&quot;column:user_id;&quot;`</span>
+  Number <span class="token builtin">string</span> <span class="token string">`gorm:&quot;column:number&quot;`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  db<span class="token punctuation">,</span> err <span class="token operator">:=</span> gorm<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token string">&quot;mysql&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;root:21ysten123@(127.0.0.1)/gorm?charset=utf8&amp;parseTime=True&amp;loc=Local&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+    <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">defer</span> db<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  db<span class="token punctuation">.</span><span class="token function">AutoMigrate</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    Email<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    Address<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    Language<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    CreditCard<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">var</span> creditCard1 CreditCard
+  creditCard1<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">1</span>
+  creditCard1<span class="token punctuation">.</span>UserID <span class="token operator">=</span> <span class="token number">1001</span>
+  creditCard1<span class="token punctuation">.</span>Number <span class="token operator">=</span> <span class="token string">&quot;1001PDD&quot;</span>
+
+  <span class="token keyword">var</span> creditCard2 CreditCard
+  creditCard2<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">2</span>
+  creditCard2<span class="token punctuation">.</span>UserID <span class="token operator">=</span> <span class="token number">1002</span>
+  creditCard2<span class="token punctuation">.</span>Number <span class="token operator">=</span> <span class="token string">&quot;1002PXX&quot;</span>
+
+  <span class="token keyword">var</span> language1 Language
+  language1<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">1</span>
+  language1<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;english&quot;</span>
+  language1<span class="token punctuation">.</span>Code <span class="token operator">=</span> <span class="token string">&quot;101ENG&quot;</span>
+
+  <span class="token keyword">var</span> language2 Language
+  language2<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">2</span>
+  language2<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;chinese&quot;</span>
+  language2<span class="token punctuation">.</span>Code <span class="token operator">=</span> <span class="token string">&quot;102CHI&quot;</span>
+
+  languages <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>Language<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+  languages<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> language1
+  languages<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> language2
+
+  <span class="token keyword">var</span> address Address
+  address<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">1</span>
+  address<span class="token punctuation">.</span>Address1 <span class="token operator">=</span> <span class="token string">&quot;扬州市&quot;</span>
+  address<span class="token punctuation">.</span>Address2 <span class="token operator">=</span> <span class="token string">&quot;无锡市&quot;</span>
+  address<span class="token punctuation">.</span>Post <span class="token operator">=</span> <span class="token string">&quot;214000&quot;</span>
+
+  <span class="token keyword">var</span> email1 Email
+  email1<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">1</span>
+  email1<span class="token punctuation">.</span>UserID <span class="token operator">=</span> <span class="token number">11</span>
+  email1<span class="token punctuation">.</span>Email <span class="token operator">=</span> <span class="token string">&quot;254995740@qq.com&quot;</span>
+
+  <span class="token keyword">var</span> email2 Email
+  email2<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">2</span>
+  email2<span class="token punctuation">.</span>UserID <span class="token operator">=</span> <span class="token number">12</span>
+  email2<span class="token punctuation">.</span>Email <span class="token operator">=</span> <span class="token string">&quot;1103901630@qq.com&quot;</span>
+
+  oEmails1 <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>Email<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  oEmails1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> email1
+
+  oEmails2 <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>Email<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  oEmails2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> email2
+
+  <span class="token keyword">var</span> user1 User
+  user1<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">1</span>
+  user1<span class="token punctuation">.</span>Birthday <span class="token operator">=</span> <span class="token string">&quot;1029&quot;</span>
+  user1<span class="token punctuation">.</span>Age <span class="token operator">=</span> <span class="token number">30</span>
+  user1<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;pdd&quot;</span>
+  user1<span class="token punctuation">.</span>BillingAddress <span class="token operator">=</span> address
+  user1<span class="token punctuation">.</span>BillingAddressId <span class="token operator">=</span> <span class="token number">1</span>
+  user1<span class="token punctuation">.</span>ShippingAddress <span class="token operator">=</span> address
+  user1<span class="token punctuation">.</span>ShippingAddressId <span class="token operator">=</span> <span class="token number">2</span>
+  user1<span class="token punctuation">.</span>CreditCard <span class="token operator">=</span> creditCard1
+  user1<span class="token punctuation">.</span>Emails <span class="token operator">=</span> oEmails1
+  user1<span class="token punctuation">.</span>Languages <span class="token operator">=</span> languages
+
+  <span class="token keyword">var</span> user2 User
+  user2<span class="token punctuation">.</span>ID <span class="token operator">=</span> <span class="token number">2</span>
+  user2<span class="token punctuation">.</span>Birthday <span class="token operator">=</span> <span class="token string">&quot;1030&quot;</span>
+  user2<span class="token punctuation">.</span>Age <span class="token operator">=</span> <span class="token number">30</span>
+  user2<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">&quot;pxx&quot;</span>
+  user2<span class="token punctuation">.</span>BillingAddress <span class="token operator">=</span> address
+  user2<span class="token punctuation">.</span>BillingAddressId <span class="token operator">=</span> <span class="token number">2</span>
+  user2<span class="token punctuation">.</span>ShippingAddress <span class="token operator">=</span> address
+  user2<span class="token punctuation">.</span>ShippingAddressId <span class="token operator">=</span> <span class="token number">2</span>
+  user2<span class="token punctuation">.</span>CreditCard <span class="token operator">=</span> creditCard2
+  user2<span class="token punctuation">.</span>Emails <span class="token operator">=</span> oEmails2
+  user2<span class="token punctuation">.</span>Languages <span class="token operator">=</span> languages
+
+  <span class="token comment">//插入数据</span>
+  <span class="token comment">//db.Create(&amp;creditCard1)</span>
+  <span class="token comment">//db.Create(&amp;creditCard2)</span>
+  <span class="token comment">//db.Create(&amp;language1)</span>
+  <span class="token comment">//db.Create(&amp;language2)</span>
+  <span class="token comment">//db.Create(&amp;address)</span>
+  <span class="token comment">//db.Create(&amp;email1)</span>
+  <span class="token comment">//db.Create(&amp;email2)</span>
+  <span class="token comment">//db.Create(&amp;user1)</span>
+  <span class="token comment">//db.Create(&amp;user2)</span>
+
+  <span class="token comment">//删除数据</span>
+  <span class="token comment">//db.Delete(&amp;user)</span>
+
+  <span class="token comment">//查询</span>
+  u <span class="token operator">:=</span> User<span class="token punctuation">{</span>ID<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span>
+  db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Find</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span>
+  db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Related</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">.</span>CreditCard<span class="token punctuation">,</span><span class="token string">&quot;CreditCard&quot;</span><span class="token punctuation">)</span>
+  db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Related</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">.</span>Emails<span class="token punctuation">,</span><span class="token string">&quot;Emails&quot;</span><span class="token punctuation">)</span>
+  db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Related</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">.</span>Languages<span class="token punctuation">,</span> <span class="token string">&quot;Languages&quot;</span><span class="token punctuation">)</span>
+  db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Related</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">.</span>BillingAddress<span class="token punctuation">,</span><span class="token string">&quot;BillingAddress&quot;</span><span class="token punctuation">)</span>
+  db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Related</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>u<span class="token punctuation">.</span>ShippingAddress<span class="token punctuation">,</span><span class="token string">&quot;ShippingAddress&quot;</span><span class="token punctuation">)</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-go extra-class"><pre class="language-go"><code><span class="token punctuation">{</span><span class="token number">1</span> <span class="token number">1029</span> <span class="token number">30</span> pdd <span class="token punctuation">{</span><span class="token number">1</span> 扬州市 无锡市 <span class="token number">214000</span><span class="token punctuation">}</span> <span class="token number">1</span> <span class="token punctuation">{</span><span class="token number">1</span> 扬州市 无锡市 <span class="token number">214000</span><span class="token punctuation">}</span> <span class="token number">1</span> <span class="token punctuation">{</span><span class="token number">1</span> <span class="token number">1</span> <span class="token number">1001</span>PDD<span class="token punctuation">}</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token number">1</span> <span class="token number">1</span> <span class="token number">254995740</span>@qq<span class="token punctuation">.</span>com<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token number">1</span> english <span class="token number">101</span>ENG<span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token number">2</span> chinese <span class="token number">102</span>CHI<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="预加载"><a href="#预加载" class="header-anchor">#</a> 预加载</h3> <p>GORM 允许在 Preload 的其它 SQL 中直接加载关系，例如：</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// Cluster有多个Host，ClusterID是外键</span>
+<span class="token keyword">type</span> Cluster <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  Name  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+  Hosts <span class="token punctuation">[</span><span class="token punctuation">]</span>Host  <span class="token string">`gorm:&quot;constraint:OnDelete:CASCADE&quot;`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Host <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  gorm<span class="token punctuation">.</span>Model
+  ClusterID <span class="token builtin">uint</span>    <span class="token comment">// 外键</span>
+  HostName  <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;column:hostname;not null;unique&quot;`</span>
+  SshIp     <span class="token builtin">string</span>  <span class="token string">`gorm:&quot;not null;unique&quot;`</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 查找 cluster 时预加载相关 host</span>
+db<span class="token punctuation">.</span><span class="token function">Preload</span><span class="token punctuation">(</span><span class="token string">&quot;Hosts&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Find</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cluster<span class="token punctuation">)</span>
+<span class="token comment">// SELECT * FROM clusters;</span>
+<span class="token comment">// SELECT * FROM hosts WHERE cluster_id = 1;</span>
+</code></pre></div><h2 id="自定义数据类型"><a href="#自定义数据类型" class="header-anchor">#</a> 自定义数据类型</h2> <p>GORM 提供了少量接口，使用户能够为 GORM 定义支持的数据类型</p> <h3 id="scanner-valuer"><a href="#scanner-valuer" class="header-anchor">#</a> Scanner/Valuer</h3> <p>自定义的数据类型必须实现<code>Scanner</code>和<code>Valuer</code>接口，以便让 GORM 知道如何将该类型接收、保存到数据库</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 网络</span>
+<span class="token comment">// {</span>
+<span class="token comment">//   &quot;network&quot;: {</span>
+<span class="token comment">//     &quot;internal_network&quot;: {</span>
+<span class="token comment">//       &quot;net_start&quot;: &quot;192.168.1.1&quot;,</span>
+<span class="token comment">//       &quot;net_end&quot;: &quot;192.168.1.10&quot;,</span>
+<span class="token comment">//       &quot;prefix&quot;: 24</span>
+<span class="token comment">//     },</span>
+<span class="token comment">//     &quot;management_network&quot;: {</span>
+<span class="token comment">//       &quot;net_start&quot;: &quot;192.168.1.1&quot;,</span>
+<span class="token comment">//       &quot;net_end&quot;: &quot;192.168.1.10&quot;,</span>
+<span class="token comment">//       &quot;prefix&quot;: 24</span>
+<span class="token comment">//     },</span>
+<span class="token comment">//   }</span>
+<span class="token comment">// }</span>
+
+<span class="token keyword">type</span> Networks <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c Networks<span class="token punctuation">)</span> <span class="token function">Value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>driver<span class="token punctuation">.</span>Value<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  b<span class="token punctuation">,</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Marshal</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> err
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Networks<span class="token punctuation">)</span> <span class="token function">Scan</span><span class="token punctuation">(</span>input <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> json<span class="token punctuation">.</span><span class="token function">Unmarshal</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// SDN</span>
+<span class="token comment">// {</span>
+<span class="token comment">//   internal_vlan_id: &quot;&quot;,</span>
+<span class="token comment">//   external_vlan_range: &quot;&quot;,</span>
+<span class="token comment">//   vroute_template: &quot;&quot;,</span>
+<span class="token comment">//   mirror_url: &quot;&quot;,</span>
+<span class="token comment">//   mirror_tag: &quot;&quot;,</span>
+<span class="token comment">//   arnet_vlan_range: &quot;&quot;,</span>
+<span class="token comment">// }</span>
+
+<span class="token keyword">type</span> SDN <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c SDN<span class="token punctuation">)</span> <span class="token function">Value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>driver<span class="token punctuation">.</span>Value<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  b<span class="token punctuation">,</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Marshal</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> err
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>SDN<span class="token punctuation">)</span> <span class="token function">Scan</span><span class="token punctuation">(</span>input <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> json<span class="token punctuation">.</span><span class="token function">Unmarshal</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Cluster <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  global<span class="token punctuation">.</span>ARSDN_MODEL
+  Name         <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;not null;unique;comment:'集群名称'&quot;`</span>
+  CType        <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:enum('master','slave');default:'master';comment:'主从类型'&quot;`</span>
+  MasterIp     <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'主集群IP'&quot;`</span>
+  MasterPort   <span class="token builtin">uint</span>        <span class="token string">`gorm:&quot;comment:'主集群Port'&quot;`</span>
+  MasterPass   <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:varchar(2000);comment:'主集群密码'&quot;`</span>
+  Desc         <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'集群描述'&quot;`</span>
+  SdnVersion   <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:enum('arSdn_3.1', 'arSdn_3.2');comment:'SDN版本'&quot;`</span>
+  BackendType  <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;type:enum('KVM','VMware');comment:'后端集群类型'&quot;`</span>
+  BackendIp    <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;not null;unique;comment:'后端集群IP'&quot;`</span>
+  BackendPort  <span class="token builtin">uint</span>        <span class="token string">`gorm:&quot;not null;comment:'后端集群端口'&quot;`</span>
+  BackendUser  <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'VMware账号'&quot;`</span>
+  BackendPass  <span class="token builtin">string</span>      <span class="token string">`gorm:&quot;comment:'VMware密码'&quot;`</span>
+  Network      Networks    <span class="token string">`gorm:&quot;not null;type:json;comment:'网络'&quot;`</span>
+  Sdn          SDN         <span class="token string">`gorm:&quot;not null;type:json;comment:'SDN参数'&quot;`</span>
+  Status       <span class="token builtin">int</span>         <span class="token string">`gorm:&quot;not null;comment:'集群状态'&quot;`</span>
+  Hosts        <span class="token punctuation">[</span><span class="token punctuation">]</span>HostModel <span class="token string">`gorm:&quot;constraint:OnDelete:CASCADE;comment:'主机'&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/17.b1c707d0.js" defer></script>
+  </body>
+</html>

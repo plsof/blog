@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>监控 | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/8.fad53de1.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/cloud-native/kubernetes/overview.html" class="sidebar-link">概述</a></li><li><a href="/blog/note/cloud-native/kubernetes/install.html" class="sidebar-link">安装</a></li><li><a href="/blog/note/cloud-native/kubernetes/workloads.html" class="sidebar-link">工作负载</a></li><li><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html" class="sidebar-link">服务、负载均衡和网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/storage.html" class="sidebar-link">存储</a></li><li><a href="/blog/note/cloud-native/kubernetes/clusterAdministration.html" class="sidebar-link">集群管理</a></li><li><a href="/blog/note/cloud-native/kubernetes/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/helm.html" class="sidebar-link">Helm</a></li><li><a href="/blog/note/cloud-native/kubernetes/monitoring.html" aria-current="page" class="active sidebar-link">监控</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#简介" class="sidebar-link">简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#前提" class="sidebar-link">前提</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#operator" class="sidebar-link">Operator</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#安装" class="sidebar-link">安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#helm安装" class="sidebar-link">helm安装</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#源码安装" class="sidebar-link">源码安装</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#配置" class="sidebar-link">配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#k8s组件监控" class="sidebar-link">k8s组件监控</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#grafana" class="sidebar-link">grafana</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#数据持久化" class="sidebar-link">数据持久化</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#告警配置" class="sidebar-link">告警配置</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#自定义监控项" class="sidebar-link">自定义监控项</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#监控自动发现配置" class="sidebar-link">监控自动发现配置</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/monitoring.html#参考" class="sidebar-link">参考</a></li></ul></li></ul></li><li><a href="/blog/note/cloud-native/kubernetes/efk.html" class="sidebar-link">EFK</a></li><li><a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="sidebar-link">Dashboard</a></li><li><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html" class="sidebar-link">部署策略</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <h3 id="前提"><a href="#前提" class="header-anchor">#</a> 前提</h3> <p>这里我们使用<code>Prometheus</code>监控Kubernetes集群状态，配置<code>Prometheus</code>的成本非常高，而且也非常麻烦。如果我们还要考虑<code>Prometheus</code>、<code>AlertManager</code>这些组件服务本身的高可用的话，成本就更高了。因此我们可以使用另外一种更加高级的方式来部署<code>Prometheus</code>：<code>Operator</code>框架</p> <h3 id="operator"><a href="#operator" class="header-anchor">#</a> Operator</h3> <p><code>Operator</code>是由CoreOS开发的，用来扩展Kubernetes API，特定的应用程序控制器，它用来创建、配置和管理复杂的有状态应用，如数据库、缓存和监控系统。<code>Operator</code>基于Kubernetes的资源和控制器概念之上构建，但同时又包含了应用程序特定的领域知识。创建<code>Operator</code>的关键是CRD（自定义资源）的设计。</p> <p><strong>架构图</strong></p> <img src="/blog/assets/img/prometheus-operator.e8a23cc2.png" alt="Prometheus Operator"> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <h3 id="helm安装"><a href="#helm安装" class="header-anchor">#</a> helm安装</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>helm repo <span class="token function">add</span> stable https://kubernetes-charts.storage.googleapis.com/
+kubectl create namespace monitoring
+helm <span class="token function">install</span> prometheus-operator --namespace monitoring stable/prometheus-operator
+</code></pre></div><h3 id="源码安装"><a href="#源码安装" class="header-anchor">#</a> 源码安装</h3> <p>版本：<code>v0.3.0</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> https://github.com/coreos/kube-prometheus/archive/v0.3.0.tar.gz
+<span class="token function">tar</span> -zxv -f v0.3.0.tar.gz<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> kube-prometheus-0.3.0
+kubectl apply -f manifests/setup
+kubectl apply -f manifests
+</code></pre></div><p>部署完成后，会创建一个monitoring的namespace，所有的资源对象都将部署在这个命名空间下面。</p> <p><code>CRD</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master manifests<span class="token punctuation">]</span><span class="token comment"># kubectl get crd | grep coreos</span>
+alertmanagers.monitoring.coreos.com     <span class="token number">2020</span>-03-08T15:50:21Z
+podmonitors.monitoring.coreos.com       <span class="token number">2020</span>-03-08T15:50:21Z
+prometheuses.monitoring.coreos.com      <span class="token number">2020</span>-03-08T15:50:22Z
+prometheusrules.monitoring.coreos.com   <span class="token number">2020</span>-03-08T15:50:22Z
+servicemonitors.monitoring.coreos.com   <span class="token number">2020</span>-03-08T15:50:22Z
+</code></pre></div><p><code>POD</code> alertmanager和prometheus是用StatefulSet控制器管理的，其中还有一个比较核心的Pod prometheus-operator，用来控制其他资源对象和监听对象变化</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master manifests<span class="token punctuation">]</span><span class="token comment"># kubectl get pod -n monitoring</span>
+NAME                                  READY   STATUS    RESTARTS   AGE
+alertmanager-main-0                   <span class="token number">2</span>/2     Running   <span class="token number">0</span>          16h
+alertmanager-main-1                   <span class="token number">2</span>/2     Running   <span class="token number">0</span>          16h
+alertmanager-main-2                   <span class="token number">2</span>/2     Running   <span class="token number">0</span>          16h
+grafana-58dc7468d7-7nx9d              <span class="token number">1</span>/1     Running   <span class="token number">0</span>          2d11h
+kube-state-metrics-78b46c84d8-hc8cm   <span class="token number">3</span>/3     Running   <span class="token number">0</span>          2d11h
+node-exporter-2sgf6                   <span class="token number">2</span>/2     Running   <span class="token number">0</span>          2d11h
+node-exporter-66sh6                   <span class="token number">2</span>/2     Running   <span class="token number">0</span>          2d11h
+node-exporter-74mx4                   <span class="token number">2</span>/2     Running   <span class="token number">0</span>          2d11h
+prometheus-adapter-5cd5798d96-x6rcs   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          2d11h
+prometheus-k8s-0                      <span class="token number">3</span>/3     Running   <span class="token number">1</span>          44h
+prometheus-k8s-1                      <span class="token number">3</span>/3     Running   <span class="token number">1</span>          44h
+prometheus-operator-99dccdc56-x6htc   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          2d11h
+</code></pre></div><p><code>SVC</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master manifests<span class="token punctuation">]</span><span class="token comment"># kubectl get svc -n monitoring</span>
+NAME                    TYPE        CLUSTER-IP       EXTERNAL-IP   PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>                      AGE
+alertmanager-main       ClusterIP   <span class="token number">10.101</span>.142.157   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">9093</span>/TCP                     2d11h
+alertmanager-operated   ClusterIP   None             <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">9093</span>/TCP,9094/TCP,9094/UDP   2d11h
+grafana                 ClusterIP   <span class="token number">10.98</span>.84.141     <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">3000</span>/TCP                     2d11h
+kube-state-metrics      ClusterIP   None             <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">8443</span>/TCP,9443/TCP            2d11h
+node-exporter           ClusterIP   None             <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">9100</span>/TCP                     2d11h
+prometheus-adapter      ClusterIP   <span class="token number">10.106</span>.199.108   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">443</span>/TCP                      2d11h
+prometheus-k8s          ClusterIP   <span class="token number">10.109</span>.190.166   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">9090</span>/TCP                     2d11h
+prometheus-operated     ClusterIP   None             <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">9090</span>/TCP                     2d11h
+prometheus-operator     ClusterIP   None             <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">8080</span>/TCP                     2d11h
+</code></pre></div><h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <p><strong>以下配置是基于源码安装</strong></p> <h3 id="k8s组件监控"><a href="#k8s组件监控" class="header-anchor">#</a> k8s组件监控</h3> <p><code>Operator</code>默认监控了<code>Kubernetes</code>的大多数组件，但有些组件没有监控到，比如<code>kube-scheduler</code>、<code>kube-controller-manager</code>。这就跟ServiceMonitor里面的定义有关了</p> <h4 id="kube-scheduler"><a href="#kube-scheduler" class="header-anchor">#</a> kube-scheduler</h4> <p><em>prometheus-serviceMonitorKubeScheduler.yaml里面定义的svc没有创建</em></p> <p>手动创建svc
+<code>prometheus-kubeSchedulerService.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>scheduler
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>scheduler
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">component</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>scheduler
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> http<span class="token punctuation">-</span>metrics
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">10251</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">10251</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f prometheus-kubeSchedulerService.yaml
+</code></pre></div><p><em>现在可以看到这个target，但是抓取数据出错，这个错误是因为我们集群是使用<code>kubeadm</code>搭建的，其中<code>kube-scheduler</code>默认是绑定在127.0.0.1上面的，而上面我们这个地方是想通过节点的IP去访问，所以访问被拒绝了，我们只要把<code>kube-scheduler</code>绑定的地址更改成0.0.0.0即可满足要求，由于<code>kube-scheduler</code>是以静态<code>Pod</code>的形式运行在集群中的，所以我们只需要更改静态<code>Pod</code>目录下面对应的YAML文件配置即可</em></p> <p>修改静态Pod配置
+<code>/etc/kubernetes/manifests/kube-scheduler.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>bind<span class="token punctuation">-</span>address=0.0.0.0
+</code></pre></div><h4 id="kube-controller-manager"><a href="#kube-controller-manager" class="header-anchor">#</a> kube-controller-manager</h4> <p><em>异常原因和解决方法同上</em></p> <p>手动创建svc</p> <p><code>prometheus-KubeControllerManagerService.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">component</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> http<span class="token punctuation">-</span>metrics
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">10252</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">10252</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f prometheus-KubeControllerManagerService.yaml
+</code></pre></div><p>修改静态Pod配置
+<code>/etc/kubernetes/manifests/kube-controller-manager.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>bind<span class="token punctuation">-</span>address=0.0.0.0
+</code></pre></div><h3 id="grafana"><a href="#grafana" class="header-anchor">#</a> grafana</h3> <p>默认已经配置好，可使用默认账号、密码<code>admin:admin</code>登录查看</p> <h3 id="数据持久化"><a href="#数据持久化" class="header-anchor">#</a> 数据持久化</h3> <p>Pod <code>prometheus</code>和<code>alertmanager</code>默认用的<code>emptyDir</code>存储，没有做数据持久化。Pod重启后数据就丢失了</p> <p>配置数据持久化</p> <ol><li>prometheus</li></ol> <p><code>prometheus-prometheus.yaml</code></p> <p>添加</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code>  <span class="token key atrule">storage</span><span class="token punctuation">:</span>
+    <span class="token key atrule">volumeClaimTemplate</span><span class="token punctuation">:</span>
+      <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+        <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> managed<span class="token punctuation">-</span>nfs<span class="token punctuation">-</span>storage
+        <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+          <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+            <span class="token key atrule">storage</span><span class="token punctuation">:</span> 1Gi
+</code></pre></div><p>验证</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pvc -n monitoring</span>
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS          AGE
+prometheus-k8s-db-prometheus-k8s-0   Bound    pvc-1b09ac85-c23f-4511-a9e1-015491647aeb   1Gi        RWO            managed-nfs-storage   3d8h
+prometheus-k8s-db-prometheus-k8s-1   Bound    pvc-54203f65-a8b8-4f87-af9b-a11f5e52545c   1Gi        RWO            managed-nfs-storage   3d8h
+<span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pv</span>
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                           STORAGECLASS          REASON   AGE
+pvc-1b09ac85-c23f-4511-a9e1-015491647aeb   1Gi        RWO            Delete           Bound    monitoring/prometheus-k8s-db-prometheus-k8s-0   managed-nfs-storage            3d8h
+pvc-54203f65-a8b8-4f87-af9b-a11f5e52545c   1Gi        RWO            Delete           Bound    monitoring/prometheus-k8s-db-prometheus-k8s-1   managed-nfs-storage            3d8h
+</code></pre></div><h3 id="告警配置"><a href="#告警配置" class="header-anchor">#</a> 告警配置</h3> <p>AlertManager配置各种告警收发器</p> <p>Service <code>alertmanager-main</code>上的status页面可以看到<code>AlertManager</code>的配置信息</p> <p>Config</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">global</span><span class="token punctuation">:</span>
+  <span class="token key atrule">resolve_timeout</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">http_config</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token key atrule">smtp_hello</span><span class="token punctuation">:</span> localhost
+  <span class="token key atrule">smtp_require_tls</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">pagerduty_url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//events.pagerduty.com/v2/enqueue
+  <span class="token key atrule">hipchat_api_url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//api.hipchat.com/
+  <span class="token key atrule">opsgenie_api_url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//api.opsgenie.com/
+  <span class="token key atrule">wechat_api_url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//qyapi.weixin.qq.com/cgi<span class="token punctuation">-</span>bin/
+  <span class="token key atrule">victorops_api_url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//alert.victorops.com/integrations/generic/20131114/alert/
+<span class="token key atrule">route</span><span class="token punctuation">:</span>
+  <span class="token key atrule">receiver</span><span class="token punctuation">:</span> <span class="token string">&quot;null&quot;</span>
+  <span class="token key atrule">group_by</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> job
+  <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">receiver</span><span class="token punctuation">:</span> <span class="token string">&quot;null&quot;</span>
+    <span class="token key atrule">match</span><span class="token punctuation">:</span>
+      <span class="token key atrule">alertname</span><span class="token punctuation">:</span> Watchdog
+  <span class="token key atrule">group_wait</span><span class="token punctuation">:</span> 30s
+  <span class="token key atrule">group_interval</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">repeat_interval</span><span class="token punctuation">:</span> 12h
+<span class="token key atrule">receivers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">&quot;null&quot;</span>
+<span class="token key atrule">templates</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre></div><p>这些配置信息实际上是来自于我们之前在manifests目录下面创建的<code>alertmanager-secret.yaml</code>文件</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">alertmanager.yaml</span><span class="token punctuation">:</span> Imdsb2JhbCI6CiAgInJlc29sdmVfdGltZW91dCI6ICI1bSIKInJlY2VpdmVycyI6Ci0gIm5hbWUiOiAibnVsbCIKInJvdXRlIjoKICAiZ3JvdXBfYnkiOgogIC0gImpvYiIKICAiZ3JvdXBfaW50ZXJ2YWwiOiAiNW0iCiAgImdyb3VwX3dhaXQiOiAiMzBzIgogICJyZWNlaXZlciI6ICJudWxsIgogICJyZXBlYXRfaW50ZXJ2YWwiOiAiMTJoIgogICJyb3V0ZXMiOgogIC0gIm1hdGNoIjoKICAgICAgImFsZXJ0bmFtZSI6ICJXYXRjaGRvZyIKICAgICJyZWNlaXZlciI6ICJudWxsIg==
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Secret
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> alertmanager<span class="token punctuation">-</span>main
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> monitoring
+<span class="token key atrule">type</span><span class="token punctuation">:</span> Opaque
+</code></pre></div><p>将<code>alertmanager.yaml</code>对应的value值做一个base64解码</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master kube-prometheus<span class="token punctuation">]</span><span class="token comment"># echo Imdsb2JhbCI6CiAgInJlc29sdmVfdGltZW91dCI6ICI1bSIKInJlY2VpdmVycyI6Ci0gIm5hbWUiOiAibnVsbCIKInJvdXRlIjoKICAiZ3JvdXBfYnkiOgogIC0gImpvYiIKICAiZ3JvdXBfaW50ZXJ2YWwiOiAiNW0iCiAgImdyb3VwX3dhaXQiOiAiMzBzIgogICJyZWNlaXZlciI6ICJudWxsIgogICJyZXBlYXRfaW50ZXJ2YWwiOiAiMTJoIgogICJyb3V0ZXMiOgogIC0gIm1hdGNoIjoKICAgICAgImFsZXJ0bmFtZSI6ICJXYXRjaGRvZyIKICAgICJyZWNlaXZlciI6ICJudWxsIg== | base64 -d</span>
+<span class="token string">&quot;global&quot;</span><span class="token builtin class-name">:</span>
+  <span class="token string">&quot;resolve_timeout&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;5m&quot;</span>
+<span class="token string">&quot;receivers&quot;</span><span class="token builtin class-name">:</span>
+- <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;null&quot;</span>
+<span class="token string">&quot;route&quot;</span><span class="token builtin class-name">:</span>
+  <span class="token string">&quot;group_by&quot;</span><span class="token builtin class-name">:</span>
+  - <span class="token string">&quot;job&quot;</span>
+  <span class="token string">&quot;group_interval&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;5m&quot;</span>
+  <span class="token string">&quot;group_wait&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;30s&quot;</span>
+  <span class="token string">&quot;receiver&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;null&quot;</span>
+  <span class="token string">&quot;repeat_interval&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;12h&quot;</span>
+  <span class="token string">&quot;routes&quot;</span><span class="token builtin class-name">:</span>
+  - <span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span>
+      <span class="token string">&quot;alertname&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Watchdog&quot;</span>
+    <span class="token string">&quot;receiver&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;null&quot;</span>
+</code></pre></div><p>我们可以看到内容和上面查看的配置信息是一致的，所以如果我们想要添加自己的接收器，或者模板消息，我们就可以更改这个secret。</p> <ol><li>邮件</li></ol> <p><code>alertmanager.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">global</span><span class="token punctuation">:</span>
+  <span class="token key atrule">resolve_timeout</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">smtp_smarthost</span><span class="token punctuation">:</span> <span class="token string">'smtp.qq.com:465'</span>
+  <span class="token key atrule">smtp_from</span><span class="token punctuation">:</span> <span class="token string">'254995740@qq.com'</span>
+  <span class="token key atrule">smtp_auth_username</span><span class="token punctuation">:</span> <span class="token string">'254995740@qq.com'</span>
+  <span class="token key atrule">smtp_auth_password</span><span class="token punctuation">:</span> <span class="token string">'sbphoqcqmkovqwer'</span>
+  <span class="token key atrule">smtp_hello</span><span class="token punctuation">:</span> <span class="token string">'qq.com'</span>
+  <span class="token key atrule">smtp_require_tls</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">route</span><span class="token punctuation">:</span>
+  <span class="token key atrule">group_by</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'alertname'</span><span class="token punctuation">]</span>
+  <span class="token key atrule">group_wait</span><span class="token punctuation">:</span> 30s
+  <span class="token key atrule">group_interval</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">repeat_interval</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">receiver</span><span class="token punctuation">:</span> default
+  <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">receiver</span><span class="token punctuation">:</span> email
+    <span class="token key atrule">group_wait</span><span class="token punctuation">:</span> 10s
+<span class="token key atrule">receivers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">'default'</span>
+  <span class="token key atrule">email_configs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> <span class="token string">'1103901630@qq.com'</span>
+    <span class="token key atrule">send_resolved</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">'email'</span>
+  <span class="token key atrule">email_configs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> <span class="token string">'1103901630@qq.com'</span>
+    <span class="token key atrule">send_resolved</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre></div><p>删除原secret，创建对应新的secret</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl delete secret alertmanager-main -n monitoring
+kubectl create secret generic alertmanager-main --from-file<span class="token operator">=</span>alertmanager.yaml -n monitoring
+</code></pre></div><p>自定义告警模版</p> <ol><li>邮件告警</li></ol> <p><code>alertmanager.tmpl</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token punctuation">{</span><span class="token punctuation">{</span> define &quot;email.default.html&quot; <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> range .Alerts <span class="token punctuation">}</span><span class="token punctuation">}</span>
+========start========== &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">告警程序</span><span class="token punctuation">:</span> prometheus_alert &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">告警级别</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Labels.severity <span class="token punctuation">}</span><span class="token punctuation">}</span> &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">告警类型</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Labels.alertname <span class="token punctuation">}</span><span class="token punctuation">}</span> &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">故障主机</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Labels.instance <span class="token punctuation">}</span><span class="token punctuation">}</span> &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">告警主题</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Annotations.summary <span class="token punctuation">}</span><span class="token punctuation">}</span> &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">告警详情</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Annotations.description <span class="token punctuation">}</span><span class="token punctuation">}</span> &lt;br<span class="token punctuation">&gt;</span>
+<span class="token key atrule">触发时间</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .StartsAt.Format &quot;2020<span class="token punctuation">-</span>03<span class="token punctuation">-</span>10 23<span class="token punctuation">:</span>11<span class="token punctuation">:</span>05&quot; <span class="token punctuation">}</span><span class="token punctuation">}</span> &lt;br<span class="token punctuation">&gt;</span>
+========end========== &lt;br<span class="token punctuation">&gt;</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> end <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> end <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre></div><p><code>alertmanager.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">global</span><span class="token punctuation">:</span>
+  <span class="token key atrule">resolve_timeout</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">smtp_smarthost</span><span class="token punctuation">:</span> <span class="token string">'smtp.qq.com:465'</span>
+  <span class="token key atrule">smtp_from</span><span class="token punctuation">:</span> <span class="token string">'254995740@qq.com'</span>
+  <span class="token key atrule">smtp_auth_username</span><span class="token punctuation">:</span> <span class="token string">'254995740@qq.com'</span>
+  <span class="token key atrule">smtp_auth_password</span><span class="token punctuation">:</span> <span class="token string">'lvirtwyfzzklqwer'</span>
+  <span class="token key atrule">smtp_hello</span><span class="token punctuation">:</span> <span class="token string">'qq.com'</span>
+  <span class="token key atrule">smtp_require_tls</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">templates</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token string">'*.tmpl'</span>
+<span class="token key atrule">route</span><span class="token punctuation">:</span>
+  <span class="token key atrule">group_by</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'alertname'</span><span class="token punctuation">]</span>
+  <span class="token key atrule">group_wait</span><span class="token punctuation">:</span> 30s
+  <span class="token key atrule">group_interval</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">repeat_interval</span><span class="token punctuation">:</span> 5m
+  <span class="token key atrule">receiver</span><span class="token punctuation">:</span> default
+  <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">receiver</span><span class="token punctuation">:</span> email
+    <span class="token key atrule">group_wait</span><span class="token punctuation">:</span> 10s
+<span class="token key atrule">receivers</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">'default'</span>
+  <span class="token key atrule">email_configs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> <span class="token string">'1103901630@qq.com'</span>
+    <span class="token key atrule">send_resolved</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">'email'</span>
+  <span class="token key atrule">email_configs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> <span class="token string">'1103901630@qq.com'</span>
+    <span class="token key atrule">send_resolved</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre></div><p>删除原secret，创建对应新的secret</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl delete secret alertmanager-main -n monitoring
+kubectl create secret generic alertmanager-main --from-file<span class="token operator">=</span>alertmanager.yaml --from-file<span class="token operator">=</span>alertmanager.tmpl -n monitoring
+</code></pre></div><h3 id="自定义监控项"><a href="#自定义监控项" class="header-anchor">#</a> 自定义监控项</h3> <p>除了Kubernetes集群中的一些资源对象、节点以及组件需要监控，有的时候我们可能还需要根据实际的业务需求去添加自定义的监控项。</p> <ol><li><p>新建一个获取metrics数据的Service对象（数据格式必须为Prometheus）</p></li> <li><p>新建一个ServiceMonitor对象，关联上面的Service</p></li></ol> <p>ServiceMonitor是Prometheus Operator中抽象的概念，他的作用是将配置Prometheus采集Target的配置变化成为动态发现的方式</p> <p><em>案例：配置Prometheus监控节目单</em></p> <p><code>创建Service prometheus-wtvService.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> wtv<span class="token punctuation">-</span>monitor
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> wtv
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> ClusterIP
+  <span class="token key atrule">clusterIP</span><span class="token punctuation">:</span> None
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wtvport
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9001</span>
+      <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">9001</span>
+
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Endpoints
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> wtv<span class="token punctuation">-</span>monitor
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> wtv
+<span class="token key atrule">subsets</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">ip</span><span class="token punctuation">:</span> <span class="token string">&quot;10.25.172.232&quot;</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wtvport
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9001</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>kubectl create -f prometheus-wtvService.yaml
+</code></pre></div><p><code>创建ServiceMonitor prometheus-serviceMonitorWtv.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> monitoring.coreos.com/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceMonitor
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> wtv<span class="token punctuation">-</span>monitor
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> monitoring
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> wtv<span class="token punctuation">-</span>monitor
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> wtvport
+    <span class="token key atrule">interval</span><span class="token punctuation">:</span> 300s
+  <span class="token key atrule">namespaceSelector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchNames</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> default
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> wtv
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>kubectl create -f prometheus-serviceMonitorWtv.yaml
+</code></pre></div><p><code>Dashboard查看对应target</code></p> <img src="/blog/assets/img/wtvPrometheus.6a483b7a.png" alt="Wtv Prometheus"> <h3 id="监控自动发现配置"><a href="#监控自动发现配置" class="header-anchor">#</a> 监控自动发现配置</h3> <h3 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h3> <p><code>https://www.cnblogs.com/xzkzzz/p/10532002.html</code></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/cloud-native/kubernetes/helm.html" class="prev">
+        Helm
+      </a></span> <span class="next"><a href="/blog/note/cloud-native/kubernetes/efk.html">
+        EFK
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/8.fad53de1.js" defer></script>
+  </body>
+</html>

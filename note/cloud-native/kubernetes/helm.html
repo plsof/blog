@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Helm | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/33.4cc9b4d7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/cloud-native/kubernetes/overview.html" class="sidebar-link">概述</a></li><li><a href="/blog/note/cloud-native/kubernetes/install.html" class="sidebar-link">安装</a></li><li><a href="/blog/note/cloud-native/kubernetes/workloads.html" class="sidebar-link">工作负载</a></li><li><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html" class="sidebar-link">服务、负载均衡和网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/storage.html" class="sidebar-link">存储</a></li><li><a href="/blog/note/cloud-native/kubernetes/clusterAdministration.html" class="sidebar-link">集群管理</a></li><li><a href="/blog/note/cloud-native/kubernetes/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/helm.html" aria-current="page" class="active sidebar-link">Helm</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#部署" class="sidebar-link">部署</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#实战" class="sidebar-link">实战</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#项目myhttp" class="sidebar-link">项目myhttp</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#升级" class="sidebar-link">升级</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#回退" class="sidebar-link">回退</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/helm.html#删除" class="sidebar-link">删除</a></li></ul></li></ul></li><li><a href="/blog/note/cloud-native/kubernetes/monitoring.html" class="sidebar-link">监控</a></li><li><a href="/blog/note/cloud-native/kubernetes/efk.html" class="sidebar-link">EFK</a></li><li><a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="sidebar-link">Dashboard</a></li><li><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html" class="sidebar-link">部署策略</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h2> <p><code>Version v2.16.1</code></p> <p>Helm: 客户端，管理本地的Chart仓库，于Tiller服务器交互，发送Chart，实例安装，查询，卸载等操作</p> <p>Tiller: 服务端，接收helm发来的Charts与Config，合并生成release</p> <p>Chart: helm程序包</p> <p>Repository: Charts仓库，http/https服务器</p> <p>Release: 特定Chart部署于目标集群上的一个实例</p> <p>Chart -&gt; Config -&gt; Release</p> <h2 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h2> <p><code>添加service account和clusterRoleBinding</code></p> <p><code>helm-rbac.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> tiller
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRoleBinding
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> tiller
+<span class="token key atrule">roleRef</span><span class="token punctuation">:</span>
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> rbac.authorization.k8s.io
+  <span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> cluster<span class="token punctuation">-</span>admin
+<span class="token key atrule">subjects</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> tiller
+    <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>system
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f helm-rbac.yaml
+</code></pre></div><p><code>安装helm</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> <span class="token string">'https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz'</span>
+<span class="token function">tar</span> -zxv -f helm-v2.16.1-linux-amd64.tar.gz<span class="token punctuation">;</span> <span class="token function">cp</span> ./linux-amd64/helm /usr/local/bin
+</code></pre></div><p><code>初始化helm; 部署tiller</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>helm init --service-account<span class="token operator">=</span>tiller --tiller-image<span class="token operator">=</span>sapcc/tiller:v2.16.1 --stable-repo-url<span class="token operator">=</span>https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts --history-max <span class="token number">300</span>
+</code></pre></div><p>说明：</p> <p>因为某些原因 需要将默认tiller-image, stable-repo源替换掉</p> <p><code>启动本地Repository Server</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm serve &amp;</span>
+<span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm repo list</span>
+NAME  	URL
+stable	http://mirror.azure.cn/kubernetes/charts/
+<span class="token builtin class-name">local</span> 	http://127.0.0.1:8879/charts
+</code></pre></div><p><code>查看版本</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># helm version</span>
+Client: <span class="token operator">&amp;</span>version.Version<span class="token punctuation">{</span>SemVer:<span class="token string">&quot;v2.16.1&quot;</span>, GitCommit:<span class="token string">&quot;bbdfe5e7803a12bbdf97e94cd847859890cf4050&quot;</span>, GitTreeState:<span class="token string">&quot;clean&quot;</span><span class="token punctuation">}</span>
+Server: <span class="token operator">&amp;</span>version.Version<span class="token punctuation">{</span>SemVer:<span class="token string">&quot;v2.16.1&quot;</span>, GitCommit:<span class="token string">&quot;bbdfe5e7803a12bbdf97e94cd847859890cf4050&quot;</span>, GitTreeState:<span class="token string">&quot;clean&quot;</span><span class="token punctuation">}</span>
+</code></pre></div><p><code>参考</code></p> <p><code>https://devopscube.com/install-configure-helm-kubernetes/</code></p> <h2 id="实战"><a href="#实战" class="header-anchor">#</a> 实战</h2> <h3 id="项目myhttp"><a href="#项目myhttp" class="header-anchor">#</a> 项目myhttp</h3> <p>部署ingress方式的myhttp服务</p> <p><code>创建myhttp chart</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm create myhttp</span>
+<span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># tree myhttp</span>
+myhttp
+├── charts
+├── Chart.yaml  <span class="token comment"># 该chart的描述文件</span>
+├── templates   <span class="token comment"># 目录下是YAML文件的模板，该模板文件遵循Go template语法</span>
+│   ├── deployment.yaml
+│   ├── _helpers.tpl  <span class="token comment"># 全局模版，给其它模版使用</span>
+│   ├── ingress.yaml
+│   ├── NOTES.txt
+│   ├── serviceaccount.yaml
+│   ├── service.yaml
+│   └── tests
+│       └── test-connection.yaml
+└── values.yaml <span class="token comment"># 变量值文件，给templates里面的模版文件引用</span>
+
+<span class="token number">3</span> directories, <span class="token number">9</span> files
+</code></pre></div><p><code>修改配置文件内容</code></p> <ol><li><code>values.yaml</code></li></ol> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">replicaCount</span><span class="token punctuation">:</span> <span class="token number">2</span>
+
+<span class="token key atrule">image</span><span class="token punctuation">:</span>
+  <span class="token key atrule">repository</span><span class="token punctuation">:</span> 172.188.3.24<span class="token punctuation">:</span>8000/library/myhttp
+  <span class="token key atrule">tag</span><span class="token punctuation">:</span> v1
+
+<span class="token key atrule">ingress</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment"># kubernetes.io/ingress.class: nginx</span>
+    <span class="token comment"># kubernetes.io/tls-acme: &quot;true&quot;</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> www.myhttp.com
+      <span class="token key atrule">paths</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'/'</span><span class="token punctuation">]</span>  <span class="token comment"># 如果多个uri ['/', '/api']</span>
+</code></pre></div><p><code>检查依赖和模板配置是否正确</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm lint myhttp</span>
+<span class="token operator">==</span><span class="token operator">&gt;</span> Linting myhttp
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Chart.yaml: icon is recommended
+
+<span class="token number">1</span> chart<span class="token punctuation">(</span>s<span class="token punctuation">)</span> linted, no failures
+</code></pre></div><p><code>打包chart</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm package myhttp --debug</span>
+Successfully packaged chart and saved it to: /root/helm/myhttp-0.1.0.tgz
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> Successfully saved /root/helm/myhttp-0.1.0.tgz to /root/.helm/repository/local
+
+</code></pre></div><p><code>查看chart</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm search myhttp</span>
+NAME        	CHART VERSION	APP VERSION	DESCRIPTION
+local/myhttp	<span class="token number">0.1</span>.0        	<span class="token number">1.0</span>        	A Helm chart <span class="token keyword">for</span> Kubernetes
+</code></pre></div><p><code>在kubernetes部署chart</code></p> <ol><li><code>预部署</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm install --dry-run --debug local/myhttp --name myhttp-chart</span>
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> Created tunnel using <span class="token builtin class-name">local</span> port: <span class="token string">'7474'</span>
+
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> SERVER: <span class="token string">&quot;127.0.0.1:7474&quot;</span>
+
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> Original chart version: <span class="token string">&quot;&quot;</span>
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> Fetched local/myhttp to /root/.helm/cache/archive/myhttp-0.1.0.tgz
+
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> CHART <span class="token environment constant">PATH</span><span class="token builtin class-name">:</span> /root/.helm/cache/archive/myhttp-0.1.0.tgz
+
+NAME:   myhttp-chart
+REVISION: <span class="token number">1</span>
+RELEASED: Fri Feb <span class="token number">21</span> <span class="token number">15</span>:02:14 <span class="token number">2020</span>
+CHART: myhttp-0.1.0
+<span class="token environment constant">USER</span>-SUPPLIED VALUES:
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+COMPUTED VALUES:
+affinity: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+fullnameOverride: <span class="token string">&quot;&quot;</span>
+image:
+  pullPolicy: IfNotPresent
+  repository: <span class="token number">172.188</span>.3.24:8000/library/myhttp
+  tag: v1
+imagePullSecrets: <span class="token punctuation">[</span><span class="token punctuation">]</span>
+ingress:
+  annotations: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  enabled: <span class="token boolean">true</span>
+  hosts:
+  - host: www.myhttp.com
+    paths:
+    - /
+  tls: <span class="token punctuation">[</span><span class="token punctuation">]</span>
+nameOverride: <span class="token string">&quot;&quot;</span>
+nodeSelector: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+podSecurityContext: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+replicaCount: <span class="token number">2</span>
+resources: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+securityContext: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+service:
+  port: <span class="token number">80</span>
+  type: ClusterIP
+serviceAccount:
+  create: <span class="token boolean">true</span>
+  name: null
+tolerations: <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+HOOKS:
+---
+<span class="token comment"># myhttp-chart-test-connection</span>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: <span class="token string">&quot;myhttp-chart-test-connection&quot;</span>
+  labels:
+    app.kubernetes.io/name: myhttp
+    helm.sh/chart: myhttp-0.1.0
+    app.kubernetes.io/instance: myhttp-chart
+    app.kubernetes.io/version: <span class="token string">&quot;1.0&quot;</span>
+    app.kubernetes.io/managed-by: Tiller
+  annotations:
+    <span class="token string">&quot;helm.sh/hook&quot;</span><span class="token builtin class-name">:</span> test-success
+spec:
+  containers:
+    - name: <span class="token function">wget</span>
+      image: busybox
+      command: <span class="token punctuation">[</span><span class="token string">'wget'</span><span class="token punctuation">]</span>
+      args:  <span class="token punctuation">[</span><span class="token string">'myhttp-chart:80'</span><span class="token punctuation">]</span>
+  restartPolicy: Never
+MANIFEST:
+
+---
+<span class="token comment"># Source: myhttp/templates/serviceaccount.yaml</span>
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: myhttp-chart
+  labels:
+    app.kubernetes.io/name: myhttp
+    helm.sh/chart: myhttp-0.1.0
+    app.kubernetes.io/instance: myhttp-chart
+    app.kubernetes.io/version: <span class="token string">&quot;1.0&quot;</span>
+    app.kubernetes.io/managed-by: Tiller
+---
+<span class="token comment"># Source: myhttp/templates/service.yaml</span>
+apiVersion: v1
+kind: Service
+metadata:
+  name: myhttp-chart
+  labels:
+    app.kubernetes.io/name: myhttp
+    helm.sh/chart: myhttp-0.1.0
+    app.kubernetes.io/instance: myhttp-chart
+    app.kubernetes.io/version: <span class="token string">&quot;1.0&quot;</span>
+    app.kubernetes.io/managed-by: Tiller
+spec:
+  type: ClusterIP
+  ports:
+    - port: <span class="token number">80</span>
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: myhttp
+    app.kubernetes.io/instance: myhttp-chart
+---
+<span class="token comment"># Source: myhttp/templates/deployment.yaml</span>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myhttp-chart
+  labels:
+    app.kubernetes.io/name: myhttp
+    helm.sh/chart: myhttp-0.1.0
+    app.kubernetes.io/instance: myhttp-chart
+    app.kubernetes.io/version: <span class="token string">&quot;1.0&quot;</span>
+    app.kubernetes.io/managed-by: Tiller
+spec:
+  replicas: <span class="token number">2</span>
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: myhttp
+      app.kubernetes.io/instance: myhttp-chart
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: myhttp
+        app.kubernetes.io/instance: myhttp-chart
+    spec:
+      serviceAccountName: myhttp-chart
+      securityContext:
+        <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+      containers:
+        - name: myhttp
+          securityContext:
+            <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+          image: <span class="token string">&quot;172.188.3.24:8000/library/myhttp:v1&quot;</span>
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: <span class="token number">80</span>
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            <span class="token punctuation">{</span><span class="token punctuation">}</span>
+---
+<span class="token comment"># Source: myhttp/templates/ingress.yaml</span>
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: myhttp-chart
+  labels:
+    app.kubernetes.io/name: myhttp
+    helm.sh/chart: myhttp-0.1.0
+    app.kubernetes.io/instance: myhttp-chart
+    app.kubernetes.io/version: <span class="token string">&quot;1.0&quot;</span>
+    app.kubernetes.io/managed-by: Tiller
+spec:
+  rules:
+    - host: <span class="token string">&quot;www.myhttp.com&quot;</span>
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: myhttp-chart
+              servicePort: <span class="token number">80</span>
+</code></pre></div><ol start="2"><li><code>部署</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm install local/myhttp --name myhttp-chart</span>
+NAME:   myhttp-chart
+LAST DEPLOYED: Fri Feb <span class="token number">21</span> <span class="token number">15</span>:06:32 <span class="token number">2020</span>
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Deployment
+NAME          AGE
+myhttp-chart  0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Pod<span class="token punctuation">(</span>related<span class="token punctuation">)</span>
+NAME                           AGE
+myhttp-chart-699c968dc7-747kj  0s
+myhttp-chart-699c968dc7-sss9t  0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Service
+NAME          AGE
+myhttp-chart  0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/ServiceAccount
+NAME          AGE
+myhttp-chart  0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1beta1/Ingress
+NAME          AGE
+myhttp-chart  0s
+
+
+NOTES:
+<span class="token number">1</span>. Get the application URL by running these commands:
+  http://www.myhttp.com/
+</code></pre></div><ol start="3"><li><code>测试、验证</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># kubectl get deployment -l 'app.kubernetes.io/instance=myhttp-chart,app.kubernetes.io/name=myhttp'</span>
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+myhttp-chart   <span class="token number">2</span>/2     <span class="token number">2</span>            <span class="token number">2</span>           63m
+<span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># kubectl get svc -l 'app.kubernetes.io/instance=myhttp-chart,app.kubernetes.io/name=myhttp'</span>
+NAME           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>   AGE
+myhttp-chart   ClusterIP   <span class="token number">10.106</span>.44.95   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        <span class="token number">80</span>/TCP    64m
+<span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># kubectl get ingress</span>
+NAME           HOSTS                        ADDRESS          PORTS   AGE
+myhttp-chart   www.myhttp.com               <span class="token number">10.108</span>.162.246   <span class="token number">80</span>      64m
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>➜  ~ <span class="token function">curl</span> -x <span class="token string">'172.188.2.86:80'</span> <span class="token string">'http://www.myhttp.com'</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="升级"><a href="#升级" class="header-anchor">#</a> 升级</h3> <p>myhttp:v1 -&gt; myhttp:v2</p> <p><code>修改配置文件</code></p> <p><code>values.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">image</span><span class="token punctuation">:</span>
+  <span class="token key atrule">repository</span><span class="token punctuation">:</span> 172.188.3.24<span class="token punctuation">:</span>8000/library/myhttp
+  <span class="token key atrule">tag</span><span class="token punctuation">:</span> v2
+  <span class="token key atrule">pullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+</code></pre></div><p><code>Chart.yaml</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> 0.2.0
+</code></pre></div><p><code>打包</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm package myhttp --debug</span>
+Successfully packaged chart and saved it to: /root/helm/myhttp-0.2.0.tgz
+<span class="token punctuation">[</span>debug<span class="token punctuation">]</span> Successfully saved /root/helm/myhttp-0.2.0.tgz to /root/.helm/repository/local
+
+</code></pre></div><p><code>查看版本</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm search myhttp -l</span>
+NAME        	CHART VERSION	APP VERSION	DESCRIPTION
+local/myhttp	<span class="token number">0.2</span>.0        	<span class="token number">1.0</span>        	A Helm chart <span class="token keyword">for</span> Kubernetes
+local/myhttp	<span class="token number">0.1</span>.0        	<span class="token number">1.0</span>        	A Helm chart <span class="token keyword">for</span> Kubernetes
+</code></pre></div><p><code>升级, 如果没有指定版本默认升级到最新版本</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm upgrade myhttp-chart local/myhttp --version=0.2.0</span>
+Release <span class="token string">&quot;myhttp-chart&quot;</span> has been upgraded.
+LAST DEPLOYED: Fri Feb <span class="token number">21</span> <span class="token number">16</span>:44:55 <span class="token number">2020</span>
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Deployment
+NAME          AGE
+myhttp-chart  98m
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Pod<span class="token punctuation">(</span>related<span class="token punctuation">)</span>
+NAME                           AGE
+myhttp-chart-699c968dc7-747kj  98m
+myhttp-chart-699c968dc7-sss9t  98m
+myhttp-chart-cf9f495d8-jrh42   0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Service
+NAME          AGE
+myhttp-chart  98m
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/ServiceAccount
+NAME          AGE
+myhttp-chart  98m
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1beta1/Ingress
+NAME          AGE
+myhttp-chart  98m
+
+
+NOTES:
+<span class="token number">1</span>. Get the application URL by running these commands:
+  http://www.myhttp.com/
+</code></pre></div><p><code>验证、测试</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm list</span>
+NAME        	REVISION	UPDATED                 	STATUS  	CHART        	APP VERSION	NAMESPACE
+myhttp-chart	<span class="token number">2</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:44:55 <span class="token number">2020</span>	DEPLOYED	myhttp-0.2.0 	<span class="token number">1.0</span>        	default
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>➜  ~ <span class="token function">curl</span> -x <span class="token string">'172.188.2.86:80'</span> <span class="token string">'http://www.myhttp.com'</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;v2&quot;</span>, <span class="token string">&quot;hostname&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;myhttp-chart-cf9f495d8-8vcdj&quot;</span>, <span class="token string">&quot;IP&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;10.244.1.11&quot;</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="回退"><a href="#回退" class="header-anchor">#</a> 回退</h3> <p><code>查看Release变更记录</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm history myhttp-chart</span>
+REVISION	UPDATED                 	STATUS    	CHART       	APP VERSION	DESCRIPTION
+<span class="token number">1</span>       	Fri Feb <span class="token number">21</span> <span class="token number">15</span>:06:32 <span class="token number">2020</span>	SUPERSEDED	myhttp-0.1.0	<span class="token number">1.0</span>        	Install complete
+<span class="token number">2</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:44:55 <span class="token number">2020</span>	DEPLOYED  	myhttp-0.2.0	<span class="token number">1.0</span>        	Upgrade complete
+</code></pre></div><p><code>回退</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm rollback myhttp-chart 1</span>
+Rollback was a success.
+</code></pre></div><p><code>验证、测试</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm list</span>
+NAME        	REVISION	UPDATED                 	STATUS  	CHART        	APP VERSION	NAMESPACE
+myhttp-chart	<span class="token number">3</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:53:25 <span class="token number">2020</span>	DEPLOYED	myhttp-0.1.0 	<span class="token number">1.0</span>        	default
+<span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm history myhttp-chart</span>
+REVISION	UPDATED                 	STATUS    	CHART       	APP VERSION	DESCRIPTION
+<span class="token number">1</span>       	Fri Feb <span class="token number">21</span> <span class="token number">15</span>:06:32 <span class="token number">2020</span>	SUPERSEDED	myhttp-0.1.0	<span class="token number">1.0</span>        	Install complete
+<span class="token number">2</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:44:55 <span class="token number">2020</span>	SUPERSEDED	myhttp-0.2.0	<span class="token number">1.0</span>        	Upgrade complete
+<span class="token number">3</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:53:25 <span class="token number">2020</span>	DEPLOYED  	myhttp-0.1.0	<span class="token number">1.0</span>        	Rollback to <span class="token number">1</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>➜  ~ <span class="token function">curl</span> -x <span class="token string">'172.188.2.86:80'</span> <span class="token string">'http://www.myhttp.com'</span>
+<span class="token punctuation">{</span><span class="token string">&quot;status&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SUCCESS&quot;</span>, <span class="token string">&quot;data&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hello from server&quot;</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="删除"><a href="#删除" class="header-anchor">#</a> 删除</h3> <p><code>删除</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm delete myhttp-chart</span>
+release <span class="token string">&quot;myhttp-chart&quot;</span> deleted
+</code></pre></div><p><code>验证</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm list -a</span>
+NAME        	REVISION	UPDATED                 	STATUS  	CHART        	APP VERSION	NAMESPACE
+myhttp-chart	<span class="token number">3</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:53:25 <span class="token number">2020</span>	DELETED 	myhttp-0.1.0 	<span class="token number">1.0</span>        	default
+<span class="token punctuation">[</span>root@master helm<span class="token punctuation">]</span><span class="token comment"># helm history myhttp-chart</span>
+REVISION	UPDATED                 	STATUS    	CHART       	APP VERSION	DESCRIPTION
+<span class="token number">1</span>       	Fri Feb <span class="token number">21</span> <span class="token number">15</span>:06:32 <span class="token number">2020</span>	SUPERSEDED	myhttp-0.1.0	<span class="token number">1.0</span>        	Install complete
+<span class="token number">2</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:44:55 <span class="token number">2020</span>	SUPERSEDED	myhttp-0.2.0	<span class="token number">1.0</span>        	Upgrade complete
+<span class="token number">3</span>       	Fri Feb <span class="token number">21</span> <span class="token number">16</span>:53:25 <span class="token number">2020</span>	DELETED   	myhttp-0.1.0	<span class="token number">1.0</span>        	Deletion complete
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/cloud-native/kubernetes/network.html" class="prev">
+        网络
+      </a></span> <span class="next"><a href="/blog/note/cloud-native/kubernetes/monitoring.html">
+        监控
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/33.4cc9b4d7.js" defer></script>
+  </body>
+</html>

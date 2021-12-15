@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安装 | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/34.e2e313b7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/7.50844ffb.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/cloud-native/kubernetes/overview.html" class="sidebar-link">概述</a></li><li><a href="/blog/note/cloud-native/kubernetes/install.html" aria-current="page" class="active sidebar-link">安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#准备" class="sidebar-link">准备</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#系统配置" class="sidebar-link">系统配置</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#安装docker" class="sidebar-link">安装Docker</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#关闭swap" class="sidebar-link">关闭Swap</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#使用kubeadm部署k8s" class="sidebar-link">使用kubeadm部署k8s</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#安装kubeadm" class="sidebar-link">安装kubeadm</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#初始化master" class="sidebar-link">初始化Master</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#安装pod-network" class="sidebar-link">安装Pod Network</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#添加node节点" class="sidebar-link">添加Node节点</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#重置" class="sidebar-link">重置</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#kube-proxy开启ipvs" class="sidebar-link">kube-proxy开启ipvs</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/install.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/blog/note/cloud-native/kubernetes/workloads.html" class="sidebar-link">工作负载</a></li><li><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html" class="sidebar-link">服务、负载均衡和网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/storage.html" class="sidebar-link">存储</a></li><li><a href="/blog/note/cloud-native/kubernetes/clusterAdministration.html" class="sidebar-link">集群管理</a></li><li><a href="/blog/note/cloud-native/kubernetes/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/helm.html" class="sidebar-link">Helm</a></li><li><a href="/blog/note/cloud-native/kubernetes/monitoring.html" class="sidebar-link">监控</a></li><li><a href="/blog/note/cloud-native/kubernetes/efk.html" class="sidebar-link">EFK</a></li><li><a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="sidebar-link">Dashboard</a></li><li><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html" class="sidebar-link">部署策略</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="准备"><a href="#准备" class="header-anchor">#</a> 准备</h2> <h3 id="系统配置"><a href="#系统配置" class="header-anchor">#</a> 系统配置</h3> <p>环境
+Kubernetes版本：<code>1.16.7</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># CentOS7</span>
+<span class="token number">172.188</span>.2.71 <span class="token comment"># master</span>
+<span class="token number">172.188</span>.2.86 <span class="token comment"># node1</span>
+<span class="token number">172.188</span>.2.87 <span class="token comment"># node2</span>
+</code></pre></div><p>关闭防火墙</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl stop firewalld
+systemctl disable firewalld
+</code></pre></div><p>禁用SELINUX</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vi</span> /etc/selinux/config
+<span class="token assign-left variable">SELINUX</span><span class="token operator">=</span>disabled
+</code></pre></div><p>优化内核参数
+<code>/etc/sysctl.d/k8s.conf</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>net.bridge.bridge-nf-call-ip6tables <span class="token operator">=</span> <span class="token number">1</span>
+net.bridge.bridge-nf-call-iptables <span class="token operator">=</span> <span class="token number">1</span>
+net.ipv4.ip_forward <span class="token operator">=</span> <span class="token number">1</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>modprobe br_netfilter
+sysctl -p /etc/sysctl.d/k8s.conf
+</code></pre></div><p>kube-proxy开启ipvs的前置条件</p> <p><code>由于ipvs已经加入到了内核，所以为kube-proxy开启ipvs的前提需要加载以下的内核模块</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>ip_vs
+ip_vs_rr
+ip_vs_wrr
+ip_vs_sh
+nf_conntrack_ipv4
+</code></pre></div><p>在所有机器上执行以下脚本</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/sysconfig/modules/ipvs.modules <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+#!/bin/bash
+modprobe -- ip_vs
+modprobe -- ip_vs_rr
+modprobe -- ip_vs_wrr
+modprobe -- ip_vs_sh
+modprobe -- nf_conntrack_ipv4
+EOF</span>
+<span class="token function">chmod</span> <span class="token number">755</span> /etc/sysconfig/modules/ipvs.modules <span class="token operator">&amp;&amp;</span> <span class="token function">bash</span> /etc/sysconfig/modules/ipvs.modules <span class="token operator">&amp;&amp;</span> lsmod <span class="token operator">|</span> <span class="token function">grep</span> -e ip_vs -e nf_conntrack_ipv4
+</code></pre></div><p>上面脚本创建了的/etc/sysconfig/modules/ipvs.modules文件，保证在节点重启后能自动加载所需模块。 使用lsmod | grep -e ip_vs -e nf_conntrack_ipv4命令查看是否已经正确加载所需的内核模块。</p> <p>接下来还需要确保各个节点上已经安装了ipset软件包yum install ipset。 为了便于查看ipvs的代理规则，最好安装一下管理工具ipvsadm yum install ipvsadm。</p> <p>如果以上前提条件如果不满足，则即使kube-proxy的配置开启了ipvs模式，也会退回到iptables模式。</p> <h3 id="安装docker"><a href="#安装docker" class="header-anchor">#</a> 安装Docker</h3> <p>安装docker的yum源</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre></div><p>查看最新的Docker版本</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum list docker-ce.x86_64  --showduplicates <span class="token operator">|</span><span class="token function">sort</span> -r
+docker-ce.x86_64            <span class="token number">3</span>:19.03.5-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:19.03.4-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:19.03.3-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:19.03.2-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:19.03.1-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:19.03.0-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.9-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.8-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.7-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.7-3.el7                    @docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.6-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.5-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.4-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.3-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.2-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.1-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:18.09.0-3.el7                    docker-ce-stable
+docker-ce.x86_64            <span class="token number">18.06</span>.3.ce-3.el7                   docker-ce-stable
+docker-ce.x86_64            <span class="token number">18.06</span>.2.ce-3.el7                   docker-ce-stable
+docker-ce.x86_64            <span class="token number">18.06</span>.1.ce-3.el7                   docker-ce-stable
+docker-ce.x86_64            <span class="token number">18.06</span>.0.ce-3.el7                   docker-ce-stable
+<span class="token punctuation">..</span>.
+</code></pre></div><p>Kubernetes 1.15当前支持的docker版本列表是1.13.1, 17.03, 17.06, 17.09, 18.06, 18.09。这里在各节点安装docker的18.09.7版本</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum makecache fast
+
+yum <span class="token function">install</span> -y --setopt<span class="token operator">=</span>obsoletes<span class="token operator">=</span><span class="token number">0</span> docker-ce-18.09.7-3.el7 
+
+systemctl start docker
+systemctl <span class="token builtin class-name">enable</span> docker
+</code></pre></div><p>确认一下iptables filter表中FOWARD链的默认策略(pllicy)为ACCEPT</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># iptables -L -n -v</span>
+Chain INPUT <span class="token punctuation">(</span>policy ACCEPT <span class="token number">1928</span> packets, 317K bytes<span class="token punctuation">)</span>
+ pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
+<span class="token number">30616</span> 1597K KUBE-SERVICES  all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0            ctstate NEW /* kubernetes <span class="token function">service</span> portals */
+<span class="token number">30616</span> 1597K KUBE-EXTERNAL-SERVICES  all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0            ctstate NEW /* kubernetes externally-visible <span class="token function">service</span> portals */
+1249K  222M KUBE-FIREWALL  all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0
+
+Chain FORWARD <span class="token punctuation">(</span>policy ACCEPT <span class="token number">0</span> packets, <span class="token number">0</span> bytes<span class="token punctuation">)</span>
+ pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
+ <span class="token number">3816</span>  175K KUBE-FORWARD  all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0            /* kubernetes forwarding rules */
+ <span class="token number">3812</span>  174K KUBE-SERVICES  all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0            ctstate NEW /* kubernetes <span class="token function">service</span> portals */
+ <span class="token number">3812</span>  174K DOCKER-<span class="token environment constant">USER</span>  all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0
+</code></pre></div><p>修改docker cgroup driver为systemd</p> <p>根据文档CRI installation中的内容，对于使用systemd作为init system的Linux的发行版，使用systemd作为docker的cgroup driver可以确保服务器节点在资源紧张的情况更加稳定，因此这里修改各个节点上docker的cgroup driver为systemd。</p> <p>创建或修改<code>/etc/docker/daemon.json</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;exec-opts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;native.cgroupdriver=systemd&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>systemctl restart docker
+
+docker info <span class="token operator">|</span> <span class="token function">grep</span> Cgroup
+Cgroup Driver: systemd
+</code></pre></div><h3 id="关闭swap"><a href="#关闭swap" class="header-anchor">#</a> 关闭Swap</h3> <p>Kubernetes 1.8开始要求关闭系统的Swap，如果不关闭，默认配置下kubelet将无法启动。关闭系统的Swap方法如下</p> <div class="language-shell extra-class"><pre class="language-shell"><code>swapoff -a
+</code></pre></div><p>修改 /etc/fstab 文件，注释掉 SWAP 的自动挂载，使用free -m确认swap已经关闭。 swappiness参数调整，修改/etc/sysctl.d/k8s.conf添加下面一行</p> <div class="language-shell extra-class"><pre class="language-shell"><code>vm.swappiness<span class="token operator">=</span><span class="token number">0</span>
+</code></pre></div><p>执行<code>sysctl -p /etc/sysctl.d/k8s.conf</code>使修改生效。</p> <h2 id="使用kubeadm部署k8s"><a href="#使用kubeadm部署k8s" class="header-anchor">#</a> 使用kubeadm部署k8s</h2> <h3 id="安装kubeadm"><a href="#安装kubeadm" class="header-anchor">#</a> 安装kubeadm</h3> <p>安装yum源</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span> /etc/yum.repos.d/kubernetes.repo</span>
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF</span>
+</code></pre></div><p>安装kubelet kubeadm kubectl</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum <span class="token function">install</span> -y kubelet-1.16.7 kubeadm-1.16.7 kubectl-1.16.7
+</code></pre></div><p>各节点开机启动kubelet服务</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl <span class="token builtin class-name">enable</span> kubelet.service
+</code></pre></div><h3 id="初始化master"><a href="#初始化master" class="header-anchor">#</a> 初始化Master</h3> <p>生成master初始化文件</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm config print init-defaults <span class="token operator">&gt;</span> kubeadm-init.yaml
+</code></pre></div><p>该文件有三处需要修改</p> <ol><li>将<code>advertiseAddress: 1.2.3.4</code>修改为本机地址</li> <li>将<code>imageRepository: k8s.gcr.io</code>修改为<code>imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers</code></li> <li>添加<code>--pod-network-cidr</code>配置<code>podSubnet</code></li></ol> <p>修改完毕后文件如下</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> kubeadm.k8s.io/v1beta2
+<span class="token key atrule">bootstrapTokens</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">groups</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> system<span class="token punctuation">:</span>bootstrappers<span class="token punctuation">:</span>kubeadm<span class="token punctuation">:</span>default<span class="token punctuation">-</span>node<span class="token punctuation">-</span>token
+  <span class="token key atrule">token</span><span class="token punctuation">:</span> abcdef.0123456789abcdef
+  <span class="token key atrule">ttl</span><span class="token punctuation">:</span> 24h0m0s
+  <span class="token key atrule">usages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> signing
+  <span class="token punctuation">-</span> authentication
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> InitConfiguration
+<span class="token key atrule">localAPIEndpoint</span><span class="token punctuation">:</span>
+  <span class="token key atrule">advertiseAddress</span><span class="token punctuation">:</span> 172.188.2.71
+  <span class="token key atrule">bindPort</span><span class="token punctuation">:</span> <span class="token number">6443</span>
+<span class="token key atrule">nodeRegistration</span><span class="token punctuation">:</span>
+  <span class="token key atrule">criSocket</span><span class="token punctuation">:</span> /var/run/dockershim.sock
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> master
+  <span class="token key atrule">taints</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">effect</span><span class="token punctuation">:</span> NoSchedule
+    <span class="token key atrule">key</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>role.kubernetes.io/master
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiServer</span><span class="token punctuation">:</span>
+  <span class="token key atrule">timeoutForControlPlane</span><span class="token punctuation">:</span> 4m0s
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> kubeadm.k8s.io/v1beta2
+<span class="token key atrule">certificatesDir</span><span class="token punctuation">:</span> /etc/kubernetes/pki
+<span class="token key atrule">clusterName</span><span class="token punctuation">:</span> kubernetes
+<span class="token key atrule">controllerManager</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token key atrule">dns</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> CoreDNS
+<span class="token key atrule">etcd</span><span class="token punctuation">:</span>
+  <span class="token key atrule">local</span><span class="token punctuation">:</span>
+    <span class="token key atrule">dataDir</span><span class="token punctuation">:</span> /var/lib/etcd
+<span class="token key atrule">imageRepository</span><span class="token punctuation">:</span> registry.cn<span class="token punctuation">-</span>hangzhou.aliyuncs.com/google_containers
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterConfiguration
+<span class="token key atrule">kubernetesVersion</span><span class="token punctuation">:</span> v1.15.7
+<span class="token key atrule">networking</span><span class="token punctuation">:</span>
+  <span class="token key atrule">dnsDomain</span><span class="token punctuation">:</span> cluster.local
+  <span class="token key atrule">podSubnet</span><span class="token punctuation">:</span> 10.244.0.0/16
+  <span class="token key atrule">serviceSubnet</span><span class="token punctuation">:</span> 10.96.0.0/12
+<span class="token key atrule">scheduler</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>下载镜像</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm config images pull --config kubeadm-init.yaml
+</code></pre></div><p>执行初始化</p> <ol><li>配置文件初始化</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm init --config kubeadm-init.yaml
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>To start using your cluster, you need to run the following as a regular user:
+
+  <span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+  <span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+  <span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run <span class="token string">&quot;kubectl apply -f [podnetwork].yaml&quot;</span> with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can <span class="token function">join</span> any number of worker nodes by running the following on each as root:
+
+kubeadm <span class="token function">join</span> <span class="token number">172.188</span>.2.71:6443 --token abcdef.0123456789abcdef <span class="token punctuation">\</span>
+    --discovery-token-ca-cert-hash sha256:cd6a2ec0a5da2060bfe0be4b43078f5f11e1dbd1b0d9b0e4d47fce7b764f1f66
+</code></pre></div><ol start="2"><li>命令行初始化</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm init --kubernetes-version<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubeadm version -o short<span class="token variable">)</span></span>  --pod-network-cidr<span class="token operator">=</span><span class="token number">10.244</span>.0.0/16 --service-cidr<span class="token operator">=</span><span class="token number">10.96</span>.0.0/12
+</code></pre></div><p>配置环境, 让当前用户可以执行kubectl命令</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+<span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+<span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
+</code></pre></div><h3 id="安装pod-network"><a href="#安装pod-network" class="header-anchor">#</a> 安装Pod Network</h3> <p>这里选用flannel</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">curl</span> -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f kube-flannel.yml
+</code></pre></div><p>查看各pod的状态，确保都是Running</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pod --all-namespaces -o wide</span>
+NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE    IP             NODE     NOMINATED NODE   READINESS GATES
+kube-system   coredns-645bfc575f-c6rdw         <span class="token number">1</span>/1     Running             <span class="token number">0</span>          133m   <span class="token number">10.244</span>.0.18    master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   coredns-645bfc575f-jvxd2         <span class="token number">1</span>/1     Running             <span class="token number">0</span>          133m   <span class="token number">10.244</span>.0.19    master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   etcd-master                      <span class="token number">1</span>/1     Running             <span class="token number">0</span>          132m   <span class="token number">172.188</span>.2.71   master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-apiserver-master            <span class="token number">1</span>/1     Running             <span class="token number">0</span>          132m   <span class="token number">172.188</span>.2.71   master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-controller-manager-master   <span class="token number">1</span>/1     Running             <span class="token number">0</span>          133m   <span class="token number">172.188</span>.2.71   master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-flannel-ds-amd64-hsxbq      <span class="token number">1</span>/1     Running             <span class="token number">0</span>          131m   <span class="token number">172.188</span>.2.71   master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-flannel-ds-amd64-nd65q      <span class="token number">1</span>/1     Running             <span class="token number">0</span>          131m   <span class="token number">172.188</span>.2.87   node2    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-flannel-ds-amd64-zx4bq      <span class="token number">1</span>/1     Running             <span class="token number">0</span>          131m   <span class="token number">172.188</span>.2.86   node1    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-proxy-22rtl                 <span class="token number">1</span>/1     Running             <span class="token number">0</span>          72m    <span class="token number">172.188</span>.2.86   node1    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-proxy-j7wp8                 <span class="token number">1</span>/1     Running             <span class="token number">0</span>          72m    <span class="token number">172.188</span>.2.87   node2    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-proxy-jrttm                 <span class="token number">1</span>/1     Running             <span class="token number">0</span>          72m    <span class="token number">172.188</span>.2.71   master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+kube-system   kube-scheduler-master            <span class="token number">1</span>/1     Running             <span class="token number">0</span>          132m   <span class="token number">172.188</span>.2.71   master   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="添加node节点"><a href="#添加node节点" class="header-anchor">#</a> 添加Node节点</h3> <p>node加入节点，node节点上面执行</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm <span class="token function">join</span> <span class="token number">172.188</span>.2.71:6443 --token abcdef.0123456789abcdef <span class="token punctuation">\</span>
+    --discovery-token-ca-cert-hash sha256:cd6a2ec0a5da2060bfe0be4b43078f5f11e1dbd1b0d9b0e4d47fce7b764f1f66
+</code></pre></div><p>查看节点状态</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl get node</span>
+NAME     STATUS   ROLES    AGE    VERSION
+master   Ready    master   138m   v1.15.7
+node1    Ready    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>   135m   v1.15.7
+node2    Ready    <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>   135m   v1.15.7
+</code></pre></div><h3 id="重置"><a href="#重置" class="header-anchor">#</a> 重置</h3> <p>集群初始化如果遇到问题，可以使用下面的命令进行清理</p> <p>master</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm reset
+<span class="token function">rm</span> -f .kube/config
+</code></pre></div><p>node</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubeadm reset
+</code></pre></div><h3 id="kube-proxy开启ipvs"><a href="#kube-proxy开启ipvs" class="header-anchor">#</a> kube-proxy开启ipvs</h3> <p>修改ConfigMap的kube-system/kube-proxy中的config.conf，<code>mode: &quot;ipvs&quot;:</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl edit cm kube-proxy -n kube-system
+</code></pre></div><p>重启Pod</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get pod -n kube-system <span class="token operator">|</span> <span class="token function">grep</span> kube-proxy <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{system(&quot;kubectl delete pod &quot;$1&quot; -n kube-system&quot;)}'</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pod -n kube-system | grep kube-proxy</span>
+kube-proxy-22rtl                 <span class="token number">1</span>/1     Running   <span class="token number">0</span>          87m
+kube-proxy-j7wp8                 <span class="token number">1</span>/1     Running   <span class="token number">0</span>          87m
+kube-proxy-jrttm                 <span class="token number">1</span>/1     Running   <span class="token number">0</span>          87m
+
+<span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl logs kube-proxy-22rtl -n kube-system</span>
+I0208 08:03:17.814816       <span class="token number">1</span> server_others.go:170<span class="token punctuation">]</span> Using ipvs Proxier.
+W0208 08:03:17.815165       <span class="token number">1</span> proxier.go:401<span class="token punctuation">]</span> IPVS scheduler not specified, use rr by default
+I0208 08:03:17.815331       <span class="token number">1</span> server.go:534<span class="token punctuation">]</span> Version: v1.15.7
+I0208 08:03:17.828436       <span class="token number">1</span> conntrack.go:52<span class="token punctuation">]</span> Setting nf_conntrack_max to <span class="token number">524288</span>
+I0208 08:03:17.828670       <span class="token number">1</span> config.go:187<span class="token punctuation">]</span> Starting <span class="token function">service</span> config controller
+I0208 08:03:17.828708       <span class="token number">1</span> controller_utils.go:1029<span class="token punctuation">]</span> Waiting <span class="token keyword">for</span> caches to <span class="token function">sync</span> <span class="token keyword">for</span> <span class="token function">service</span> config controller
+I0208 08:03:17.828846       <span class="token number">1</span> config.go:96<span class="token punctuation">]</span> Starting endpoints config controller
+I0208 08:03:17.828895       <span class="token number">1</span> controller_utils.go:1029<span class="token punctuation">]</span> Waiting <span class="token keyword">for</span> caches to <span class="token function">sync</span> <span class="token keyword">for</span> endpoints config controller
+I0208 08:03:17.928850       <span class="token number">1</span> controller_utils.go:1036<span class="token punctuation">]</span> Caches are synced <span class="token keyword">for</span> <span class="token function">service</span> config controller
+I0208 08:03:17.929058       <span class="token number">1</span> controller_utils.go:1036<span class="token punctuation">]</span> Caches are synced <span class="token keyword">for</span> endpoints config controller
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <p><code>https://blog.frognew.com/2019/07/kubeadm-install-kubernetes-1.15.html</code></p> <p><code>https://juejin.im/post/5d7fb46d5188253264365dcf</code></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/cloud-native/kubernetes/overview.html" class="prev">
+        概述
+      </a></span> <span class="next"><a href="/blog/note/cloud-native/kubernetes/workloads.html">
+        工作负载
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/34.e2e313b7.js" defer></script>
+  </body>
+</html>

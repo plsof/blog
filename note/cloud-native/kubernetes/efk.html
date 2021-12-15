@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EFK | plsof</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/assets/img/favicon.ico">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.dab10465.css" as="style"><link rel="preload" href="/blog/assets/js/app.88086388.js" as="script"><link rel="preload" href="/blog/assets/js/2.49a236d9.js" as="script"><link rel="preload" href="/blog/assets/js/7.50844ffb.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2757765f.js"><link rel="prefetch" href="/blog/assets/js/11.5839dede.js"><link rel="prefetch" href="/blog/assets/js/12.a8947560.js"><link rel="prefetch" href="/blog/assets/js/13.a0ba02e9.js"><link rel="prefetch" href="/blog/assets/js/14.e2f92b4b.js"><link rel="prefetch" href="/blog/assets/js/15.b48fa565.js"><link rel="prefetch" href="/blog/assets/js/16.b81700c6.js"><link rel="prefetch" href="/blog/assets/js/17.b1c707d0.js"><link rel="prefetch" href="/blog/assets/js/18.5eef7a22.js"><link rel="prefetch" href="/blog/assets/js/19.520437c4.js"><link rel="prefetch" href="/blog/assets/js/20.d9d202f0.js"><link rel="prefetch" href="/blog/assets/js/21.cb138f89.js"><link rel="prefetch" href="/blog/assets/js/22.9785cf36.js"><link rel="prefetch" href="/blog/assets/js/23.7b46bea8.js"><link rel="prefetch" href="/blog/assets/js/24.4d3fedb1.js"><link rel="prefetch" href="/blog/assets/js/25.886bae34.js"><link rel="prefetch" href="/blog/assets/js/26.ed77c345.js"><link rel="prefetch" href="/blog/assets/js/27.bdbc11e8.js"><link rel="prefetch" href="/blog/assets/js/28.e10fadf3.js"><link rel="prefetch" href="/blog/assets/js/29.dda59d92.js"><link rel="prefetch" href="/blog/assets/js/3.f658113e.js"><link rel="prefetch" href="/blog/assets/js/30.d689903e.js"><link rel="prefetch" href="/blog/assets/js/31.aef48960.js"><link rel="prefetch" href="/blog/assets/js/32.12d3d2fc.js"><link rel="prefetch" href="/blog/assets/js/33.4cc9b4d7.js"><link rel="prefetch" href="/blog/assets/js/34.e2e313b7.js"><link rel="prefetch" href="/blog/assets/js/35.c5b27b66.js"><link rel="prefetch" href="/blog/assets/js/36.c5c32567.js"><link rel="prefetch" href="/blog/assets/js/37.dbdaccf3.js"><link rel="prefetch" href="/blog/assets/js/38.d63f78f3.js"><link rel="prefetch" href="/blog/assets/js/39.c09e93e4.js"><link rel="prefetch" href="/blog/assets/js/4.95d7177c.js"><link rel="prefetch" href="/blog/assets/js/40.d21e0571.js"><link rel="prefetch" href="/blog/assets/js/41.308ba400.js"><link rel="prefetch" href="/blog/assets/js/42.7a51c716.js"><link rel="prefetch" href="/blog/assets/js/43.7d849dfb.js"><link rel="prefetch" href="/blog/assets/js/44.9242de2f.js"><link rel="prefetch" href="/blog/assets/js/45.c5b4a02c.js"><link rel="prefetch" href="/blog/assets/js/46.57f62cd6.js"><link rel="prefetch" href="/blog/assets/js/47.d8881a46.js"><link rel="prefetch" href="/blog/assets/js/48.a8ce35d6.js"><link rel="prefetch" href="/blog/assets/js/49.cfb56ea8.js"><link rel="prefetch" href="/blog/assets/js/5.b4edcf13.js"><link rel="prefetch" href="/blog/assets/js/50.5102c797.js"><link rel="prefetch" href="/blog/assets/js/51.985f331b.js"><link rel="prefetch" href="/blog/assets/js/52.2c5b2d65.js"><link rel="prefetch" href="/blog/assets/js/53.91ad6526.js"><link rel="prefetch" href="/blog/assets/js/54.df415473.js"><link rel="prefetch" href="/blog/assets/js/55.6597a04e.js"><link rel="prefetch" href="/blog/assets/js/56.f09e9bf7.js"><link rel="prefetch" href="/blog/assets/js/57.73dec97d.js"><link rel="prefetch" href="/blog/assets/js/58.6c6da79c.js"><link rel="prefetch" href="/blog/assets/js/59.129c9d37.js"><link rel="prefetch" href="/blog/assets/js/6.b73564f2.js"><link rel="prefetch" href="/blog/assets/js/60.c3e19ee6.js"><link rel="prefetch" href="/blog/assets/js/61.99a0272f.js"><link rel="prefetch" href="/blog/assets/js/62.8e7648bc.js"><link rel="prefetch" href="/blog/assets/js/63.bc3cac30.js"><link rel="prefetch" href="/blog/assets/js/64.b112247d.js"><link rel="prefetch" href="/blog/assets/js/65.071e002b.js"><link rel="prefetch" href="/blog/assets/js/66.006dc1f0.js"><link rel="prefetch" href="/blog/assets/js/67.a2b507c8.js"><link rel="prefetch" href="/blog/assets/js/68.b0d7cf22.js"><link rel="prefetch" href="/blog/assets/js/69.4ee86054.js"><link rel="prefetch" href="/blog/assets/js/70.dc7beda1.js"><link rel="prefetch" href="/blog/assets/js/71.ce7db99a.js"><link rel="prefetch" href="/blog/assets/js/72.047b9fa4.js"><link rel="prefetch" href="/blog/assets/js/73.9d07e8c8.js"><link rel="prefetch" href="/blog/assets/js/74.53e33484.js"><link rel="prefetch" href="/blog/assets/js/75.231d43d3.js"><link rel="prefetch" href="/blog/assets/js/8.fad53de1.js"><link rel="prefetch" href="/blog/assets/js/9.1f23426f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.dab10465.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/assets/img/sheep.png" alt="plsof" class="logo"> <span class="site-name can-hide">plsof</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/linux/awk.html" class="nav-link">
+  awk
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/linux/date.html" class="nav-link">
+  date
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/python/datatypes/" class="nav-link">
+  数据类型
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/function/" class="nav-link">
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/oop/" class="nav-link">
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/log/" class="nav-link">
+  日志
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/python/network/" class="nav-link">
+  网络
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/go/basic/" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gin/" class="nav-link">
+  gin
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/go/gorm/" class="nav-link">
+  gorm
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/frontend/vue/" class="nav-link">
+  vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/db/etcd/" class="nav-link">
+  etcd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/db/redis/" class="nav-link">
+  redis
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="云原生" class="dropdown-title"><span class="title">云原生</span> <span class="arrow down"></span></button> <button type="button" aria-label="云原生" class="mobile-dropdown-title"><span class="title">云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker/" class="nav-link">
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/docker-compose/" class="nav-link">
+  docker-compose
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/kubernetes/" class="nav-link router-link-active">
+  kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/cloud-native/harbor/" class="nav-link">
+  harbor
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="监控" class="dropdown-title"><span class="title">监控</span> <span class="arrow down"></span></button> <button type="button" aria-label="监控" class="mobile-dropdown-title"><span class="title">监控</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/monitor/prometheus/" class="nav-link">
+  prometheus
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="配置管理" class="dropdown-title"><span class="title">配置管理</span> <span class="arrow down"></span></button> <button type="button" aria-label="配置管理" class="mobile-dropdown-title"><span class="title">配置管理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/confd/" class="nav-link">
+  confd
+</a></li><li class="dropdown-item"><!----> <a href="/blog/note/configuration-management/saltstack/" class="nav-link">
+  saltstack
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/plsof" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/note/cloud-native/kubernetes/overview.html" class="sidebar-link">概述</a></li><li><a href="/blog/note/cloud-native/kubernetes/install.html" class="sidebar-link">安装</a></li><li><a href="/blog/note/cloud-native/kubernetes/workloads.html" class="sidebar-link">工作负载</a></li><li><a href="/blog/note/cloud-native/kubernetes/servicesLoadbalancingNetworking.html" class="sidebar-link">服务、负载均衡和网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/storage.html" class="sidebar-link">存储</a></li><li><a href="/blog/note/cloud-native/kubernetes/clusterAdministration.html" class="sidebar-link">集群管理</a></li><li><a href="/blog/note/cloud-native/kubernetes/network.html" class="sidebar-link">网络</a></li><li><a href="/blog/note/cloud-native/kubernetes/helm.html" class="sidebar-link">Helm</a></li><li><a href="/blog/note/cloud-native/kubernetes/monitoring.html" class="sidebar-link">监控</a></li><li><a href="/blog/note/cloud-native/kubernetes/efk.html" aria-current="page" class="active sidebar-link">EFK</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#简介" class="sidebar-link">简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#收集方式" class="sidebar-link">收集方式</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#推荐方案" class="sidebar-link">推荐方案</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#部署" class="sidebar-link">部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#前提" class="sidebar-link">前提</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#elasticsearch" class="sidebar-link">elasticsearch</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#fluentd" class="sidebar-link">fluentd</a></li><li class="sidebar-sub-header"><a href="/blog/note/cloud-native/kubernetes/efk.html#kibana" class="sidebar-link">kibana</a></li></ul></li></ul></li><li><a href="/blog/note/cloud-native/kubernetes/dashboard.html" class="sidebar-link">Dashboard</a></li><li><a href="/blog/note/cloud-native/kubernetes/deploymentStrategies.html" class="sidebar-link">部署策略</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <h3 id="收集方式"><a href="#收集方式" class="header-anchor">#</a> 收集方式</h3> <p><code>kubernetes</code>集群本身不提供日志收集的解决方案，一般来说主要有三种方案：</p> <ol><li>在节点上运行一个agent（DaemonSet）来收集日志</li> <li>在Pod中包含一个sidecar容器来收集应用日志</li> <li>直接在应用程序中将日志信息推送到采集后端</li></ol> <p>参考：<code>https://www.qikqiak.com/post/kubernetes-logs-architecture/</code></p> <h3 id="推荐方案"><a href="#推荐方案" class="header-anchor">#</a> 推荐方案</h3> <p><code>kubernetes</code>中比较流行的日志收集解决方案是<code>Elasticsearch</code>、<code>Fluentd</code>和<code>Kibana</code>（EFK）技术栈，也是官方现在比较推荐的一种方案</p> <h2 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h2> <h3 id="前提"><a href="#前提" class="header-anchor">#</a> 前提</h3> <p>下面的案例使用helm来部署EFK, <strong>elasticsearch的版本必须和kibana的版本一致</strong></p> <table><thead><tr><th style="text-align:center;">CHART</th> <th style="text-align:center;">APP VERSION</th></tr></thead> <tbody><tr><td style="text-align:center;">elasticsearch-11.0.18</td> <td style="text-align:center;">7.6.2</td></tr> <tr><td style="text-align:center;">fluentd-elasticsearch-6.2.4</td> <td style="text-align:center;">3.0.0</td></tr> <tr><td style="text-align:center;">kibana-5.0.14</td> <td style="text-align:center;">7.6.2</td></tr></tbody></table> <p>创建命名空间：</p> <p><code>kubectl create ns efk</code></p> <h3 id="elasticsearch"><a href="#elasticsearch" class="header-anchor">#</a> elasticsearch</h3> <p>添加bitnami repo：</p> <p><code>helm repo add bitnami https://charts.bitnami.com/bitnami</code></p> <p>下载package：</p> <p><code>helm fetch bitnami/elasticsearch --version 11.0.18 --untar</code></p> <p>修改参数：</p> <ul><li>使用存储卷</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">persistence</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">storageClass</span><span class="token punctuation">:</span> <span class="token string">&quot;managed-nfs-storage&quot;</span>
+</code></pre></div><p>安装：</p> <p><code>helm install es-release bitnami/elasticsearch --version 11.0.18 -n efk -f elasticsearch/values.yaml</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>NAME: es-release
+LAST DEPLOYED: Fri Apr <span class="token number">17</span> <span class="token number">18</span>:06:41 <span class="token number">2020</span>
+NAMESPACE: efk
+STATUS: deployed
+REVISION: <span class="token number">1</span>
+TEST SUITE: None
+NOTES:
+-------------------------------------------------------------------------------
+ WARNING
+
+    Elasticsearch requires some changes <span class="token keyword">in</span> the kernel of the <span class="token function">host</span> machine to
+    work as expected. If those values are not <span class="token builtin class-name">set</span> <span class="token keyword">in</span> the underlying operating
+    system, the ES containers fail to boot with ERROR messages.
+
+    More information about these requirements can be found <span class="token keyword">in</span> the links below:
+
+      https://www.elastic.co/guide/en/elasticsearch/reference/current/file-descriptors.html
+      https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
+
+    This chart uses a privileged initContainer to change those settings <span class="token keyword">in</span> the Kernel
+    by running: sysctl -w vm.max_map_count<span class="token operator">=</span><span class="token number">262144</span> <span class="token operator">&amp;&amp;</span> sysctl -w fs.file-max<span class="token operator">=</span><span class="token number">65536</span>
+
+** Please be patient <span class="token keyword">while</span> the chart is being deployed **
+
+  Elasticsearch can be accessed within the cluster on port <span class="token number">9200</span> at es-release-elasticsearch-coordinating-only.efk.svc.cluster.local
+
+  To access from outside the cluster execute the following commands:
+
+    <span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_PORT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get --namespace efk -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">&quot;{.spec.ports[0].nodePort}&quot;</span> services es-release-elasticsearch-coordinating-only<span class="token variable">)</span></span>
+    <span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_IP</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get nodes --namespace efk -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="token variable">)</span></span>
+    <span class="token function">curl</span> http://<span class="token variable">$NODE_IP</span><span class="token builtin class-name">:</span><span class="token variable">$NODE_PORT</span>/
+</code></pre></div><p>测试：</p> <ul><li>测试端口</li> <li>查看节点状态</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl run cirros --rm -it --image=cirros  -- /bin/sh</span>
+kubectl run --generator<span class="token operator">=</span>deployment/apps.v1 is DEPRECATED and will be removed <span class="token keyword">in</span> a future version. Use kubectl run --generator<span class="token operator">=</span>run-pod/v1 or kubectl create instead.
+If you don't see a <span class="token builtin class-name">command</span> prompt, try pressing enter.
+/ <span class="token comment"># curl es-release-elasticsearch-coordinating-only.efk.svc.cluster.local:9200</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;es-release-elasticsearch-coordinating-only-868b99f9b-szbcm&quot;</span>,
+  <span class="token string">&quot;cluster_name&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;elastic&quot;</span>,
+  <span class="token string">&quot;cluster_uuid&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;o9QJY50SQluG3dyMF5WmSw&quot;</span>,
+  <span class="token string">&quot;version&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;number&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;7.6.2&quot;</span>,
+    <span class="token string">&quot;build_flavor&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;oss&quot;</span>,
+    <span class="token string">&quot;build_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;tar&quot;</span>,
+    <span class="token string">&quot;build_hash&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;ef48eb35cf30adf4db14086e8aabd07ef6fb113f&quot;</span>,
+    <span class="token string">&quot;build_date&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2020-03-26T06:34:37.794943Z&quot;</span>,
+    <span class="token string">&quot;build_snapshot&quot;</span> <span class="token builtin class-name">:</span> false,
+    <span class="token string">&quot;lucene_version&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;8.4.0&quot;</span>,
+    <span class="token string">&quot;minimum_wire_compatibility_version&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;6.8.0&quot;</span>,
+    <span class="token string">&quot;minimum_index_compatibility_version&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;6.0.0-beta1&quot;</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;tagline&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;You Know, for Search&quot;</span>
+<span class="token punctuation">}</span>
+/ <span class="token comment"># curl es-release-elasticsearch-coordinating-only.efk.svc.cluster.local:9200/_cat/nodes?v</span>
+<span class="token function">ip</span>          heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
+<span class="token number">10.244</span>.1.86           <span class="token number">52</span>          <span class="token number">25</span>   <span class="token number">1</span>    <span class="token number">0.01</span>    <span class="token number">0.09</span>     <span class="token number">0.13</span> d         -      es-release-elasticsearch-data-1
+<span class="token number">10.244</span>.1.85           <span class="token number">41</span>          <span class="token number">25</span>   <span class="token number">1</span>    <span class="token number">0.01</span>    <span class="token number">0.09</span>     <span class="token number">0.13</span> m         *      es-release-elasticsearch-master-1
+<span class="token number">10.244</span>.2.86           <span class="token number">50</span>          <span class="token number">27</span>   <span class="token number">1</span>    <span class="token number">0.15</span>    <span class="token number">0.19</span>     <span class="token number">0.22</span> d         -      es-release-elasticsearch-data-0
+<span class="token number">10.244</span>.2.87           <span class="token number">37</span>          <span class="token number">27</span>   <span class="token number">1</span>    <span class="token number">0.15</span>    <span class="token number">0.19</span>     <span class="token number">0.22</span> m         -      es-release-elasticsearch-master-0
+<span class="token number">10.244</span>.2.85           <span class="token number">53</span>          <span class="token number">27</span>   <span class="token number">1</span>    <span class="token number">0.15</span>    <span class="token number">0.19</span>     <span class="token number">0.22</span> -         -      es-release-elasticsearch-coordinating-only-868b99f9b-szbcm
+<span class="token number">10.244</span>.1.84           <span class="token number">44</span>          <span class="token number">25</span>   <span class="token number">1</span>    <span class="token number">0.01</span>    <span class="token number">0.09</span>     <span class="token number">0.13</span> -         -      es-release-elasticsearch-coordinating-only-868b99f9b-nmmzp
+</code></pre></div><h3 id="fluentd"><a href="#fluentd" class="header-anchor">#</a> fluentd</h3> <p>这里使用<code>DaemonSet</code>的方式部署fluentd</p> <p>添加kiwigrid repo：</p> <p><code>helm repo add kiwigrid https://kiwigrid.github.io</code></p> <p>下载package：</p> <p><code>helm fetch kiwigrid/fluentd-elasticsearch --version 3.0.0 --untar</code></p> <p>修改参数：</p> <ul><li>修改elasticsearch host</li> <li>允许收集master节点的pod日志</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">&quot;es-release-elasticsearch-coordinating-only.efk.svc.cluster.local&quot;</span>
+
+<span class="token key atrule">tolerations</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>role.kubernetes.io/master
+     <span class="token key atrule">operator</span><span class="token punctuation">:</span> Exists
+     <span class="token key atrule">effect</span><span class="token punctuation">:</span> NoSchedule
+</code></pre></div><p>安装：</p> <p><code>helm install fe-release --namespace efk -f fluentd-elasticsearch/values.yaml kiwigrid/fluentd-elasticsearch --version 3.0.0</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>NAME: fe-release
+LAST DEPLOYED: Fri Apr <span class="token number">17</span> <span class="token number">18</span>:24:22 <span class="token number">2020</span>
+NAMESPACE: efk
+STATUS: deployed
+REVISION: <span class="token number">1</span>
+TEST SUITE: None
+NOTES:
+<span class="token number">1</span>. To verify that Fluentd has started, run:
+
+  kubectl --namespace<span class="token operator">=</span>efk get pods -l <span class="token string">&quot;app.kubernetes.io/name=fluentd-elasticsearch,app.kubernetes.io/instance=fe-release&quot;</span>
+
+THIS APPLICATION CAPTURES ALL CONSOLE OUTPUT AND FORWARDS IT TO elasticsearch <span class="token builtin class-name">.</span> Anything that might be identifying,
+including things like IP addresses, container images, and object names will NOT be anonymized.
+<span class="token number">2</span>. Get the application URL by running these commands:
+  <span class="token builtin class-name">export</span> <span class="token assign-left variable">POD_NAME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get pods --namespace efk -l <span class="token string">&quot;app.kubernetes.io/name=fluentd-elasticsearch,app.kubernetes.io/instance=fe-release&quot;</span> -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">&quot;{.items[0].metadata.name}&quot;</span><span class="token variable">)</span></span>
+  <span class="token builtin class-name">echo</span> <span class="token string">&quot;Visit http://127.0.0.1:8080 to use your application&quot;</span>
+  kubectl port-forward <span class="token variable">$POD_NAME</span> <span class="token number">8080</span>:80
+</code></pre></div><p>测试：</p> <ul><li>查看生成的index</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># kubectl run cirros --rm -it --image=cirros  -- /bin/sh</span>
+kubectl run --generator<span class="token operator">=</span>deployment/apps.v1 is DEPRECATED and will be removed <span class="token keyword">in</span> a future version. Use kubectl run --generator<span class="token operator">=</span>run-pod/v1 or kubectl create instead.
+If you don't see a <span class="token builtin class-name">command</span> prompt, try pressing enter.
+/ <span class="token comment"># curl es-release-elasticsearch-coordinating-only.efk.svc.cluster.local:9200/_cat/indices?v</span>
+health status index               uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+green  <span class="token function">open</span>   logstash-2020.04.17 FgvPHuA0R-yf-5y3otDNnQ   <span class="token number">1</span>   <span class="token number">1</span>     <span class="token number">326045</span>            <span class="token number">0</span>    <span class="token number">175</span>.8mb           88mb
+green  <span class="token function">open</span>   .kibana_1           5G0PnvrUSbmKyLdCzvO04w   <span class="token number">1</span>   <span class="token number">1</span>          <span class="token number">9</span>            <span class="token number">2</span>      146kb           73kb
+</code></pre></div><h3 id="kibana"><a href="#kibana" class="header-anchor">#</a> kibana</h3> <p>下载package：</p> <p><code>helm fetch bitnami/kibana --version 5.0.14 --untar</code></p> <p>修改参数：</p> <ul><li>使用存储卷</li> <li>使用NodePort发布服务</li> <li>修改elasticsearch host</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">persistence</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">storageClass</span><span class="token punctuation">:</span> <span class="token string">&quot;managed-nfs-storage&quot;</span>
+
+<span class="token key atrule">service</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+
+<span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> es<span class="token punctuation">-</span>release<span class="token punctuation">-</span>elasticsearch<span class="token punctuation">-</span>coordinating<span class="token punctuation">-</span>only.efk.svc.cluster.local
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+</code></pre></div><p>安装：</p> <p><code>helm install kb-release bitnami/kibana --version 5.0.14 -n efk -f kibana/values.yaml</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>NAME: kb-release
+LAST DEPLOYED: Fri Apr <span class="token number">17</span> <span class="token number">19</span>:00:52 <span class="token number">2020</span>
+NAMESPACE: efk
+STATUS: deployed
+REVISION: <span class="token number">1</span>
+NOTES:
+<span class="token number">1</span>. Get the application URL by running these commands:
+  <span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_PORT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get --namespace efk -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">&quot;{.spec.ports[0].nodePort}&quot;</span> services kb-release-kibana<span class="token variable">)</span></span>
+  <span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_IP</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get nodes --namespace efk -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="token variable">)</span></span>
+  <span class="token builtin class-name">echo</span> http://<span class="token variable">$NODE_IP</span><span class="token builtin class-name">:</span><span class="token variable">$NODE_PORT</span>
+
+WARNING: Kibana is externally accessible from the cluster but the dashboard does not contain authentication mechanisms. Make sure you follow the authentication guidelines <span class="token keyword">in</span> your Elastic stack.
++info https://www.elastic.co/guide/en/elastic-stack-overview/current/setting-up-authentication.html
+</code></pre></div><p>添加index：</p> <img src="/blog/assets/img/kibana1.7688b8a8.png" alt="kibana-index" style="zoom:85%;"> <p>页面展示：</p> <img src="/blog/assets/img/kibana2.7b4ee3ba.png" alt="kibana-index" style="zoom:85%;"></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/cloud-native/kubernetes/monitoring.html" class="prev">
+        监控
+      </a></span> <span class="next"><a href="/blog/note/cloud-native/kubernetes/dashboard.html">
+        Dashboard
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.88086388.js" defer></script><script src="/blog/assets/js/2.49a236d9.js" defer></script><script src="/blog/assets/js/7.50844ffb.js" defer></script>
+  </body>
+</html>
